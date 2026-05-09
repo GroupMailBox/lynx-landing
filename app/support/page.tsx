@@ -33,6 +33,16 @@ const EXTENDED_FAQ = [
     answer:
       'You can cancel your subscription at any time from your account settings. Your data will be preserved, and you\'ll be downgraded to the free plan at the end of your billing period.',
   },
+  {
+    question: 'How do I delete my account and data?',
+    answer:
+      `Email ${SUPPORT_EMAIL} from the address associated with your account. We will revoke your Google OAuth tokens server-side and remove your account, leads, templates, campaigns, send logs, and unsubscribe records within 30 days of a verified request. Locally cached data in the extension is removed automatically when you uninstall it.`,
+  },
+  {
+    question: 'How do I revoke GroupMailBox\'s access to my Google account?',
+    answer:
+      'You can revoke access at any time at https://myaccount.google.com/permissions — find GroupMailBox in the list and click Remove Access. You can also use the Disconnect Google action inside the extension. Revocation halts all campaign sending immediately.',
+  },
 ];
 
 export default function SupportPage() {
