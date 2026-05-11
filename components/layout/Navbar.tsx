@@ -6,10 +6,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Logo from './Logo';
 import Button from '@/components/ui/Button';
 import { NAV_LINKS, CHROME_STORE_URL } from '@/lib/constants';
+import { useAuth } from '@/lib/auth';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { auth, signIn, signOut, hydrated } = useAuth();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -50,8 +52,31 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Desktop CTA */}
-            <div className="hidden md:block">
+            {/* Desktop CTA + auth */}
+            <div className="hidden md:flex items-center gap-3">
+              {hydrated && auth ? (
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08]">
+                    <div className="w-2 h-2 rounded-full bg-accent-green" />
+                    <span className="text-xs text-text-secondary max-w-[160px] truncate">
+                      {auth.user.email}
+                    </span>
+                  </div>
+                  <button
+                    onClick={signOut}
+                    className="text-xs text-text-muted hover:text-text-secondary transition-colors"
+                  >
+                    Sign out
+                  </button>
+                </div>
+              ) : hydrated ? (
+                <button
+                  onClick={() => signIn()}
+                  className="text-sm text-text-secondary hover:text-accent-blue transition-colors font-medium"
+                >
+                  Sign in
+                </button>
+              ) : null}
               <Button href={CHROME_STORE_URL} size="sm" external>
                 Install Free
               </Button>
@@ -105,6 +130,30 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              {hydrated && auth ? (
+                <div className="w-full mt-4 flex flex-col gap-3 items-center">
+                  <div className="text-text-secondary text-sm">{auth.user.email}</div>
+                  <button
+                    onClick={() => {
+                      signOut();
+                      setMobileOpen(false);
+                    }}
+                    className="text-sm text-text-muted hover:text-text-secondary"
+                  >
+                    Sign out
+                  </button>
+                </div>
+              ) : hydrated ? (
+                <button
+                  onClick={() => {
+                    setMobileOpen(false);
+                    signIn();
+                  }}
+                  className="text-text-primary text-lg font-sora font-semibold hover:text-accent-blue transition-colors"
+                >
+                  Sign in
+                </button>
+              ) : null}
               <Button href={CHROME_STORE_URL} size="lg" className="w-full mt-4" external>
                 Install Free
               </Button>

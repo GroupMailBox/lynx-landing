@@ -1,17 +1,26 @@
-import type { Metadata } from 'next';
+'use client';
+
 import AnimateIn from '@/components/ui/AnimateIn';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
-import { PRICING_PLANS, CHROME_STORE_URL } from '@/lib/constants';
+import { PRICING_PLANS, CHROME_STORE_URL, type PlanId } from '@/lib/constants';
 import JsonLd from '@/components/seo/JsonLd';
-
-export const metadata: Metadata = {
-  title: 'Pricing — Free, Pro & Agency Plans',
-  description:
-    'GroupMailBox pricing: Free plan for 1 group, Pro at $29/mo for 5 groups with auto-approve, Agency at $99/mo for unlimited groups. Start free today.',
-};
+import { useAuth } from '@/lib/auth';
+import { useRouter } from 'next/navigation';
 
 export default function PricingPage() {
+  const { auth, signIn, hydrated } = useAuth();
+  const router = useRouter();
+
+  const handleUpgrade = (planId: Exclude<PlanId, 'free'>) => {
+    const target = `/checkout/#plan=${planId}`;
+    if (auth) {
+      router.push(target);
+    } else {
+      signIn(target);
+    }
+  };
+
   return (
     <div className="pt-24 pb-16">
       <JsonLd
@@ -104,14 +113,30 @@ export default function PricingPage() {
                   ))}
                 </ul>
 
-                <Button
-                  href={CHROME_STORE_URL}
-                  variant={plan.highlighted ? 'primary' : 'secondary'}
-                  className="w-full"
-                  external
-                >
-                  {plan.cta}
-                </Button>
+                {plan.id === 'free' ? (
+                  <Button
+                    href={CHROME_STORE_URL}
+                    variant={plan.highlighted ? 'primary' : 'secondary'}
+                    className="w-full"
+                    external
+                  >
+                    {plan.cta}
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={() => handleUpgrade(plan.id as Exclude<PlanId, 'free'>)}
+                    variant={plan.highlighted ? 'primary' : 'secondary'}
+                    className="w-full"
+                    disabled={!hydrated}
+                  >
+                    {plan.cta}
+                  </Button>
+                )}
+                {plan.id !== 'free' && hydrated && !auth && (
+                  <p className="text-text-muted text-[11px] mt-3 text-center">
+                    We&apos;ll ask you to sign in with Google first, then take you to checkout.
+                  </p>
+                )}
               </div>
             </AnimateIn>
           ))}

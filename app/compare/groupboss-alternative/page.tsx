@@ -54,7 +54,7 @@ export default function GroupBossAlternativePage() {
         },
         {
           question: 'Does GroupMailBox have auto-approve like GroupBoss?',
-          answer: 'GroupMailBox actually offers auto-approve on Pro and Agency plans, which GroupBoss does not offer at any price point. The auto-approve includes configurable safety delays.',
+          answer: 'GroupMailBox actually offers auto-approve on Pro and Advanced plans, which GroupBoss does not offer at any price point. The auto-approve includes configurable safety delays.',
         },
         {
           question: 'How much does GroupMailBox cost compared to GroupBoss?',

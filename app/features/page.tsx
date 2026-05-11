@@ -36,7 +36,7 @@ const FEATURES = [
   {
     title: 'Auto-Approve Members',
     description:
-      'Available on Pro and Agency plans. Automatically approve member requests after capturing their data. Includes configurable safety delays to mimic human behavior.',
+      'Available on Pro and Advanced plans. Automatically approve member requests after capturing their data. Includes configurable safety delays to mimic human behavior.',
     bullets: [
       'Configurable delay between approvals',
       'Mimics human click patterns',

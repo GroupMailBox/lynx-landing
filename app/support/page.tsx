@@ -26,7 +26,7 @@ const EXTENDED_FAQ = [
   {
     question: 'Can I use GroupMailBox on multiple groups?',
     answer:
-      'The free plan supports 1 group. Pro supports 5 groups, and Agency supports unlimited groups. Each group can have its own Google Sheet.',
+      'The free plan supports 1 group. Pro supports 5 groups, and Advanced supports unlimited groups. Each group can have its own Google Sheet.',
   },
   {
     question: 'How do I cancel my subscription?',

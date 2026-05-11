@@ -3,8 +3,16 @@ export const SITE_TAGLINE = 'Capture Every Lead from Your Facebook Group';
 export const SITE_DESCRIPTION =
   'GroupMailBox is a Chrome extension that automatically captures leads from Facebook Group member requests and pushes them to Google Sheets. Free to install.';
 export const SITE_URL = 'https://samarjeetmohite.github.io/GroupBoxWebsite';
-export const CHROME_STORE_URL = '#'; // TODO: replace with real Chrome Web Store URL
+export const CHROME_STORE_URL =
+  'https://chromewebstore.google.com/detail/groupmailbox/nbiakohglicfbphghphgjijckccnknbp';
 export const SUPPORT_EMAIL = 'support@groupmailbox.com';
+
+// Backend (viper-core) base URL — read at build time. Override via
+// NEXT_PUBLIC_BACKEND_URL in .env.local for local dev.
+export const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3000';
+
+export type PlanId = 'free' | 'pro' | 'agency';
 
 export const NAV_LINKS = [
   { label: 'Features', href: '/features' },
@@ -37,6 +45,7 @@ export const FOOTER_LINKS = {
 
 export const PRICING_PLANS = [
   {
+    id: 'free' as PlanId,
     name: 'Free',
     price: '$0',
     period: 'forever',
@@ -57,6 +66,7 @@ export const PRICING_PLANS = [
     highlighted: false,
   },
   {
+    id: 'pro' as PlanId,
     name: 'Pro',
     price: '$29',
     period: '/month',
@@ -75,10 +85,11 @@ export const PRICING_PLANS = [
     highlighted: true,
   },
   {
-    name: 'Agency',
+    id: 'agency' as PlanId,
+    name: 'Advanced',
     price: '$99',
     period: '/month',
-    description: 'For agencies managing multiple client groups.',
+    description: 'For power users and agencies running multiple groups.',
     features: [
       'Unlimited Facebook Groups',
       'Unlimited leads',
@@ -90,7 +101,7 @@ export const PRICING_PLANS = [
       'Priority support',
     ],
     notIncluded: [],
-    cta: 'Contact Sales',
+    cta: 'Start Advanced Plan',
     highlighted: false,
   },
 ] as const;
@@ -124,6 +135,6 @@ export const FAQ_DATA = [
   {
     question: 'Can GroupMailBox auto-approve member requests?',
     answer:
-      'Yes, the Pro and Agency plans include auto-approve functionality. It includes safety delays to mimic human behavior and protect your group from spam.',
+      'Yes, the Pro and Advanced plans include auto-approve functionality. It includes safety delays to mimic human behavior and protect your group from spam.',
   },
 ] as const;
