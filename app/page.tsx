@@ -95,12 +95,12 @@ const STEPS = [
 ];
 
 const COMPARISON = [
-  { feature: 'Price', gmb: 'Free tier', gc: '$19/mo', gl: '$27/mo', gb: '$9.99/mo' },
-  { feature: 'Instant Detection', gmb: 'Yes', gc: 'No', gl: 'No', gb: 'No' },
-  { feature: 'Screening Answers', gmb: '3 Q&A pairs', gc: 'Limited', gl: 'Yes', gb: 'Yes' },
-  { feature: 'Google Sheets', gmb: 'Native', gc: 'CSV export', gl: 'Yes', gb: 'Yes' },
-  { feature: 'Auto-Approve', gmb: 'Yes (Pro)', gc: 'Yes', gl: 'Yes', gb: 'No' },
-  { feature: 'Side Panel UI', gmb: 'Yes', gc: 'No', gl: 'No', gb: 'No' },
+  { feature: 'Price', gmb: 'Free tier', gc: 'Paid only', gl: '$27/mo', gb: '$19/mo' },
+  { feature: 'Free Plan', gmb: 'Yes (1 group)', gc: 'No', gl: 'No', gb: 'No' },
+  { feature: 'Google Sheets Push', gmb: 'Native', gc: 'Yes', gl: 'Yes', gb: 'Yes' },
+  { feature: 'Captures Screening Answers', gmb: 'All 3 Q&A', gc: 'Limited', gl: 'Yes', gb: 'Yes' },
+  { feature: 'No Account to Try', gmb: 'Yes', gc: 'No', gl: 'No', gb: 'No' },
+  { feature: 'Auto-Approve Members', gmb: 'Pro plan', gc: 'Yes', gl: 'Yes', gb: 'No' },
 ];
 
 /** Organic SVG blob for visual interest between sections */
@@ -144,14 +144,15 @@ export default function HomePage() {
 
           <AnimateIn delay={0.1} animation="scale">
             <h1 className="font-sora leading-tight mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="font-normal">Stop losing leads from your</span>{' '}
-              <span className="font-extrabold text-gradient-teal">Facebook Group</span>
+              <span className="font-normal">Capture every</span>{' '}
+              <span className="font-extrabold text-gradient-teal">Facebook Group lead</span>
+              <span className="font-normal"> — for free.</span>
             </h1>
           </AnimateIn>
 
           <AnimateIn delay={0.2}>
             <p className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-              You know that feeling when 200 join requests pile up and you forgot to grab emails from the first 50? GroupMailBox captures every member request automatically and pushes them to Google Sheets.
+              GroupMailBox is a free Chrome extension that grabs every member request and pushes it straight to Google Sheets.
             </p>
           </AnimateIn>
 
@@ -190,27 +191,20 @@ export default function HomePage() {
       </section>
 
       {/* ===== SOCIAL PROOF ===== */}
-      {/* Tighter transition from hero — no extra padding */}
       <section className="relative z-20 -mt-4 pb-8">
         <div className="max-w-5xl mx-auto px-4">
-          {/* No AnimateIn on social proof — static elements feel confident */}
-          <div className="glass rounded-[12px] px-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16">
-            <p className="text-text-muted text-sm font-medium">Trusted by Facebook Group admins</p>
-            <div className="flex items-center gap-10">
-              {/* TODO: Replace these placeholder stats with real Chrome Web Store data once published */}
-              <div className="text-center">
-                <p className="font-sora font-bold text-5xl text-accent-blue">500+</p>
-                <p className="text-text-muted text-xs">Active Users</p>
-              </div>
-              <div className="text-center">
-                <p className="font-sora font-bold text-5xl text-accent-blue">50K+</p>
-                <p className="text-text-muted text-xs">Leads Captured</p>
-              </div>
-              <div className="text-center">
-                <p className="font-sora font-bold text-5xl text-accent-blue">4.8</p>
-                <p className="text-text-muted text-xs">Star Rating</p>
-              </div>
-            </div>
+          <div className="glass rounded-[12px] px-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+            <p className="text-text-secondary text-sm font-medium">
+              Built for Facebook Group admins who are tired of manually copying member info
+            </p>
+            <a
+              href={CHROME_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent-blue text-sm font-semibold hover:underline whitespace-nowrap"
+            >
+              See it on the Chrome Web Store &rarr;
+            </a>
           </div>
         </div>
       </section>
@@ -390,57 +384,6 @@ export default function HomePage() {
             <Button href="/compare/groupconvert-alternative" variant="outline" size="sm">
               See Full Comparisons
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== TESTIMONIALS PLACEHOLDER ===== */}
-      {/* TODO: Replace with real testimonials from Chrome Web Store reviews or direct user feedback */}
-      <section className="pt-12 pb-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-sora font-bold text-2xl text-center mb-10">
-            What group admins are saying
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {/* Testimonial slot 1 */}
-            <Card variant="transparent" hover={false} className="p-6">
-              <p className="text-text-secondary text-sm italic leading-relaxed mb-4">
-                &ldquo;TODO: Add real testimonial quote from a verified user.&rdquo;
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-navy-lighter" />
-                <div>
-                  <p className="text-text-primary text-sm font-medium">User Name</p>
-                  <p className="text-text-muted text-xs">Group Admin</p>
-                </div>
-              </div>
-            </Card>
-            {/* Testimonial slot 2 */}
-            <Card variant="glass" hover={false} className="p-6">
-              <p className="text-text-secondary text-sm italic leading-relaxed mb-4">
-                &ldquo;TODO: Add real testimonial quote from a verified user.&rdquo;
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-navy-lighter" />
-                <div>
-                  <p className="text-text-primary text-sm font-medium">User Name</p>
-                  <p className="text-text-muted text-xs">Community Manager</p>
-                </div>
-              </div>
-            </Card>
-            {/* Testimonial slot 3 */}
-            <Card variant="transparent" hover={false} className="p-6">
-              <p className="text-text-secondary text-sm italic leading-relaxed mb-4">
-                &ldquo;TODO: Add real testimonial quote from a verified user.&rdquo;
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-navy-lighter" />
-                <div>
-                  <p className="text-text-primary text-sm font-medium">User Name</p>
-                  <p className="text-text-muted text-xs">Course Creator</p>
-                </div>
-              </div>
-            </Card>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@ export const SITE_NAME = 'GroupMailBox';
 export const SITE_TAGLINE = 'Capture Every Lead from Your Facebook Group';
 export const SITE_DESCRIPTION =
   'GroupMailBox is a Chrome extension that automatically captures leads from Facebook Group member requests and pushes them to Google Sheets. Free to install.';
-export const SITE_URL = 'https://samarjeetmohite.github.io/GroupBoxWebsite';
+export const SITE_URL = 'https://groupmailbox.com';
 export const CHROME_STORE_URL =
   'https://chromewebstore.google.com/detail/groupmailbox/nbiakohglicfbphghphgjijckccnknbp';
 export const SUPPORT_EMAIL = 'support@groupmailbox.com';

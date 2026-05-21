@@ -29,7 +29,7 @@ export function SoftwareApplicationSchema() {
         },
         description:
           'Chrome extension that automatically captures leads from Facebook Group member requests and pushes them to Google Sheets.',
-        url: 'https://samarjeetmohite.github.io/GroupBoxWebsite/',
+        url: 'https://groupmailbox.com/',
         aggregateRating: {
           '@type': 'AggregateRating',
           ratingValue: '4.8',
@@ -66,8 +66,8 @@ export function OrganizationSchema() {
         '@context': 'https://schema.org',
         '@type': 'Organization',
         name: 'GroupMailBox',
-        url: 'https://samarjeetmohite.github.io/GroupBoxWebsite/',
-        logo: 'https://samarjeetmohite.github.io/GroupBoxWebsite/logo.svg',
+        url: 'https://groupmailbox.com/',
+        logo: 'https://groupmailbox.com/logo.svg',
         sameAs: [],
       }}
     />
