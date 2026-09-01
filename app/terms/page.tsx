@@ -26,7 +26,7 @@ export default function TermsPage() {
             <section>
               <h2 className="font-sora font-bold text-xl text-text-primary mb-3">1. The Services</h2>
               <p>
-                {SITE_NAME} provides a software-as-a-service platform consisting of (a) a Chrome browser extension that captures answers to Facebook Group screening questions visible to a logged-in Group Admin, (b) a web-based dashboard and backend that append those answers to a Google Sheet you authorize, and (c) tools to compose and send email campaigns to your captured leads using your own Gmail account (collectively, the &quot;Services&quot;).
+                {SITE_NAME} provides a software-as-a-service platform consisting of (a) a Chrome browser extension that captures answers to Facebook Group screening questions visible to a logged-in Group Admin, (b) a web-based dashboard and backend that append those answers to a Google Sheet you select via the Google Picker (or one created for you), and (c) tools to compose and send email campaigns to your captured leads using your own Gmail account (collectively, the &quot;Services&quot;).
               </p>
             </section>
 

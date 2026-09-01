@@ -15,11 +15,11 @@ const STEPS = [
     step: '01',
     title: 'Install the Chrome Extension',
     description:
-      'Add GroupMailBox to your Chrome browser from the Chrome Web Store. It takes just a few seconds. Then connect your Google account to enable Sheets integration.',
+      'Add GroupMailBox to your Chrome browser from the Chrome Web Store. It takes just a few seconds. Then connect your Google account and pick (or create) the one sheet your leads should land in.',
     details: [
       'One-click install from Chrome Web Store',
       'Secure Google OAuth2 authentication',
-      'No complex setup or configuration needed',
+      'Per-file access only — we never see the rest of your Drive',
     ],
   },
   {
@@ -48,7 +48,7 @@ const STEPS = [
     step: '04',
     title: 'Push to Google Sheets',
     description:
-      'Open the side panel and click "Push to Sheets" to send all captured leads to your Google Sheet. Data is organized into clean columns automatically.',
+      'Open the side panel and click "Push to Sheets" to send all captured leads to the sheet you picked. Data is organized into clean columns automatically.',
     details: [
       'One-click push to Google Sheets',
       'Automatically organized columns',

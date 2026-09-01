@@ -16,7 +16,7 @@ const EXTENDED_FAQ = [
   {
     question: 'How do I connect Google Sheets?',
     answer:
-      'Open the GroupMailBox side panel, click "Connect Google Account," and follow the OAuth2 authentication flow. Once connected, you can select or create a Google Sheet for your leads.',
+      'Open the GroupMailBox side panel, click "Connect Google Account," and follow the OAuth2 authentication flow. Once connected, pick the sheet you want leads in via the Google file picker — or let GroupMailBox create one for you. We can only access the sheet you choose, never the rest of your Drive.',
   },
   {
     question: 'Why aren\'t member requests being detected?',

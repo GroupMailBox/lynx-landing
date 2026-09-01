@@ -29,8 +29,8 @@ const FEATURES = [
     bullets: [
       'One-click push to Google Sheets',
       'Auto-creates columns for each data field',
-      'Supports multiple sheets per group',
-      'Secure OAuth2 authentication with Google',
+      'Pick your own sheet or let us create one',
+      'Per-file access only — we never see the rest of your Drive',
     ],
   },
   {

@@ -37,7 +37,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="font-sora font-bold text-xl text-text-primary mb-3">1. Scope and Roles</h2>
               <p>
-                {SITE_NAME} provides software-as-a-service tools that enable administrators of Facebook™ groups (&quot;Group Admins&quot;) to capture answers to membership screening questions submitted by prospective members of <em>their own</em> groups, append those answers to a Google Sheet they connect, and (optionally) send email campaigns to those leads from the Group Admin&apos;s own Gmail account.
+                {SITE_NAME} provides software-as-a-service tools that enable administrators of Facebook™ groups (&quot;Group Admins&quot;) to capture answers to membership screening questions submitted by prospective members of <em>their own</em> groups, append those answers to a Google Sheet they pick (or one created for them), and (optionally) send email campaigns to those leads from the Group Admin&apos;s own Gmail account.
               </p>
               <p className="mt-3">For the purposes of the EU/UK General Data Protection Regulation (&quot;GDPR&quot;) and analogous laws:</p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
@@ -52,7 +52,7 @@ export default function PrivacyPage() {
 
               <h3 className="font-sora font-semibold text-lg text-text-primary mt-4 mb-2">2.1 Information you provide directly to us</h3>
               <ul className="list-disc pl-6 space-y-2 mt-2">
-                <li>Account registration data: license key, the email address Google returns at OAuth, and the Google Sheet ID you connect.</li>
+                <li>Account registration data: license key, the email address Google returns at OAuth, and the ID of the Google Sheet you pick or create.</li>
                 <li>Customer-support communications you initiate.</li>
                 <li>Marketing preferences (e.g. newsletter opt-in).</li>
               </ul>
@@ -75,13 +75,13 @@ export default function PrivacyPage() {
                 <li>Your Extension settings (selected sheet, mapping, filters, UI preferences).</li>
               </ul>
               <p className="mt-3"><strong className="text-text-primary">The Extension does NOT access:</strong> your private Facebook messages, your news feed, your friends list, your photos, your notifications, content from any Facebook page outside member-requests, or any Facebook account credentials or session tokens.</p>
-              <p className="mt-3">Captured rows stay in your local browser (<code>chrome.storage.local</code>) until you click <strong>Capture &amp; Push</strong>. On that explicit action, the rows are sent over HTTPS to {SITE_NAME}&apos;s backend, written to your account record, and appended to the Google Sheet you connected.</p>
+              <p className="mt-3">Captured rows stay in your local browser (<code>chrome.storage.local</code>) until you click <strong>Capture &amp; Push</strong>. On that explicit action, the rows are sent over HTTPS to {SITE_NAME}&apos;s backend, written to your account record, and appended to the Google Sheet you picked or created.</p>
 
               <h3 className="font-sora font-semibold text-lg text-text-primary mt-6 mb-2">2.4 Information from third-party integrations you authorize</h3>
               <p>When you connect Google services to your {SITE_NAME} account via OAuth 2.0, we receive and store:</p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
-                <li>The access token and refresh token Google returns for the scopes you granted (<code>spreadsheets</code> and, if you connect Gmail, <code>gmail.send</code>). Tokens are encrypted at rest and used only to fulfill your requests.</li>
-                <li>The Google Sheet ID(s) you select and the Gmail address Google returns at OAuth.</li>
+                <li>The access token and refresh token Google returns for the scopes you granted (<code>drive.file</code> and, if you connect Gmail, <code>gmail.send</code>). Tokens are encrypted at rest and used only to fulfill your requests.</li>
+                <li>The ID of the Google Sheet(s) you explicitly select via the Google Picker (or that {SITE_NAME} creates for you), and the Gmail address Google returns at OAuth.</li>
                 <li>For email campaigns you create: templates, campaigns, recipient lists, rendered messages, send-log entries (recipient address, status, Gmail message ID, error if any), and unsubscribe records.</li>
               </ul>
 
@@ -127,6 +127,10 @@ export default function PrivacyPage() {
                 </a>
                 , including the Limited Use requirements. We do not transfer this information to third parties except as necessary to provide or improve user-facing features, to comply with applicable law, or as part of a merger, acquisition, or sale of assets with prior user consent. We do not use or transfer this information for serving advertisements, including retargeted, personalized, or interest-based advertising. We do not use or transfer this information to determine credit-worthiness or for lending purposes. We do not allow humans to read this information except (i) with the user&apos;s affirmative agreement for specific messages, (ii) as necessary for security purposes, (iii) to comply with applicable law, or (iv) where the information has been aggregated and anonymized for internal operations.
               </p>
+              <p className="mt-3"><strong className="text-text-primary">Google Drive-specific:</strong></p>
+              <ul className="list-disc pl-6 space-y-2 mt-2">
+                <li>The <code>drive.file</code> scope is per-file: {SITE_NAME} can only open the specific sheet(s) you pick in the Google Picker or that it created for you. It cannot see, list, or read any other file in your Google Drive.</li>
+              </ul>
               <p className="mt-3"><strong className="text-text-primary">Gmail-specific:</strong></p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
                 <li>We never read, list, or modify your existing emails. The <code>gmail.send</code> scope only permits sending new messages.</li>
