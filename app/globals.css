@@ -218,3 +218,21 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .aurora span, .text-shimmer, .beam, .row-in, .ping-dot::after, .marquee-track, .glow-border::after { animation: none !important; }
 }
+
+/* ===== Long-form article typography ===== */
+.article { font-size: 17px; line-height: 1.75; color: var(--text-secondary); }
+.article h2 { font-family: var(--font-sora), sans-serif; font-weight: 700; font-size: 28px; line-height: 1.25; color: var(--text-primary); margin: 48px 0 14px; letter-spacing: -0.01em; }
+.article h3 { font-family: var(--font-sora), sans-serif; font-weight: 700; font-size: 20px; color: var(--text-primary); margin: 32px 0 10px; }
+.article p { margin: 0 0 18px; }
+.article ul, .article ol { margin: 0 0 20px; padding-left: 22px; }
+.article ul { list-style: disc; }
+.article ol { list-style: decimal; }
+.article li { margin: 6px 0; }
+.article strong { color: var(--text-primary); }
+.article a { color: var(--accent-blue); text-decoration: underline; text-underline-offset: 3px; }
+.article .callout { border: 1px solid var(--border); background: var(--navy-light); border-radius: 16px; padding: 18px 20px; margin: 24px 0; }
+.article .qgrid { display: grid; gap: 10px; margin: 8px 0 24px; padding: 0; list-style: none; }
+.article .qgrid li { margin: 0; border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; background: #fff; color: var(--text-primary); font-size: 15.5px; }
+.article table { width: 100%; border-collapse: collapse; margin: 8px 0 24px; font-size: 15px; }
+.article th, .article td { border-bottom: 1px solid var(--border); padding: 10px 8px; text-align: left; vertical-align: top; }
+.article th { color: var(--text-primary); font-weight: 600; }

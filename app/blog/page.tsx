@@ -11,59 +11,24 @@ export const metadata: Metadata = {
     'Read the GroupMailBox blog for tips on Facebook Group lead capture, Google Sheets automation, and growing your community.',
 };
 
+// Only articles that exist. The old list had six placeholder posts linking to '#'.
 const BLOG_POSTS = [
   {
-    slug: '#',
-    title: 'How to Capture Leads from Facebook Group Member Requests',
+    slug: '/blog/facebook-group-membership-questions/',
+    title: 'Facebook Group Membership Questions: 60 Examples by Niche',
     excerpt:
-      'Learn the best strategies for turning Facebook Group member requests into actionable leads for your business.',
-    category: 'Tutorial',
-    date: 'March 28, 2026',
-    readTime: '5 min read',
+      'Copy-and-paste membership questions for coaching, business, local, hobby and course groups, plus how to ask for an email address with clear consent.',
+    category: 'Templates',
+    date: 'October 25, 2026',
+    readTime: '9 min read',
   },
   {
-    slug: '#',
-    title: 'GroupMailBox vs Manual Lead Capture: Time Comparison',
+    slug: '/compare/groupkit-alternative/',
+    title: 'GroupKit Shut Down: What to Use Instead',
     excerpt:
-      'We compared the time it takes to manually capture leads vs using GroupMailBox. The results may surprise you.',
-    category: 'Comparison',
-    date: 'March 20, 2026',
-    readTime: '4 min read',
-  },
-  {
-    slug: '#',
-    title: '5 Ways to Grow Your Facebook Group in 2026',
-    excerpt:
-      'Proven strategies to grow your Facebook Group and attract high-quality members who engage with your content.',
-    category: 'Strategy',
-    date: 'March 15, 2026',
-    readTime: '7 min read',
-  },
-  {
-    slug: '#',
-    title: 'Automating Your Facebook Group Workflow with Google Sheets',
-    excerpt:
-      'Discover how to build automated workflows using GroupMailBox and Google Sheets to manage your group efficiently.',
-    category: 'Tutorial',
-    date: 'March 10, 2026',
-    readTime: '6 min read',
-  },
-  {
-    slug: '#',
-    title: 'The Complete Guide to Facebook Group Screening Questions',
-    excerpt:
-      'How to write effective screening questions that qualify leads and protect your group from spam.',
-    category: 'Strategy',
-    date: 'March 5, 2026',
-    readTime: '8 min read',
-  },
-  {
-    slug: '#',
-    title: 'What is MutationObserver and Why It Matters for Lead Capture',
-    excerpt:
-      'A non-technical explanation of the technology behind GroupMailBox\'s real-time member detection.',
-    category: 'Technical',
-    date: 'February 28, 2026',
+      'GroupKit closed on 23 October 2026. How to keep capturing Facebook group leads without losing a week of new members.',
+    category: 'Guide',
+    date: 'October 25, 2026',
     readTime: '4 min read',
   },
 ];
