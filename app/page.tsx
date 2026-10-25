@@ -3,6 +3,7 @@ import Button from '@/components/ui/Button';
 import AnimateIn from '@/components/ui/AnimateIn';
 import Accordion from '@/components/ui/Accordion';
 import FlowMock from '@/components/home/FlowMock';
+import SpotlightCard from '@/components/home/SpotlightCard';
 import { SoftwareApplicationSchema, FAQPageSchema } from '@/components/seo/JsonLd';
 import { CHROME_STORE_URL, FAQ_DATA, PRICING_PLANS } from '@/lib/constants';
 
@@ -73,10 +74,11 @@ export default function HomePage() {
 
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden px-4 pb-20 pt-32 md:pt-40">
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[640px] bg-[radial-gradient(60%_55%_at_50%_0%,rgba(47,107,242,0.12)_0%,rgba(124,92,255,0.06)_40%,transparent_75%)]"
-          aria-hidden
-        />
+        <div className="aurora" aria-hidden>
+          <span />
+          <span />
+          <span />
+        </div>
         <div
           className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(14,18,34,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(14,18,34,0.04)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)]"
           aria-hidden
@@ -92,7 +94,7 @@ export default function HomePage() {
             </Link>
                       <h1 className="font-sora text-[42px] font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
               Turn Facebook group members{' '}
-              <span className="text-gradient-teal">into customers.</span>
+              <span className="text-shimmer">into customers.</span>
             </h1>
                       <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-text-secondary md:text-xl">
               GroupMailBox captures every member request, syncs it to Google Sheets, and follows up from your own Gmail
@@ -116,13 +118,20 @@ export default function HomePage() {
               </section>
 
       {/* ===== WORKS WITH ===== */}
-      <section className="border-y border-black/[0.06] bg-navy-light/60 px-4 py-8">
-        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm font-semibold text-text-muted">
-          <span className="text-xs font-medium uppercase tracking-[0.14em]">Works with</span>
-          <span>Facebook Groups</span>
-          <span>Google Sheets</span>
-          <span>Gmail &amp; Google Workspace</span>
-          <span>Google Chrome</span>
+      <section className="border-y border-black/[0.06] bg-navy-light/60 py-7">
+        <div className="marquee-mask overflow-hidden">
+          <div className="marquee-track gap-14 pr-14 text-sm font-semibold text-text-muted">
+            {[0, 1].map((k) => (
+              <div key={k} className="flex shrink-0 items-center gap-14" aria-hidden={k === 1}>
+                {['Facebook Groups', 'Google Sheets', 'Gmail', 'Google Workspace', 'Google Chrome', 'Screening questions', 'Member approvals', 'Follow-up sequences'].map((t) => (
+                  <span key={t} className="flex items-center gap-2 whitespace-nowrap">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent-blue/50" />
+                    {t}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -136,7 +145,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
           {PILLARS.map((p, i) => (
             <AnimateIn key={p.eyebrow} delay={i * 0.06}>
-              <div className="h-full rounded-2xl border border-black/[0.08] bg-white p-7 shadow-card">
+              <SpotlightCard className="h-full rounded-2xl border border-black/[0.08] bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-pop">
                 <div className="mb-5 flex items-center gap-3">
                   <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent-blue/10 font-sora text-sm font-bold text-accent-blue">
                     {i + 1}
@@ -145,7 +154,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-sora text-xl font-bold leading-snug">{p.title}</h3>
                 <p className="mt-3 leading-relaxed text-text-secondary">{p.body}</p>
-              </div>
+              </SpotlightCard>
             </AnimateIn>
           ))}
         </div>
@@ -157,13 +166,13 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f, i) => (
             <AnimateIn key={f.title} delay={(i % 3) * 0.05}>
-              <div>
+              <SpotlightCard className="h-full rounded-2xl p-5 transition hover:bg-white hover:shadow-card">
                 <span className="mb-4 grid h-11 w-11 place-items-center rounded-xl border border-black/[0.06] bg-white text-accent-blue shadow-card">
                   {icon(f.d)}
                 </span>
                 <h3 className="font-sora text-lg font-bold">{f.title}</h3>
                 <p className="mt-2 leading-relaxed text-text-secondary">{f.body}</p>
-              </div>
+              </SpotlightCard>
             </AnimateIn>
           ))}
         </div>
@@ -230,7 +239,7 @@ export default function HomePage() {
           {PRICING_PLANS.map((p) => (
             <div
               key={p.id}
-              className={`flex flex-col rounded-2xl border bg-white p-7 ${p.highlighted ? 'border-accent-blue shadow-pop ring-4 ring-accent-blue/10' : 'border-black/[0.08] shadow-card'}`}
+              className={`flex flex-col rounded-2xl border bg-white p-7 ${p.highlighted ? 'glow-border border-transparent shadow-pop' : 'border-black/[0.08] shadow-card'}`}
             >
               <div className="flex items-center justify-between">
                 <h3 className="font-sora text-lg font-bold">{p.name}</h3>

@@ -11,13 +11,14 @@ function Chip({ tone, children }: { tone: 'blue' | 'green' | 'gray' | 'amber'; c
   return <span className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${tones[tone]}`}>{children}</span>;
 }
 
-function Panel({ step, title, icon, children, className = '' }: { step: string; title: string; icon: React.ReactNode; children: React.ReactNode; className?: string }) {
+function Panel({ step, title, icon, children, className = '', live = false }: { step: string; title: string; icon: React.ReactNode; children: React.ReactNode; className?: string; live?: boolean }) {
   return (
-    <div className={`rounded-2xl border border-black/[0.08] bg-white shadow-card ${className}`}>
+    <div className={`relative z-10 rounded-2xl border border-black/[0.08] bg-white shadow-card ${className}`}>
       <div className="flex items-center gap-2 border-b border-black/[0.06] px-4 py-3">
         <span className="grid h-6 w-6 place-items-center rounded-lg bg-navy-light text-text-secondary">{icon}</span>
         <span className="text-xs font-semibold text-text-primary">{title}</span>
         <span className="ml-auto text-[11px] font-medium text-text-muted">{step}</span>
+        {live && <span className="ping-dot h-2 w-2 rounded-full bg-accent-green" aria-hidden />}
       </div>
       {children}
     </div>
@@ -33,12 +34,28 @@ const Avatar = ({ i, c }: { i: string; c: string }) => (
 export default function FlowMock() {
   return (
     <div
-      className="relative mx-auto grid w-full max-w-5xl gap-4 md:grid-cols-3"
+      className="relative mx-auto grid w-full max-w-5xl gap-4 md:grid-cols-3 md:gap-10"
       role="img"
       aria-label="Example: a Facebook group member request is captured, added to a Google Sheet, then followed up in Gmail until they reply"
     >
+      {/* Light beams flowing between the three panels (desktop only) */}
+      <svg className="pointer-events-none absolute inset-0 -z-0 hidden h-full w-full md:block" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden>
+        <defs>
+          <linearGradient id="beamGrad" x1="0" x2="1">
+            <stop offset="0" stopColor="#2F6BF2" stopOpacity="0" />
+            <stop offset=".5" stopColor="#7C5CFF" />
+            <stop offset="1" stopColor="#2F6BF2" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <path d="M300 170 C 330 170, 330 200, 360 200" stroke="#2F6BF2" strokeOpacity=".12" strokeWidth="2" fill="none" />
+        <path d="M640 200 C 670 200, 670 170, 700 170" stroke="#2F6BF2" strokeOpacity=".12" strokeWidth="2" fill="none" />
+        <path className="beam" d="M300 170 C 330 170, 330 200, 360 200" stroke="url(#beamGrad)" strokeWidth="3" fill="none" strokeLinecap="round" />
+        <path className="beam" style={{ animationDelay: '1.3s' }} d="M640 200 C 670 200, 670 170, 700 170" stroke="url(#beamGrad)" strokeWidth="3" fill="none" strokeLinecap="round" />
+      </svg>
+
       {/* 1. Facebook member request */}
       <Panel
+        live
         step="1 · Capture"
         title="Member requests"
         icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5C15 14.2 10.3 13 8 13Zm8 0c-.3 0-.6 0-1 .1 1.2.8 2 1.9 2 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5Z" /></svg>}
@@ -85,8 +102,8 @@ export default function FlowMock() {
               ['Sara K.', 'sara@brigh…', 'Step 1 · sent', 'blue'],
               ['Dev P.', 'dev@kestre…', 'Unsubscribed', 'gray'],
               ['Neha R.', 'neha@loom…', 'Queued', 'amber'],
-            ].map(([n, e, s, t]) => (
-              <tr key={n} className="border-b border-black/[0.04] last:border-0">
+            ].map(([n, e, s, t], i) => (
+              <tr key={n} className="row-in border-b border-black/[0.04] last:border-0" style={{ animationDelay: `${0.4 + i * 0.35}s` }}>
                 <td className="px-4 py-2.5 font-medium">{n}</td>
                 <td className="px-2 py-2.5 text-text-muted">{e}</td>
                 <td className="px-4 py-2.5"><Chip tone={t as 'blue'}>{s}</Chip></td>
