@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SUPPORT_EMAIL, SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/privacy/' },
   title: 'Privacy Policy',
   description:
     'GroupMailBox privacy policy. Learn how we collect, use, and protect your data when using our Chrome extension and website.',

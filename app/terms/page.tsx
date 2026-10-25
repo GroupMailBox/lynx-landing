@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SUPPORT_EMAIL, SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/terms/' },
   title: 'Terms of Service',
   description:
     'GroupMailBox terms of service. Read the terms and conditions governing your use of our Chrome extension and website.',

@@ -18,7 +18,8 @@ export function SoftwareApplicationSchema() {
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
         name: 'GroupMailBox',
-        applicationCategory: 'BrowserApplication',
+        applicationCategory: 'BusinessApplication',
+        applicationSubCategory: 'Chrome extension',
         operatingSystem: 'Chrome',
         offers: {
           '@type': 'AggregateOffer',
@@ -28,13 +29,10 @@ export function SoftwareApplicationSchema() {
           offerCount: '3',
         },
         description:
-          'Chrome extension that automatically captures leads from Facebook Group member requests and pushes them to Google Sheets.',
+          'Chrome extension that captures Facebook Group member requests and screening answers, syncs them to Google Sheets, and sends Gmail follow-ups that stop when someone replies.',
         url: 'https://groupmailbox.com/',
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.8',
-          ratingCount: '50',
-        },
+        // No aggregateRating: ratings in markup must match real, visible reviews
+        // (the hard-coded 4.8 / 50 did not). Add it only from live Chrome Web Store data.
       }}
     />
   );
@@ -67,8 +65,8 @@ export function OrganizationSchema() {
         '@type': 'Organization',
         name: 'GroupMailBox',
         url: 'https://groupmailbox.com/',
-        logo: 'https://groupmailbox.com/logo.svg',
-        sameAs: [],
+        logo: 'https://groupmailbox.com/logo.png',
+        sameAs: ['https://chromewebstore.google.com/detail/groupmailbox/nbiakohglicfbphghphgjijckccnknbp'],
       }}
     />
   );

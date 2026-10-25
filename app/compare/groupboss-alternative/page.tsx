@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import ComparisonPage from '@/components/ComparisonPage';
 
 export const metadata: Metadata = {
-  title: 'GroupMailBox vs GroupBoss — Best Alternative (2024)',
+  alternates: { canonical: '/compare/groupboss-alternative/' },
+  title: 'GroupMailBox vs GroupBoss — Best Alternative (2026)',
   description:
     'Compare GroupMailBox vs GroupBoss: features, pricing, and capabilities. See why GroupMailBox is the best GroupBoss alternative with a free plan and real-time detection.',
 };

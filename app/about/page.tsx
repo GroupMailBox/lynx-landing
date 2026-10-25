@@ -5,6 +5,7 @@ import Button from '@/components/ui/Button';
 import { CHROME_STORE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/about/' },
   title: 'About GroupMailBox — Our Mission',
   description:
     'Learn about GroupMailBox, the Chrome extension built to help Facebook Group admins capture and manage leads effortlessly.',

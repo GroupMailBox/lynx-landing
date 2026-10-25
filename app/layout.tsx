@@ -34,11 +34,13 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME}: Turn Facebook Group Members into Customers`,
     description: SITE_DESCRIPTION,
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'GroupMailBox: turn Facebook group members into customers' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE_NAME}: Turn Facebook Group Members into Customers`,
     description: SITE_DESCRIPTION,
+    images: ['/og.png'],
   },
   robots: {
     index: true,

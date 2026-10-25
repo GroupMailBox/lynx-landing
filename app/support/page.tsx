@@ -6,6 +6,7 @@ import { FAQPageSchema } from '@/components/seo/JsonLd';
 import { FAQ_DATA, SUPPORT_EMAIL } from '@/lib/constants';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/support/' },
   title: 'Support — FAQ & Contact',
   description:
     'Get help with GroupMailBox. Browse frequently asked questions or contact our support team for assistance with the Chrome extension.',

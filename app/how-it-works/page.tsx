@@ -5,6 +5,7 @@ import Button from '@/components/ui/Button';
 import { CHROME_STORE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/how-it-works/' },
   title: 'How It Works — 4 Simple Steps to Capture Leads',
   description:
     'Learn how GroupMailBox works in 4 simple steps: install the extension, navigate to member requests, auto-capture data, and push to Google Sheets.',

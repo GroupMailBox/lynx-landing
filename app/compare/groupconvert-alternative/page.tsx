@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import ComparisonPage from '@/components/ComparisonPage';
 
 export const metadata: Metadata = {
-  title: 'GroupMailBox vs GroupConvert — Best Alternative (2024)',
+  alternates: { canonical: '/compare/groupconvert-alternative/' },
+  title: 'GroupMailBox vs GroupConvert — Best Alternative (2026)',
   description:
     'Compare GroupMailBox vs GroupConvert: features, pricing, and capabilities. See why GroupMailBox is the best GroupConvert alternative for Facebook Group lead capture.',
 };

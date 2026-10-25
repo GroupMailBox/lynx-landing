@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import AnimateIn from '@/components/ui/AnimateIn';
@@ -6,6 +7,8 @@ import FlowMock from '@/components/home/FlowMock';
 import SpotlightCard from '@/components/home/SpotlightCard';
 import { SoftwareApplicationSchema, FAQPageSchema } from '@/components/seo/JsonLd';
 import { CHROME_STORE_URL, FAQ_DATA, PRICING_PLANS } from '@/lib/constants';
+
+export const metadata: Metadata = { alternates: { canonical: '/' } };
 
 const icon = (d: string) => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>

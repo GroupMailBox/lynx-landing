@@ -5,6 +5,7 @@ import Badge from '@/components/ui/Badge';
 import Card from '@/components/ui/Card';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/' },
   title: 'Blog — Tips, Guides & Updates',
   description:
     'Read the GroupMailBox blog for tips on Facebook Group lead capture, Google Sheets automation, and growing your community.',

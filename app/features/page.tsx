@@ -5,6 +5,7 @@ import Button from '@/components/ui/Button';
 import { CHROME_STORE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/features/' },
   title: 'Features — Lead Capture, Google Sheets, Auto-Approve & More',
   description:
     'Explore GroupMailBox features: one-click lead capture, Google Sheets integration, auto-approve members, screening answer capture, real-time detection, and side panel dashboard.',
