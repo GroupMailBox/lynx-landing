@@ -6,7 +6,7 @@ import { FOOTER_LINKS, SITE_NAME, SUPPORT_EMAIL } from '@/lib/constants';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] bg-navy-light/40">
+    <footer className="border-t border-black/[0.08] bg-navy-light/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
           {/* Brand column */}
@@ -32,9 +32,9 @@ export default function Footer() {
                   id="newsletter-email"
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 px-4 py-2.5 bg-navy-lighter border border-white/[0.06] rounded-[4px] text-sm text-text-primary placeholder:text-text-muted focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue/30 transition-all"
+                  className="flex-1 px-4 py-2.5 bg-navy-lighter border border-black/[0.08] rounded-[4px] text-sm text-text-primary placeholder:text-text-muted focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue/30 transition-all"
                 />
-                <button className="px-4 py-2.5 bg-gradient-to-r from-accent-blue to-[#3A75E0] text-white font-bold text-sm rounded-[4px] hover:shadow-[0_4px_16px_rgba(79,140,255,0.3)] transition-all">
+                <button className="px-4 py-2.5 bg-accent-blue hover:bg-teal-dim text-white font-bold text-sm rounded-[4px] hover:shadow-[0_4px_16px_rgba(79,140,255,0.3)] transition-all">
                   Subscribe
                 </button>
               </div>
@@ -111,7 +111,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-black/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-text-muted text-sm">
             &copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
           </p>

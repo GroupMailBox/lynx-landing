@@ -19,18 +19,17 @@ interface ButtonProps {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-gradient-to-r from-accent-blue to-[#3A75E0] text-white font-bold shadow-[0_0_0_0_rgba(79,140,255,0)] hover:shadow-[0_0_24px_4px_rgba(79,140,255,0.25)] active:scale-[0.97] transition-all duration-200',
+    'bg-accent-blue text-white shadow-[0_8px_24px_-8px_rgba(47,107,242,0.55)] hover:bg-teal-dim hover:-translate-y-px active:translate-y-0',
   secondary:
-    'bg-navy-lighter text-text-primary border border-white/[0.06] hover:bg-white/[0.08] hover:border-accent-blue/20',
+    'bg-white text-text-primary border border-black/[0.10] shadow-[0_1px_2px_rgba(14,18,34,0.05)] hover:border-black/20 hover:bg-navy-light',
   outline:
-    'bg-transparent text-accent-blue border border-accent-blue/30 hover:bg-accent-blue/10 hover:border-accent-blue/50',
+    'bg-transparent text-accent-blue border border-accent-blue/30 hover:bg-accent-blue/[0.06] hover:border-accent-blue/50',
 };
 
-/* Consistent radius system: 4px for buttons */
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'px-4 py-2 text-sm rounded-[4px]',
-  md: 'px-6 py-3 text-base rounded-[4px]',
-  lg: 'px-8 py-4 text-lg rounded-[4px]',
+  sm: 'px-4 py-2 text-sm rounded-lg',
+  md: 'px-5 py-2.5 text-[15px] rounded-xl',
+  lg: 'px-6 py-3.5 text-base rounded-xl',
 };
 
 export default function Button({

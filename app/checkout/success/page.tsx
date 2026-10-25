@@ -22,7 +22,7 @@ export default function CheckoutSuccessPage() {
             will unlock the moment the side panel reloads.
           </p>
 
-          <div className="bg-navy-light/60 backdrop-blur-xl border border-white/[0.06] rounded-[12px] p-6 text-left mb-8">
+          <div className="bg-navy-light/60 backdrop-blur-xl border border-black/[0.08] rounded-[12px] p-6 text-left mb-8">
             <div className="text-text-primary font-semibold mb-3">Next steps</div>
             <ol className="text-sm text-text-secondary space-y-2">
               <li><span className="text-text-primary font-semibold">1.</span> Close this tab.</li>

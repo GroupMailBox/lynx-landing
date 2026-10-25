@@ -136,7 +136,7 @@ export default function FeaturesPage() {
 
                 {/* Visual placeholder */}
                 <div className="flex-1 w-full">
-                  <div className="bg-navy-light/60 backdrop-blur-xl border border-white/[0.06] rounded-[12px] aspect-video flex items-center justify-center">
+                  <div className="bg-navy-light/60 backdrop-blur-xl border border-black/[0.08] rounded-[12px] aspect-video flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center">
                         <span className="font-sora font-bold text-xl text-accent-blue">{String(i + 1).padStart(2, '0')}</span>

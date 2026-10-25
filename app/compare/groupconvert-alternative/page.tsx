@@ -15,7 +15,7 @@ export default function GroupConvertAlternativePage() {
       intro="Looking for a GroupConvert alternative? GroupMailBox offers real-time lead detection, native Google Sheets integration, and a free tier — all features GroupConvert lacks."
       comparison={[
         { feature: 'Starting Price', gmb: 'Free', competitor: '$19/mo' },
-        { feature: 'Real-Time Detection', gmb: 'Yes (MutationObserver)', competitor: 'No' },
+        { feature: 'Real-Time Detection', gmb: 'Yes, instant', competitor: 'No' },
         { feature: 'Google Sheets', gmb: 'Native integration', competitor: 'CSV export only' },
         { feature: 'Screening Answers', gmb: '3 Q&A pairs', competitor: 'Limited' },
         { feature: 'Auto-Approve', gmb: 'Yes (Pro plan)', competitor: 'Yes' },
@@ -49,7 +49,7 @@ export default function GroupConvertAlternativePage() {
       faq={[
         {
           question: 'Is GroupMailBox better than GroupConvert?',
-          answer: 'GroupMailBox offers several advantages: a free tier, real-time member detection using MutationObserver, native Google Sheets integration, and a modern side panel UI. GroupConvert is more established but lacks these features.',
+          answer: 'GroupMailBox offers several advantages: a free tier, instant detection of new member requests, native Google Sheets integration, and a modern side panel UI. GroupConvert is more established but lacks these features.',
         },
         {
           question: 'Can I switch from GroupConvert to GroupMailBox?',

@@ -178,7 +178,7 @@ export default function CheckoutPage() {
           )}
 
           {(step === 'pay' || step === 'submitting' || step === 'verifying') && order && (
-            <div className="bg-navy-light/60 backdrop-blur-xl border border-white/[0.06] rounded-[12px] p-8">
+            <div className="bg-navy-light/60 backdrop-blur-xl border border-black/[0.08] rounded-[12px] p-8">
               <div className="flex flex-col items-center mb-6">
                 <div className="bg-white p-3 rounded-lg mb-4">
                   <QRCodeSVG value={order.upiUri} size={224} level="M" includeMargin={false} />
@@ -202,7 +202,7 @@ export default function CheckoutPage() {
               </label>
               <div className="flex gap-2">
                 <input
-                  className="flex-1 bg-navy/60 border border-white/[0.08] rounded-md px-3 py-2 text-text-primary text-sm focus:outline-none focus:border-accent-blue/50 disabled:opacity-50"
+                  className="flex-1 bg-navy/60 border border-black/[0.08] rounded-md px-3 py-2 text-text-primary text-sm focus:outline-none focus:border-accent-blue/50 disabled:opacity-50"
                   type="text"
                   value={utr}
                   onChange={(e) => setUtr(e.target.value)}

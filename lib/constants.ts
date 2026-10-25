@@ -1,7 +1,7 @@
 export const SITE_NAME = 'GroupMailBox';
-export const SITE_TAGLINE = 'Capture Every Lead from Your Facebook Group';
+export const SITE_TAGLINE = 'Turn Facebook Group Members into Customers';
 export const SITE_DESCRIPTION =
-  'GroupMailBox is a Chrome extension that automatically captures leads from Facebook Group member requests and pushes them to Google Sheets. Free to install.';
+  'GroupMailBox captures every Facebook Group member request, syncs it to Google Sheets, and follows up from your own Gmail until they reply. Free to install.';
 export const SITE_URL = 'https://groupmailbox.com';
 export const CHROME_STORE_URL =
   'https://chromewebstore.google.com/detail/groupmailbox/nbiakohglicfbphghphgjijckccnknbp';
@@ -59,7 +59,7 @@ export const PRICING_PLANS = [
     ],
     notIncluded: [
       'Auto-approve members',
-      'Email campaigns',
+      'Gmail campaigns & follow-ups',
       'Priority support',
     ],
     cta: 'Install Free',
@@ -78,7 +78,8 @@ export const PRICING_PLANS = [
       'Screening answers capture',
       'Side panel dashboard',
       'Auto-approve members',
-      '500 email campaigns/mo',
+      'Gmail campaigns with follow-ups',
+      'Stop-on-reply sequences',
     ],
     notIncluded: ['Priority support'],
     cta: 'Start Pro Trial',
@@ -97,7 +98,8 @@ export const PRICING_PLANS = [
       'Screening answers capture',
       'Side panel dashboard',
       'Auto-approve members',
-      '5,000 email campaigns/mo',
+      'Gmail campaigns with follow-ups',
+      'Stop-on-reply sequences',
       'Priority support',
     ],
     notIncluded: [],
@@ -131,6 +133,16 @@ export const FAQ_DATA = [
     question: 'Is my data safe with GroupMailBox?',
     answer:
       'Absolutely. GroupMailBox only accesses data from Facebook Group member requests that you can already see as an admin. Data is securely transmitted using HTTPS and stored in encrypted databases. We never sell your data.',
+  },
+  {
+    question: 'Can GroupMailBox email new members for me?',
+    answer:
+      'Yes. Paid plans send personal emails from your own Gmail to the members you capture, with up to 4 automatic follow-ups in the same thread. Follow-ups stop the moment someone replies or unsubscribes.',
+  },
+  {
+    question: 'Do I still need Mailchimp or Zapier?',
+    answer:
+      'Not for following up with new members. GroupMailBox captures the member, adds them to your Google Sheet and runs the Gmail follow-ups itself. You can still export the sheet to any other tool.',
   },
   {
     question: 'Can GroupMailBox auto-approve member requests?',

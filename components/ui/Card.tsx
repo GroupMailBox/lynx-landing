@@ -17,11 +17,11 @@ interface CardProps {
 
 const variantClasses: Record<CardVariant, string> = {
   glass:
-    'bg-navy-light/60 backdrop-blur-xl border border-white/[0.06]',
+    'bg-navy-light/60 backdrop-blur-xl border border-black/[0.08]',
   transparent:
-    'bg-transparent border border-white/[0.04]',
+    'bg-transparent border border-black/[0.08]',
   'accent-top':
-    'bg-navy-light/40 backdrop-blur-xl border border-white/[0.06] border-t-2 border-t-accent-blue/40',
+    'bg-navy-light/40 backdrop-blur-xl border border-black/[0.08] border-t-2 border-t-accent-blue/40',
   highlight:
     'bg-gradient-to-br from-navy-light/80 to-navy-lighter/40 backdrop-blur-xl border border-accent-blue/10',
 };

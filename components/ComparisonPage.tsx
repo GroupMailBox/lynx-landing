@@ -60,7 +60,7 @@ export default function ComparisonPage({
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-white/[0.06]">
+                  <tr className="border-b border-black/[0.08]">
                     <th className="text-left py-4 px-4 text-text-muted font-medium">Feature</th>
                     <th className="py-4 px-4 text-accent-blue font-sora font-semibold">GroupMailBox</th>
                     <th className="py-4 px-4 text-text-muted font-medium">{competitorName}</th>
@@ -68,7 +68,7 @@ export default function ComparisonPage({
                 </thead>
                 <tbody>
                   {comparison.map((row) => (
-                    <tr key={row.feature} className="border-b border-white/[0.04]">
+                    <tr key={row.feature} className="border-b border-black/[0.08]">
                       <td className="py-3 px-4 text-text-secondary">{row.feature}</td>
                       <td className="py-3 px-4 text-center text-accent-blue font-medium">{row.gmb}</td>
                       <td className="py-3 px-4 text-center text-text-muted">{row.competitor}</td>
@@ -111,7 +111,7 @@ export default function ComparisonPage({
           </AnimateIn>
 
           <AnimateIn direction="right">
-            <div className="bg-navy-light/60 backdrop-blur-xl border border-white/[0.06] rounded-[12px] p-6">
+            <div className="bg-navy-light/60 backdrop-blur-xl border border-black/[0.08] rounded-[12px] p-6">
               <h3 className="font-sora font-semibold text-lg mb-4 text-text-secondary">{competitorName}</h3>
               <div className="mb-4">
                 <p className="text-xs uppercase text-text-muted font-semibold tracking-wider mb-2">Pros</p>

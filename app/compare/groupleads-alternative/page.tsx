@@ -12,10 +12,10 @@ export default function GroupLeadsAlternativePage() {
     <ComparisonPage
       competitorName="GroupLeads"
       competitorSlug="groupleads"
-      intro="Considering a GroupLeads alternative? GroupMailBox provides a free tier, real-time MutationObserver-based detection, and a modern Chrome side panel — at a fraction of the cost."
+      intro="Considering a GroupLeads alternative? GroupMailBox provides a free tier, instant detection of new requests, and a modern Chrome side panel — at a fraction of the cost."
       comparison={[
         { feature: 'Starting Price', gmb: 'Free', competitor: '$27/mo' },
-        { feature: 'Real-Time Detection', gmb: 'Yes (MutationObserver)', competitor: 'No' },
+        { feature: 'Real-Time Detection', gmb: 'Yes, instant', competitor: 'No' },
         { feature: 'Google Sheets', gmb: 'Native integration', competitor: 'Yes' },
         { feature: 'Screening Answers', gmb: '3 Q&A pairs', competitor: 'Yes' },
         { feature: 'Auto-Approve', gmb: 'Yes (Pro plan)', competitor: 'Yes' },

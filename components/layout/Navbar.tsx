@@ -56,7 +56,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-3">
               {hydrated && auth ? (
                 <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08]">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/[0.03] border border-black/[0.08]">
                     <div className="w-2 h-2 rounded-full bg-accent-green" />
                     <span className="text-xs text-text-secondary max-w-[160px] truncate">
                       {auth.user.email}

@@ -112,7 +112,7 @@ export default function HowItWorksPage() {
                       </ul>
 
                       {/* Visual placeholder */}
-                      <div className="mt-6 bg-navy-light/60 backdrop-blur-xl border border-white/[0.06] rounded-[12px] aspect-[16/7] flex items-center justify-center">
+                      <div className="mt-6 bg-navy-light/60 backdrop-blur-xl border border-black/[0.08] rounded-[12px] aspect-[16/7] flex items-center justify-center">
                         <p className="text-text-muted text-sm">Step {step.step} Preview</p>
                       </div>
                     </div>

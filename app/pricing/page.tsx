@@ -62,7 +62,7 @@ export default function PricingPage() {
                 className={`relative bg-navy-light/60 backdrop-blur-xl border rounded-[12px] p-8 h-full flex flex-col transition-all duration-300 ${
                   plan.highlighted
                     ? 'border-accent-blue/30 shadow-[0_0_40px_rgba(79,140,255,0.15)] order-first md:order-none'
-                    : 'border-white/[0.06] hover:border-accent-blue/20 hover:shadow-[0_0_30px_rgba(79,140,255,0.1)]'
+                    : 'border-black/[0.08] hover:border-accent-blue/20 hover:shadow-[0_0_30px_rgba(79,140,255,0.1)]'
                 }`}
               >
                 {plan.highlighted && (
