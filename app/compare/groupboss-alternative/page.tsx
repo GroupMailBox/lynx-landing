@@ -15,7 +15,7 @@ export default function GroupBossAlternativePage() {
       competitorSlug="groupboss"
       intro="Looking for a GroupBoss alternative? GroupMailBox adds a free plan and built-in Gmail follow-ups that stop on reply, so you don't need a separate email tool."
       comparison={[
-        { feature: 'Starting Price', gmb: 'Free', competitor: '$45/quarter (7-day trial)' },
+        { feature: 'Starting Price', gmb: 'Free', competitor: '$19/mo or $79/yr (7-day trial)' },
         { feature: 'Real-Time Detection', gmb: 'Yes, instant', competitor: 'No' },
         { feature: 'Google Sheets', gmb: 'Native integration', competitor: 'Yes' },
         { feature: 'Screening Answers', gmb: '3 Q&A pairs', competitor: 'Yes' },
@@ -33,7 +33,7 @@ export default function GroupBossAlternativePage() {
         'Native Google Sheets integration',
       ]}
       competitorPros={[
-        'Yearly plan from $99 (3 groups)',
+        'Low starting price ($19/mo, or $79/yr for 2 groups)',
         'Simple and straightforward',
         'Screening answer capture',
         'Google Sheets support',
@@ -59,7 +59,7 @@ export default function GroupBossAlternativePage() {
         },
         {
           question: 'How much does GroupMailBox cost compared to GroupBoss?',
-          answer: 'GroupMailBox offers a free plan (100 leads/month) while GroupBoss starts at $45 per quarter or $99 per year (prices checked 25 Oct 2026). For unlimited leads and auto-approve, GroupMailBox Pro is $29/month.',
+          answer: 'GroupMailBox offers a free plan (100 leads/month) while GroupBoss starts at $19/month or $79/year for 2 groups (prices checked 25 Oct 2026). For unlimited leads and auto-approve, GroupMailBox Pro is $29/month.',
         },
       ]}
     />

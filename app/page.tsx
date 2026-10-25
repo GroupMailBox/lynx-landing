@@ -56,7 +56,7 @@ const COMPARISON = [
   { feature: 'Screening answers', gmb: 'All 3 Q&A', gc: 'Limited', gl: 'Yes', gb: 'Yes' },
   { feature: 'Try without an account', gmb: 'Yes', gc: 'No', gl: 'No', gb: 'No' },
   { feature: 'Auto-approve members', gmb: 'Pro plan', gc: 'Yes', gl: 'Yes', gb: 'Yes' },
-  { feature: 'Starting price', gmb: 'Free', gc: 'Paid only', gl: '$27/mo', gb: '$45/quarter' },
+  { feature: 'Starting price', gmb: 'Free', gc: 'Paid only', gl: '$27/mo', gb: '$19/mo' },
 ];
 
 function SectionHead({ eyebrow, title, sub }: { eyebrow: string; title: string; sub?: string }) {
