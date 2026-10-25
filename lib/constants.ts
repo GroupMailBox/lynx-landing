@@ -31,6 +31,7 @@ export const FOOTER_LINKS = {
     { label: 'vs GroupConvert', href: '/compare/groupconvert-alternative' },
     { label: 'vs GroupLeads', href: '/compare/groupleads-alternative' },
     { label: 'vs GroupBoss', href: '/compare/groupboss-alternative' },
+    { label: 'GroupKit alternative', href: '/compare/groupkit-alternative' },
   ],
   resources: [
     { label: 'Blog', href: '/blog' },

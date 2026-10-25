@@ -232,6 +232,8 @@ export default function HomePage() {
           <Link href="/compare/groupleads-alternative" className="text-accent-blue hover:underline">GroupLeads alternative</Link>
           <span className="text-text-muted">·</span>
           <Link href="/compare/groupconvert-alternative" className="text-accent-blue hover:underline">GroupConvert alternative</Link>
+          <span className="text-text-muted">·</span>
+          <Link href="/compare/groupkit-alternative/" className="text-accent-blue hover:underline">GroupKit alternative</Link>
         </div>
       </section>
 
