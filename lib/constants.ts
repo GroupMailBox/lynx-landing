@@ -39,6 +39,7 @@ export const FOOTER_LINKS = {
   ],
   resources: [
     { label: 'Follow-up calculator', href: '/tools/follow-up-cadence-calculator' },
+    { label: 'Question generator', href: '/tools/membership-question-generator' },
     { label: 'Blog', href: '/blog' },
     { label: 'Support', href: '/support' },
     { label: 'About', href: '/about' },

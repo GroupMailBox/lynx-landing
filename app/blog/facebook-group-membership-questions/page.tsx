@@ -151,7 +151,10 @@ export default function MembershipQuestionsArticle() {
         group admins ask up to three of them. Used well, they do three jobs at once: they keep spam out, they tell you who
         your new members are, and, if you ask clearly and respectfully, they can start an email list you own.
       </p>
-      <p>Below are 60 questions you can copy, grouped by type of group, followed by how to ask for an email address the right way.</p>
+      <p>
+        Below are 60 questions you can copy, grouped by type of group, followed by how to ask for an email address the right way.
+        In a hurry? Use the free <Link href="/tools/membership-question-generator/">membership question generator</Link>.
+      </p>
 
       <div className="callout">
         <strong>Quick rule of three.</strong> Use one question to filter (are they the right fit?), one to learn their
