@@ -34,6 +34,8 @@ export const FOOTER_LINKS = {
     { label: 'vs GroupBoss', href: '/compare/groupboss-alternative' },
     { label: 'GroupKit alternative', href: '/compare/groupkit-alternative' },
     { label: 'vs Group Collector', href: '/compare/group-collector-alternative' },
+    { label: 'GMass alternative', href: '/compare/gmass-alternative' },
+    { label: 'Mailmeteor alternative', href: '/compare/mailmeteor-alternative' },
   ],
   resources: [
     { label: 'Blog', href: '/blog' },
