@@ -19,6 +19,7 @@ export default function GroupBossAlternativePage() {
         { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: 'No' },
         { feature: 'Google Sheets', gmb: 'Native', competitor: 'Yes' },
         { feature: 'Screening answers', gmb: 'All 3 Q&A', competitor: 'Yes' },
+        { feature: 'Email typed inside a sentence ("sure, it’s ada@site.com")', gmb: 'Captured', competitor: 'Only if the answer is just the email (per its help docs)' },
         { feature: 'Auto-approve', gmb: 'Yes (Pro plan)', competitor: 'Yes' },
         { feature: 'Email marketing integrations', gmb: 'Google Sheets export', competitor: '27 (Mailchimp, GoHighLevel, Kit…)' },
         { feature: 'Sends follow-up emails itself', gmb: 'Yes, from your Gmail, stops on reply', competitor: 'No, hands leads to your email tool' },
@@ -26,6 +27,7 @@ export default function GroupBossAlternativePage() {
       gmbPros={[
         'Free plan for one group',
         'Gmail follow-ups that stop when someone replies, no email tool needed',
+        'Finds the email even when members type it inside a sentence',
         'Auto-approve members (Pro plan)',
         'Side panel next to your member requests',
         'Native Google Sheets sync',
@@ -43,6 +45,7 @@ export default function GroupBossAlternativePage() {
       competitorCons={[
         'No free plan (7-day trial)',
         'Does not send emails itself: you need a separate email tool',
+        'Misses emails typed with extra words (its help docs: answers must contain just the email)',
       ]}
       faq={[
         {
