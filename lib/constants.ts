@@ -38,6 +38,7 @@ export const FOOTER_LINKS = {
     { label: 'Mailmeteor alternative', href: '/compare/mailmeteor-alternative' },
   ],
   resources: [
+    { label: 'Follow-up calculator', href: '/tools/follow-up-cadence-calculator' },
     { label: 'Blog', href: '/blog' },
     { label: 'Support', href: '/support' },
     { label: 'About', href: '/about' },
