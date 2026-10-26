@@ -163,6 +163,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== REASSURANCE (from customer reviews: copy-paste pain, vendor shutdowns, hard cancellations) ===== */}
+      <section className="px-4 pb-24">
+        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
+          {[
+            { t: 'No more copy and paste', b: 'Stop moving answers into a spreadsheet by hand, or paying a VA to do it. Every request is captured as you review it.' },
+            { t: 'Your list stays yours', b: 'A copy of every lead lives in your own Google Sheet. If you ever stop using GroupMailBox, your list stays with you.' },
+            { t: 'Free to start', b: 'The free plan needs no credit card. Paid plans are billed monthly, so you can upgrade only when it pays for itself.' },
+          ].map((x) => (
+            <div key={x.t} className="rounded-2xl border border-accent-blue/15 bg-accent-blue/[0.04] p-6">
+              <p className="font-sora text-lg font-bold">{x.t}</p>
+              <p className="mt-2 leading-relaxed text-text-secondary">{x.b}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ===== FEATURES ===== */}
       <section className="bg-navy-light/60 px-4 py-24 md:py-28" id="features">
         <SectionHead eyebrow="Features" title="Everything a group admin needs to sell" />
