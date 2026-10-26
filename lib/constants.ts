@@ -32,6 +32,7 @@ export const FOOTER_LINKS = {
     { label: 'vs GroupLeads', href: '/compare/groupleads-alternative' },
     { label: 'vs GroupBoss', href: '/compare/groupboss-alternative' },
     { label: 'GroupKit alternative', href: '/compare/groupkit-alternative' },
+    { label: 'vs Group Collector', href: '/compare/group-collector-alternative' },
   ],
   resources: [
     { label: 'Blog', href: '/blog' },
