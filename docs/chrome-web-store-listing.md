@@ -8,7 +8,7 @@ GroupMailBox: Facebook Group Leads to Sheets & Gmail Follow-ups
 
 ## Summary (max 132 characters)
 Capture Facebook group member requests and answers to Google Sheets, auto-approve, and follow up from Gmail until they reply.
-(124 characters)
+(125 characters)
 
 ## Description
 Turn Facebook group members into customers.
