@@ -13,44 +13,39 @@ export default function GroupConvertAlternativePage() {
     <ComparisonPage
       competitorName="GroupConvert"
       competitorSlug="groupconvert"
-      intro="Looking for a GroupConvert alternative? GroupMailBox offers real-time lead detection, native Google Sheets integration, and a free tier — all features GroupConvert lacks."
+      intro="Looking for a GroupConvert alternative? GroupMailBox is a self-serve option with a free plan and built-in Gmail follow-ups that stop when someone replies."
       comparison={[
-        { feature: 'Starting Price', gmb: 'Free', competitor: '$19/mo' },
-        { feature: 'Real-Time Detection', gmb: 'Yes, instant', competitor: 'No' },
-        { feature: 'Google Sheets', gmb: 'Native integration', competitor: 'CSV export only' },
-        { feature: 'Screening Answers', gmb: '3 Q&A pairs', competitor: 'Limited' },
-        { feature: 'Auto-Approve', gmb: 'Yes (Pro plan)', competitor: 'Yes' },
-        { feature: 'Side Panel UI', gmb: 'Yes', competitor: 'No' },
-        { feature: 'Free Plan', gmb: '100 leads/mo', competitor: 'No free plan' },
-        { feature: 'Email Campaigns', gmb: 'Yes (Pro+)', competitor: 'Yes' },
+        { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: 'No' },
+        { feature: 'Google Sheets', gmb: 'Native', competitor: 'See their site' },
+        { feature: 'Screening answers', gmb: 'All 3 Q&A', competitor: 'Yes' },
+        { feature: 'Auto-approve', gmb: 'Yes (Pro plan)', competitor: 'Yes' },
+        { feature: 'Sends follow-up emails from your Gmail', gmb: 'Yes, stops on reply', competitor: 'No' },
+        { feature: 'Sold with', gmb: 'Self-serve plans', competitor: 'A coaching program (Kim Dang)' },
       ]}
       gmbPros={[
-        'Free plan available with 100 leads/month',
-        'Real-time detection without page refresh',
-        'Native Google Sheets integration',
-        'Modern side panel dashboard',
-        'Captures all 3 screening answers',
+        'Free plan for one group',
+        'Gmail follow-ups that stop when someone replies',
+        'Self-serve: no course or coaching needed to get value',
+        'Native Google Sheets sync',
       ]}
       competitorPros={[
-        'Established tool with larger user base',
-        'Email campaign features included',
-        'CRM integrations available',
+        'Highly rated on the Chrome Web Store (4.9, Oct 2026)',
+        'Comes with training and coaching from its founder',
+        'Large, engaged community',
       ]}
       gmbCons={[
         'Newer tool, smaller community',
-        'Fewer third-party integrations (for now)',
+        'No coaching program',
       ]}
       competitorCons={[
-        'No free plan available',
-        'No real-time member detection',
-        'CSV-only export for sheets',
-        'No side panel interface',
-        'Higher starting price',
+        'No free plan',
+        'Best value if you also want the coaching programme',
+        'Does not send follow-up emails from your Gmail',
       ]}
       faq={[
         {
           question: 'Is GroupMailBox better than GroupConvert?',
-          answer: 'GroupMailBox offers several advantages: a free tier, instant detection of new member requests, native Google Sheets integration, and a modern side panel UI. GroupConvert is more established but lacks these features.',
+          answer: 'They suit different people. GroupConvert is highly rated and comes with its founder’s coaching programme. GroupMailBox is self-serve, has a free plan, and follows up with new members from your own Gmail, stopping when they reply.',
         },
         {
           question: 'Can I switch from GroupConvert to GroupMailBox?',
