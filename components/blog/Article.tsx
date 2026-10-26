@@ -10,12 +10,16 @@ interface ArticleProps {
   published: string; // ISO date
   updated?: string;
   readMinutes: number;
+  /** Full path for pages outside /blog/, e.g. '/features/x/'. */
+  path?: string;
+  /** Breadcrumb parent; defaults to the blog. */
+  section?: { name: string; href: string };
   children: React.ReactNode;
 }
 
 /** Shared layout for real blog posts: breadcrumbs, Article + BreadcrumbList schema, readable typography, CTA. */
-export default function Article({ slug, title, description, category, published, updated, readMinutes, children }: ArticleProps) {
-  const url = `${SITE_URL}/blog/${slug}/`;
+export default function Article({ slug, title, description, category, published, updated, readMinutes, path, section = { name: 'Blog', href: '/blog/' }, children }: ArticleProps) {
+  const url = `${SITE_URL}${path || `/blog/${slug}/`}`;
   return (
     <article className="px-4 pb-24 pt-32">
       <JsonLd
@@ -38,7 +42,7 @@ export default function Article({ slug, title, description, category, published,
           '@type': 'BreadcrumbList',
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-            { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog/` },
+            { '@type': 'ListItem', position: 2, name: section.name, item: `${SITE_URL}${section.href}` },
             { '@type': 'ListItem', position: 3, name: title, item: url },
           ],
         }}
@@ -46,7 +50,7 @@ export default function Article({ slug, title, description, category, published,
       <div className="mx-auto max-w-3xl">
         <nav className="mb-6 text-sm text-text-muted" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-accent-blue">Home</Link> <span aria-hidden>/</span>{' '}
-          <Link href="/blog/" className="hover:text-accent-blue">Blog</Link>
+          <Link href={section.href} className="hover:text-accent-blue">{section.name}</Link>
         </nav>
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent-blue">{category}</p>
         <h1 className="font-sora text-4xl font-bold leading-tight tracking-tight md:text-5xl">{title}</h1>

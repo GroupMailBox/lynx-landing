@@ -24,6 +24,7 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = {
   product: [
     { label: 'Features', href: '/features' },
+    { label: 'Auto-approve', href: '/features/auto-approve-facebook-group-members' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'How It Works', href: '/how-it-works' },
   ],
