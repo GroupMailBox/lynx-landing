@@ -14,6 +14,14 @@ export const metadata: Metadata = {
 // Only articles that exist. The old list had six placeholder posts linking to '#'.
 const BLOG_POSTS = [
   {
+    slug: '/blog/google-sheets-crm-for-facebook-groups/',
+    title: 'Use Google Sheets as a Simple CRM for Your Facebook Group',
+    excerpt: 'The columns to use, how to tag members by their answers, and statuses that tell you who to follow up with.',
+    category: 'Guide',
+    date: 'October 26, 2026',
+    readTime: '6 min read',
+  },
+  {
     slug: '/blog/email-facebook-group-members/',
     title: 'How to Email Your Facebook Group Members (Without Spamming Them)',
     excerpt: 'Collect emails with consent at join time, then send a short welcome sequence from Gmail that stops when people reply. Includes 3 templates.',
