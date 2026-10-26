@@ -40,6 +40,7 @@ export const FOOTER_LINKS = {
     { label: 'Mailmeteor alternative', href: '/compare/mailmeteor-alternative' },
   ],
   resources: [
+    { label: 'Affiliates (40%)', href: '/affiliates' },
     { label: 'Follow-up calculator', href: '/tools/follow-up-cadence-calculator' },
     { label: 'Question generator', href: '/tools/membership-question-generator' },
     { label: 'Blog', href: '/blog' },
