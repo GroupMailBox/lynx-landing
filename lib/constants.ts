@@ -17,6 +17,7 @@ export type PlanId = 'free' | 'pro' | 'agency';
 export const NAV_LINKS = [
   { label: 'Features', href: '/features' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Integrations', href: '/integrations' },
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Blog', href: '/blog' },
 ] as const;
@@ -24,6 +25,7 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = {
   product: [
     { label: 'Features', href: '/features' },
+    { label: 'Integrations', href: '/integrations' },
     { label: 'Auto-approve', href: '/features/auto-approve-facebook-group-members' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'How It Works', href: '/how-it-works' },
