@@ -14,6 +14,30 @@ export const metadata: Metadata = {
 // Only articles that exist. The old list had six placeholder posts linking to '#'.
 const BLOG_POSTS = [
   {
+    slug: '/blog/email-facebook-group-members/',
+    title: 'How to Email Your Facebook Group Members (Without Spamming Them)',
+    excerpt: 'Collect emails with consent at join time, then send a short welcome sequence from Gmail that stops when people reply. Includes 3 templates.',
+    category: 'Guide',
+    date: 'October 26, 2026',
+    readTime: '8 min read',
+  },
+  {
+    slug: '/blog/export-facebook-group-members/',
+    title: 'How to Export Facebook Group Members to Google Sheets, Excel or CSV',
+    excerpt: 'Why there is no export button, why scraping is risky, and the consent-first way to build a member spreadsheet that keeps growing.',
+    category: 'Guide',
+    date: 'October 26, 2026',
+    readTime: '7 min read',
+  },
+  {
+    slug: '/blog/facebook-group-welcome-message-templates/',
+    title: 'Facebook Group Welcome Message Templates: 18 Examples to Copy',
+    excerpt: 'Weekly welcome posts, thank-you-for-joining notes and welcome emails for every kind of group.',
+    category: 'Templates',
+    date: 'October 26, 2026',
+    readTime: '7 min read',
+  },
+  {
     slug: '/blog/facebook-group-membership-questions/',
     title: 'Facebook Group Membership Questions: 60 Examples by Niche',
     excerpt:
