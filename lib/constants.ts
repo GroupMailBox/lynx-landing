@@ -157,6 +157,6 @@ export const FAQ_DATA = [
   {
     question: 'Can GroupMailBox auto-approve member requests?',
     answer:
-      'Yes, the Pro and Advanced plans include auto-approve functionality. It includes safety delays to mimic human behavior and protect your group from spam.',
+      'Yes, on the Pro and Advanced plans. It spaces approvals a few seconds apart, stops at 50 per hour, and pauses for 6 hours if Facebook stops accepting approvals, so your account is never pushed past a rate limit.',
   },
 ] as const;

@@ -44,7 +44,12 @@ export default function AutoApprovePage() {
       <h2>Built to behave like a careful admin</h2>
       <ul>
         <li><strong>Random delays between approvals</strong>, which you can adjust with the safety slider in the side panel.</li>
-        <li><strong>A cap of 50 approvals per run</strong>, and a clear message when there are more left to review.</li>
+        <li><strong>A cap of 50 approvals per hour</strong> across all your tabs, and a clear message when there are more left to review.</li>
+        <li>
+          <strong>Backs off when Facebook pushes back</strong>: if three approvals in a row have no effect, a usual sign of
+          rate-limiting, auto-approve pauses for 6 hours instead of retrying.
+        </li>
+        <li><strong>A warning when Facebook is not in English</strong>, since approving relies on Facebook&apos;s English button labels.</li>
         <li><strong>Capture before approve</strong>: approval never runs ahead of saving the answers.</li>
         <li><strong>Clear results</strong>: how many were approved and how many failed, after every run.</li>
       </ul>

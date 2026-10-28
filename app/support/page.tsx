@@ -22,7 +22,27 @@ const EXTENDED_FAQ = [
   {
     question: 'Why aren\'t member requests being detected?',
     answer:
-      'Make sure you are on the Facebook Group member requests page. GroupMailBox automatically activates when it detects that page. Try refreshing the page. If the issue persists, check that the extension is enabled in Chrome settings.',
+      'Open your group\'s member requests page in Chrome on a computer: GroupMailBox reads requests from that page while it is open. Refresh the page once after installing or updating the extension, and check the extension is enabled in Chrome. Requests you or a co-admin approve on the Facebook app before the page is open in Chrome are not captured, so review requests on desktop when you want them saved.',
+  },
+  {
+    question: 'Does GroupMailBox work if Facebook is not in English?',
+    answer:
+      'Approving requests relies on Facebook\'s English button labels, so set Facebook to English (Settings → Language and region) while you review requests. The extension shows a warning when it detects another language.',
+  },
+  {
+    question: 'Why did auto-approve pause?',
+    answer:
+      'Two safety limits protect your Facebook account. Auto-approve stops at 50 approvals per rolling hour across all your tabs, then continues the next hour. If Facebook stops accepting approvals (three clicks in a row with no effect, which usually means it is rate-limiting you), auto-approve pauses for 6 hours instead of retrying. Approvals are spaced a few seconds apart by default, and you can make them slower in settings.',
+  },
+  {
+    question: 'Does my computer need to stay on for auto-approve?',
+    answer:
+      'Yes. Auto-approve runs in your browser on the member requests page, not on our servers, so Chrome must be open on that page. Gmail follow-ups are different: once a member is in a campaign, emails are sent from our servers on schedule even when your computer is off.',
+  },
+  {
+    question: 'Why was a member\'s email not captured?',
+    answer:
+      'GroupMailBox finds an email address anywhere in a member\'s answers, even inside a sentence like "sure, it is ada@example.com". It cannot capture an email the member did not type, or one with a typo such as a missing "@" or domain. Ask clearly, for example: "Want our free guide? Enter your email address (optional)."',
   },
   {
     question: 'Can I use GroupMailBox on multiple groups?',
@@ -32,7 +52,7 @@ const EXTENDED_FAQ = [
   {
     question: 'How do I cancel my subscription?',
     answer:
-      'You can cancel your subscription at any time from your account settings. Your data will be preserved, and you\'ll be downgraded to the free plan at the end of your billing period.',
+      `Email ${SUPPORT_EMAIL} from the address on your account and we will cancel it, with no questions asked. Your data is kept and you move to the free plan at the end of your billing period.`,
   },
   {
     question: 'How do I delete my account and data?',
