@@ -48,6 +48,24 @@ export async function createOrder(token: string, plan: PlanId): Promise<Order> {
   return data.order;
 }
 
+// Card checkout: the backend returns a Stripe-hosted page to send the buyer to.
+// existingSubscription means they already pay by card and get the billing portal.
+export async function createStripeCheckout(
+  token: string,
+  plan: PlanId,
+): Promise<{ url: string; existingSubscription: boolean }> {
+  const res = await fetch(`${BACKEND_URL}/api/billing/stripe/checkout`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ plan }),
+  });
+  if (!res.ok) throw new Error(await readError(res));
+  return res.json();
+}
+
 export async function submitUtr(
   token: string,
   orderId: string,

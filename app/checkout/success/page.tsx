@@ -18,8 +18,9 @@ export default function CheckoutSuccessPage() {
             <span className="font-extrabold text-gradient-teal">in.</span>
           </h1>
           <p className="text-text-secondary text-base mb-8">
-            Your plan is active. Open the GroupMailBox extension — your new features
-            will unlock the moment the side panel reloads.
+            Payment received. Open the GroupMailBox extension: your new features unlock
+            within a minute, as soon as the side panel reloads. A receipt is on its way to
+            your inbox.
           </p>
 
           <div className="bg-navy-light/60 backdrop-blur-xl border border-black/[0.08] rounded-[12px] p-6 text-left mb-8">
@@ -30,6 +31,10 @@ export default function CheckoutSuccessPage() {
               <li><span className="text-text-primary font-semibold">3.</span> Auto-approve and email campaigns are now enabled.</li>
             </ol>
           </div>
+
+          <p className="text-text-muted text-sm mb-6">
+            Change plan, update your card or cancel any time from the extension: Plan &amp; upgrades → Manage billing.
+          </p>
 
           <Button href="/" variant="secondary">
             Back to home

@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button';
 import { PRICING_PLANS, type PlanId } from '@/lib/constants';
 import {
   createOrder,
+  createStripeCheckout,
   getOrderStatus,
   submitUtr,
   type Order,
@@ -27,7 +28,7 @@ function readHashParams(): Record<string, string> {
   return out;
 }
 
-type Step = 'loading' | 'pay' | 'submitting' | 'verifying' | 'done' | 'error';
+type Step = 'loading' | 'redirecting' | 'pay' | 'submitting' | 'verifying' | 'done' | 'error';
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -35,6 +36,7 @@ export default function CheckoutPage() {
   const [error, setError] = useState<string>('');
   const [order, setOrder] = useState<Order | null>(null);
   const [plan, setPlan] = useState<PlanId | null>(null);
+  const [method, setMethod] = useState<'card' | 'upi'>('card');
   const [token, setToken] = useState<string>('');
   const [utr, setUtr] = useState<string>('');
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -70,7 +72,8 @@ export default function CheckoutPage() {
       // Rare case: hash includes full identity. Persist for future tabs.
       setStoredAuth({ token: t, user: { userId: params.userId, email: params.email } });
       try {
-        history.replaceState(null, '', `${window.location.pathname}#plan=${p}`);
+        const keep = params.method === 'upi' ? '&method=upi' : '';
+        history.replaceState(null, '', `${window.location.pathname}#plan=${p}${keep}`);
       } catch {
         // non-fatal
       }
@@ -78,13 +81,28 @@ export default function CheckoutPage() {
 
     if (!t) {
       // Send the user through Google sign-in, then bring them back here.
-      signInWithGoogle(`/checkout/#plan=${p}`);
+      signInWithGoogle(`/checkout/#plan=${p}${params.method === 'upi' ? '&method=upi' : ''}`);
       return;
     }
 
     setToken(t);
     setPlan(p);
 
+    // Card (Stripe) by default; UPI stays available for buyers in India.
+    if (params.method !== 'upi') {
+      setStep('redirecting');
+      createStripeCheckout(t, p)
+        .then(({ url }) => {
+          window.location.href = url;
+        })
+        .catch((err) => {
+          setError(err.message || 'Could not start card checkout');
+          setStep('error');
+        });
+      return;
+    }
+
+    setMethod('upi');
     createOrder(t, p)
       .then((ord) => {
         setOrder(ord);
@@ -163,9 +181,14 @@ export default function CheckoutPage() {
             </span>
           </h1>
           <p className="text-text-secondary text-sm mb-8">
-            Pay via UPI — scan the QR with any UPI app (GPay / PhonePe / Paytm), then paste
-            the transaction ID below.
+            {method === 'upi'
+              ? 'Pay via UPI — scan the QR with any UPI app (GPay / PhonePe / Paytm), then paste the transaction ID below.'
+              : 'Secure card payment by Stripe. Cancel or change plan any time from your billing page.'}
           </p>
+
+          {step === 'redirecting' && (
+            <div className="text-text-secondary">Taking you to secure checkout…</div>
+          )}
 
           {step === 'loading' && (
             <div className="text-text-secondary">Preparing your order…</div>
@@ -238,14 +261,38 @@ export default function CheckoutPage() {
           )}
 
           {step === 'error' && (
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap items-center gap-4">
               <Button href="/pricing/" variant="secondary">
                 Back to pricing
               </Button>
+              {method === 'card' && plan && <UpiLink plan={plan} />}
+            </div>
+          )}
+
+          {step === 'redirecting' && plan && (
+            <div className="mt-6">
+              <UpiLink plan={plan} />
             </div>
           )}
         </div>
       </section>
     </div>
+  );
+}
+
+function UpiLink({ plan }: { plan: PlanId }) {
+  // Full reload: the page reads the payment method from the hash on load.
+  const href = `/checkout/#plan=${plan}&method=upi`;
+  return (
+    <a
+      className="text-sm text-accent-blue"
+      href={href}
+      onClick={(e) => {
+        e.preventDefault();
+        window.location.hash = `plan=${plan}&method=upi`;
+        window.location.reload();
+      }}>
+      Paying from India? Pay by UPI instead
+    </a>
   );
 }

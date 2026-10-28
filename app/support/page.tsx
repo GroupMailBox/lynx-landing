@@ -52,7 +52,7 @@ const EXTENDED_FAQ = [
   {
     question: 'How do I cancel my subscription?',
     answer:
-      `Email ${SUPPORT_EMAIL} from the address on your account and we will cancel it, with no questions asked. Your data is kept and you move to the free plan at the end of your billing period.`,
+      `If you pay by card, open the extension and go to Plan & upgrades → Manage billing, then click Cancel. You keep your plan until the end of the period you paid for, then move to the free plan with your data kept. UPI payments are one month at a time and never renew, so there is nothing to cancel. Stuck? Email ${SUPPORT_EMAIL}.`,
   },
   {
     question: 'How do I delete my account and data?',
