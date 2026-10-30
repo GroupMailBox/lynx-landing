@@ -38,6 +38,10 @@ export const FOOTER_LINKS = {
     { label: 'vs Group Collector', href: '/compare/group-collector-alternative' },
     { label: 'GMass alternative', href: '/compare/gmass-alternative' },
     { label: 'Mailmeteor alternative', href: '/compare/mailmeteor-alternative' },
+    { label: 'Groups Pro alternative', href: '/compare/groups-pro-alternative' },
+    { label: 'Group Doorman alternative', href: '/compare/group-doorman-alternative' },
+    { label: 'GroupHunter alternative', href: '/compare/grouphunter-alternative' },
+    { label: 'Groupwise alternative', href: '/compare/groupwise-alternative' },
   ],
   resources: [
     { label: 'Affiliates (40%)', href: '/affiliates' },
