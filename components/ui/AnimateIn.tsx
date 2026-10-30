@@ -13,19 +13,21 @@ interface AnimateInProps {
   animation?: AnimationType;
 }
 
+// Motion only, never opacity 0: content stays visible before hydration, without JS,
+// and to crawlers. A small slide is enough to feel alive.
 const directionOffset = {
-  up: { x: 0, y: 30 },
-  down: { x: 0, y: -30 },
-  left: { x: 30, y: 0 },
-  right: { x: -30, y: 0 },
+  up: { x: 0, y: 16 },
+  down: { x: 0, y: -16 },
+  left: { x: 16, y: 0 },
+  right: { x: -16, y: 0 },
 };
 
 const animationVariants: Record<AnimationType, { initial: Record<string, number>; animate: Record<string, number> }> = {
-  'fade-up': { initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 } },
-  'fade-down': { initial: { opacity: 0, y: -30 }, animate: { opacity: 1, y: 0 } },
-  'fade-left': { initial: { opacity: 0, x: 30 }, animate: { opacity: 1, x: 0 } },
-  'fade-right': { initial: { opacity: 0, x: -30 }, animate: { opacity: 1, x: 0 } },
-  'scale': { initial: { opacity: 0, scale: 0.97 }, animate: { opacity: 1, scale: 1 } },
+  'fade-up': { initial: { y: 16 }, animate: { y: 0 } },
+  'fade-down': { initial: { y: -16 }, animate: { y: 0 } },
+  'fade-left': { initial: { x: 16 }, animate: { x: 0 } },
+  'fade-right': { initial: { x: -16 }, animate: { x: 0 } },
+  'scale': { initial: { scale: 0.98 }, animate: { scale: 1 } },
   'none': { initial: { opacity: 1 }, animate: { opacity: 1 } },
 };
 
@@ -63,8 +65,8 @@ export default function AnimateIn({
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: offset.x, y: offset.y }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      initial={{ x: offset.x, y: offset.y }}
+      whileInView={{ x: 0, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, ease: 'easeOut', delay }}
       className={className}

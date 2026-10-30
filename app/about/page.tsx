@@ -5,6 +5,7 @@ import Button from '@/components/ui/Button';
 import { CHROME_STORE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/about/' },
   title: 'About GroupMailBox — Our Mission',
   description:
     'Learn about GroupMailBox, the Chrome extension built to help Facebook Group admins capture and manage leads effortlessly.',
@@ -27,7 +28,7 @@ export default function AboutPage() {
       <section className="px-4 pb-16">
         <div className="max-w-3xl mx-auto space-y-8">
           <AnimateIn>
-            <div className="bg-navy-light/60 backdrop-blur-xl border border-white/[0.06] rounded-[12px] p-8">
+            <div className="bg-navy-light/60 backdrop-blur-xl border border-black/[0.08] rounded-[12px] p-8">
               <h2 className="font-sora font-bold text-2xl mb-4">Our Mission</h2>
               <p className="text-text-secondary leading-relaxed mb-4">
                 Facebook Groups are one of the most powerful tools for building communities and generating leads. But managing member requests — especially capturing their data and screening answers — has always been a tedious, manual process.
@@ -39,7 +40,7 @@ export default function AboutPage() {
           </AnimateIn>
 
           <AnimateIn delay={0.1}>
-            <div className="bg-navy-light/60 backdrop-blur-xl border border-white/[0.06] rounded-[12px] p-8">
+            <div className="bg-navy-light/60 backdrop-blur-xl border border-black/[0.08] rounded-[12px] p-8">
               <h2 className="font-sora font-bold text-2xl mb-4">What GroupMailBox Does</h2>
               <ul className="space-y-4 text-text-secondary">
                 <li className="flex items-start gap-3">
@@ -63,7 +64,7 @@ export default function AboutPage() {
           </AnimateIn>
 
           <AnimateIn delay={0.2}>
-            <div className="bg-navy-light/60 backdrop-blur-xl border border-white/[0.06] rounded-[12px] p-8">
+            <div className="bg-navy-light/60 backdrop-blur-xl border border-black/[0.08] rounded-[12px] p-8">
               <h2 className="font-sora font-bold text-2xl mb-4">Our Values</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>

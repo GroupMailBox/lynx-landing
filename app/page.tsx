@@ -1,122 +1,71 @@
-'use client';
-
-import dynamic from 'next/dynamic';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import Button from '@/components/ui/Button';
-import Card from '@/components/ui/Card';
 import AnimateIn from '@/components/ui/AnimateIn';
-import Badge from '@/components/ui/Badge';
 import Accordion from '@/components/ui/Accordion';
+import FlowMock from '@/components/home/FlowMock';
+import SpotlightCard from '@/components/home/SpotlightCard';
 import { SoftwareApplicationSchema, FAQPageSchema } from '@/components/seo/JsonLd';
-import { CHROME_STORE_URL, FAQ_DATA } from '@/lib/constants';
+import { CHROME_STORE_URL, FAQ_DATA, PRICING_PLANS } from '@/lib/constants';
 
-const HeroScene = dynamic(() => import('@/components/three/HeroScene'), {
-  ssr: false,
-  loading: () => null,
-});
+export const metadata: Metadata = { alternates: { canonical: '/' } };
+
+const icon = (d: string) => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d={d} />
+  </svg>
+);
+
+const PILLARS = [
+  {
+    eyebrow: 'Capture',
+    title: 'Every member request, the moment it arrives',
+    body: 'Names, profile links and all three screening answers, grabbed from your admin page while you approve.',
+  },
+  {
+    eyebrow: 'Organise',
+    title: 'A clean Google Sheet, kept up to date',
+    body: 'Each lead lands as a row with its answers, and its email status is written back as the conversation moves.',
+  },
+  {
+    eyebrow: 'Follow up',
+    title: 'Personal emails from your Gmail, until they reply',
+    body: 'A welcome email plus up to four follow-ups in the same thread. Anyone who replies or unsubscribes drops out automatically.',
+  },
+];
 
 const FEATURES = [
-  {
-    icon: (
-      <svg className="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-      </svg>
-    ),
-    title: 'One-Click Lead Capture',
-    description: 'Hit one button and every pending member request gets scraped — names, profiles, answers. No copy-pasting.',
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0112 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M12 12v-1.5c0-.621-.504-1.125-1.125-1.125M9.75 8.625c0 .621.504 1.125 1.125 1.125" />
-      </svg>
-    ),
-    title: 'Google Sheets Integration',
-    description: 'Push captured leads straight into Google Sheets. Names, profiles, screening answers — neatly organized, zero manual entry.',
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: 'Auto-Approve Members',
-    description: 'Let the extension approve requests for you with smart safety delays that look human. Wake up to a bigger group.',
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-      </svg>
-    ),
-    title: 'Screening Answers',
-    description: 'Captures all 3 screening question-answer pairs automatically. No more squinting at tiny Facebook modals.',
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-      </svg>
-    ),
-    title: 'Instant Detection',
-    description: 'New member requests appear the moment they come in. No refreshing, no waiting — the extension watches for you.',
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
-      </svg>
-    ),
-    title: 'Side Panel Dashboard',
-    description: 'Manage settings, view lead counts, and connect Google Sheets — all from a slide-out panel without leaving Facebook.',
-  },
+  { title: 'One-click capture', body: 'Grab every pending request at once. No copying and pasting from tiny Facebook modals.', d: 'M12 4v16m8-8H4' },
+  { title: 'Screening answers', body: 'All three question-and-answer pairs captured with each member, so you know who is a buyer.', d: 'M8 10h8M8 14h5M21 12a9 9 0 1 1-4.2-7.6L21 3v5h-5' },
+  { title: 'Google Sheets sync', body: 'Leads arrive in your own spreadsheet with tidy columns, ready for your CRM or team.', d: 'M4 4h16v16H4zM4 10h16M10 4v16' },
+  { title: 'Gmail follow-ups', body: 'Sequences that send from your Gmail at a human pace and stop the moment someone replies.', d: 'M4 6h16v12H4zM4 7l8 6 8-6' },
+  { title: 'Auto-approve', body: 'Approve requests for you with safety delays that look human. Wake up to a bigger group.', d: 'M5 13l4 4L19 7' },
+  { title: 'Unsubscribe built in', body: 'Every email carries a one-click unsubscribe, and opted-out people are never emailed again.', d: 'M18.4 5.6 5.6 18.4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z' },
 ];
 
 const STEPS = [
-  {
-    step: '01',
-    title: 'Install from Chrome Web Store',
-    description: 'Two clicks. No account creation needed upfront. Connect Google when you are ready to export.',
-  },
-  {
-    step: '02',
-    title: 'Open your member requests page',
-    description: 'Navigate to your Facebook Group admin page like you normally would. GroupMailBox wakes up automatically.',
-  },
-  {
-    step: '03',
-    title: 'Watch the leads roll in',
-    description: 'The extension spots every new request as it appears and grabs the data before you even scroll down.',
-  },
-  {
-    step: '04',
-    title: 'Export to Google Sheets',
-    description: 'One click sends everything to a spreadsheet. Names, profile links, screening answers — all there.',
-  },
+  { n: '1', title: 'Install the extension', body: 'Add GroupMailBox to Chrome. No account needed to start capturing.' },
+  { n: '2', title: 'Open your member requests', body: 'Go to your group admin page as usual. The side panel opens beside it.' },
+  { n: '3', title: 'Capture and sync', body: 'New requests are captured and pushed to your Google Sheet in one click.' },
+  { n: '4', title: 'Follow up from Gmail', body: 'Pick a template and a few follow-ups. Replies land in your inbox, as normal.' },
 ];
 
 const COMPARISON = [
-  { feature: 'Price', gmb: 'Free tier', gc: 'Paid only', gl: '$27/mo', gb: '$19/mo' },
-  { feature: 'Free Plan', gmb: 'Yes (1 group)', gc: 'No', gl: 'No', gb: 'No' },
-  { feature: 'Google Sheets Push', gmb: 'Native', gc: 'Yes', gl: 'Yes', gb: 'Yes' },
-  { feature: 'Captures Screening Answers', gmb: 'All 3 Q&A', gc: 'Limited', gl: 'Yes', gb: 'Yes' },
-  { feature: 'No Account to Try', gmb: 'Yes', gc: 'No', gl: 'No', gb: 'No' },
-  { feature: 'Auto-Approve Members', gmb: 'Pro plan', gc: 'Yes', gl: 'Yes', gb: 'No' },
+  { feature: 'Free plan', gmb: 'Yes, 1 group', gc: 'No', gl: 'No', gb: 'No' },
+  { feature: 'Google Sheets push', gmb: 'Native', gc: 'Yes', gl: 'Yes', gb: 'Yes' },
+  { feature: 'Screening answers', gmb: 'All 3 Q&A', gc: 'Limited', gl: 'Yes', gb: 'Yes' },
+  { feature: 'Try without an account', gmb: 'Yes', gc: 'No', gl: 'No', gb: 'No' },
+  { feature: 'Auto-approve members', gmb: 'Pro plan', gc: 'Yes', gl: 'Yes', gb: 'Yes' },
+  { feature: 'Starting price', gmb: 'Free', gc: 'Paid only', gl: '$27/mo', gb: '$19/mo' },
 ];
 
-/** Organic SVG blob for visual interest between sections */
-function BlobDecoration({ className }: { className?: string }) {
+function SectionHead({ eyebrow, title, sub }: { eyebrow: string; title: string; sub?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 600 600"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M305.3,63.5C370.8,82.5,411.5,143.8,439.3,206.8C467.1,269.8,482.1,334.5,458.3,389.2C434.5,443.9,371.9,488.7,305.3,498.5C238.7,508.3,168.1,483.2,121.5,437.2C74.9,391.2,52.3,324.3,57.5,261.5C62.7,198.7,95.7,139.9,147.3,100.5C198.9,61.1,239.8,44.5,305.3,63.5Z"
-        fill="rgba(79,140,255,0.03)"
-      />
-    </svg>
+    <div className="mx-auto mb-12 max-w-2xl text-center">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent-blue">{eyebrow}</p>
+      <h2 className="font-sora text-3xl font-bold tracking-tight md:text-[42px] md:leading-[1.1]">{title}</h2>
+      {sub && <p className="mt-4 text-lg text-text-secondary">{sub}</p>}
+    </div>
   );
 }
 
@@ -124,303 +73,247 @@ export default function HomePage() {
   return (
     <>
       <SoftwareApplicationSchema />
-      <FAQPageSchema items={FAQ_DATA.map(f => ({ question: f.question, answer: f.answer }))} />
+      <FAQPageSchema items={FAQ_DATA.map((f) => ({ question: f.question, answer: f.answer }))} />
 
       {/* ===== HERO ===== */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* 3D Background */}
-        <div className="absolute inset-0 hidden md:block" aria-hidden="true">
-          <HeroScene />
+      <section className="relative overflow-hidden px-4 pb-20 pt-32 md:pt-40">
+        <div className="aurora" aria-hidden>
+          <span />
+          <span />
+          <span />
         </div>
-
-        {/* Gradient fallback for mobile / low-power */}
-        <div className="absolute inset-0 md:hidden bg-gradient-to-br from-navy via-navy-light to-navy-lighter" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent z-10" />
-
-        <div className="relative z-20 max-w-5xl mx-auto px-4 text-center pt-32 pb-12">
-          <AnimateIn animation="scale">
-            <Badge className="mb-6">Chrome Extension</Badge>
-          </AnimateIn>
-
-          <AnimateIn delay={0.1} animation="scale">
-            <h1 className="font-sora leading-tight mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="font-normal">Capture every</span>{' '}
-              <span className="font-extrabold text-gradient-teal">Facebook Group lead</span>
-              <span className="font-normal"> — for free.</span>
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(14,18,34,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(14,18,34,0.04)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)]"
+          aria-hidden
+        />
+        <div className="mx-auto max-w-4xl text-center">
+            <Link
+              href="#follow-up"
+              className="mb-7 inline-flex items-center gap-2 rounded-full border border-black/[0.08] bg-white px-3 py-1.5 text-xs font-medium text-text-secondary shadow-card hover:border-accent-blue/30"
+            >
+              <span className="rounded-full bg-accent-blue px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">New</span>
+              Gmail follow-ups that stop on reply
+              <span aria-hidden>→</span>
+            </Link>
+                      <h1 className="font-sora text-[42px] font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
+              Turn Facebook group members{' '}
+              <span className="text-shimmer">into customers.</span>
             </h1>
-          </AnimateIn>
-
-          <AnimateIn delay={0.2}>
-            <p className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-              GroupMailBox is a free Chrome extension that grabs every member request and pushes it straight to Google Sheets.
+                      <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-text-secondary md:text-xl">
+              GroupMailBox captures every member request, syncs it to Google Sheets, and follows up from your own Gmail
+              until they reply. One Chrome extension, no Zapier.
             </p>
-          </AnimateIn>
-
-          <AnimateIn delay={0.3}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                      <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button href={CHROME_STORE_URL} size="lg" external>
-                Install Free for Chrome
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 6.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Z" /></svg>
+                Add to Chrome, it&apos;s free
               </Button>
               <Button href="#how-it-works" variant="secondary" size="lg">
-                See How It Works
+                See how it works
               </Button>
             </div>
-            {/* TODO: Replace with real demo video link */}
-            <p className="mt-4 text-text-muted text-sm">
-              <a href="#how-it-works" className="underline underline-offset-4 hover:text-accent-blue transition-colors">
-                Watch a 30-second walkthrough
-              </a>
-              {' '}&middot; No account required to start
-            </p>
-          </AnimateIn>
-
-          {/* TODO: Replace with real product screenshot */}
-          <AnimateIn delay={0.5}>
-            <div
-              className="mt-12 mx-auto max-w-3xl aspect-video rounded-[12px] border border-white/[0.08] bg-navy-light/40 flex items-center justify-center"
-              role="img"
-              aria-label="Product screenshot placeholder"
-            >
-              <p className="text-text-muted text-sm">
-                {/* TODO: Replace with real hero screenshot of extension in action */}
-                [Product screenshot: GroupMailBox capturing leads from Facebook Group member requests]
-              </p>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* ===== SOCIAL PROOF ===== */}
-      <section className="relative z-20 -mt-4 pb-8">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="glass rounded-[12px] px-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-            <p className="text-text-secondary text-sm font-medium">
-              Built for Facebook Group admins who are tired of manually copying member info
-            </p>
-            <a
-              href={CHROME_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent-blue text-sm font-semibold hover:underline whitespace-nowrap"
-            >
-              See it on the Chrome Web Store &rarr;
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== FEATURES GRID ===== */}
-      {/* More breathing room before features — asymmetric padding */}
-      <section className="pt-32 pb-20 px-4" id="features">
-        {/* Full-bleed width for visual contrast */}
-        <div className="max-w-7xl mx-auto">
-          {/* No badge on Features — break the Badge > H2 > Subtitle pattern */}
-          <div className="text-center mb-14">
-            <AnimateIn animation="scale">
-              <h2 className="font-sora text-3xl md:text-4xl mb-4">
-                <span className="font-normal">Stop losing members to</span>{' '}
-                <span className="font-extrabold text-gradient-teal">a broken spreadsheet workflow</span>
-              </h2>
-            </AnimateIn>
-            <p className="text-text-secondary max-w-2xl mx-auto">
-              Built for Facebook Group admins who are tired of manually copying member data one-by-one.
-            </p>
-          </div>
-
-          {/* Hero features: first 2 are wider with horizontal layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
-            {FEATURES.slice(0, 2).map((feature, i) => (
-              <AnimateIn key={feature.title} delay={i * 0.1} direction={i === 0 ? 'left' : 'right'}>
-                <Card variant={i === 0 ? 'highlight' : 'glass'} tilt className="h-full">
-                  <div className="flex items-start gap-5">
-                    <div className="flex-shrink-0 mt-1">{feature.icon}</div>
-                    <div>
-                      <h3 className="font-sora font-semibold text-xl mb-2 text-text-primary">
-                        {feature.title}
-                      </h3>
-                      <p className="text-text-secondary text-sm leading-relaxed">
-                        {feature.description}
-                      </p>
-                      {/* TODO: Replace with real screenshot of this feature */}
-                      <div
-                        className="mt-4 aspect-[16/9] rounded-[8px] border border-white/[0.06] bg-navy/40 flex items-center justify-center"
-                        role="img"
-                        aria-label={`${feature.title} screenshot placeholder`}
-                      >
-                        <p className="text-text-muted text-xs">
-                          [Screenshot: {feature.title} in action]
-                        </p>
-                      </div>
-                    </div>
+            <p className="mt-4 text-sm text-text-muted">Free plan for one group · No credit card · No account to try</p>
                   </div>
-                </Card>
-              </AnimateIn>
+          <div className="relative mx-auto mt-16 max-w-6xl">
+            <div className="absolute -inset-x-6 -inset-y-6 -z-10 rounded-[32px] bg-gradient-to-b from-navy-light to-transparent" aria-hidden />
+            <FlowMock />
+          </div>
+              </section>
+
+      {/* ===== WORKS WITH ===== */}
+      <section className="border-y border-black/[0.06] bg-navy-light/60 py-7">
+        <div className="marquee-mask overflow-hidden">
+          <div className="marquee-track gap-14 pr-14 text-sm font-semibold text-text-muted">
+            {[0, 1].map((k) => (
+              <div key={k} className="flex shrink-0 items-center gap-14" aria-hidden={k === 1}>
+                {['Facebook Groups', 'Google Sheets', 'Gmail', 'Google Workspace', 'Google Chrome', 'Screening questions', 'Member approvals', 'Follow-up sequences'].map((t) => (
+                  <span key={t} className="flex items-center gap-2 whitespace-nowrap">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent-blue/50" />
+                    {t}
+                  </span>
+                ))}
+              </div>
             ))}
           </div>
-
-          {/* Remaining 4 features as cards with variation */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {FEATURES.slice(2).map((feature, i) => {
-              const variants: Array<'glass' | 'transparent' | 'accent-top' | 'highlight'> = ['accent-top', 'transparent', 'glass', 'accent-top'];
-              return (
-                <AnimateIn key={feature.title} delay={0.2 + i * 0.08}>
-                  <Card variant={variants[i]} tilt className="h-full">
-                    <div className="mb-4">{feature.icon}</div>
-                    <h3 className="font-sora font-semibold text-lg mb-2 text-text-primary">
-                      {feature.title}
-                    </h3>
-                    <p className="text-text-secondary text-sm leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </Card>
-                </AnimateIn>
-              );
-            })}
-          </div>
         </div>
       </section>
 
-      {/* Organic blob decoration between sections */}
-      <div className="relative" aria-hidden="true">
-        <BlobDecoration className="absolute -top-48 -left-32 w-[500px] h-[500px] opacity-60" />
-      </div>
+      {/* ===== THE LOOP ===== */}
+      <section className="px-4 py-24 md:py-28" id="follow-up">
+        <SectionHead
+          eyebrow="One loop, one tool"
+          title="From join request to conversation"
+          sub="Other group tools stop at the spreadsheet and send you off to Mailchimp or Zapier. GroupMailBox closes the loop."
+        />
+        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
+          {PILLARS.map((p, i) => (
+            <AnimateIn key={p.eyebrow} delay={i * 0.06}>
+              <SpotlightCard className="h-full rounded-2xl border border-black/[0.08] bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-pop">
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent-blue/10 font-sora text-sm font-bold text-accent-blue">
+                    {i + 1}
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-text-muted">{p.eyebrow}</span>
+                </div>
+                <h3 className="font-sora text-xl font-bold leading-snug">{p.title}</h3>
+                <p className="mt-3 leading-relaxed text-text-secondary">{p.body}</p>
+              </SpotlightCard>
+            </AnimateIn>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== REASSURANCE (from customer reviews: copy-paste pain, vendor shutdowns, hard cancellations) ===== */}
+      <section className="px-4 pb-24">
+        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
+          {[
+            { t: 'No more copy and paste', b: 'Stop moving answers into a spreadsheet by hand, or paying a VA to do it. Every request is captured as you review it.' },
+            { t: 'Your list stays yours', b: 'A copy of every lead lives in your own Google Sheet. If you ever stop using GroupMailBox, your list stays with you.' },
+            { t: 'Free to start', b: 'The free plan needs no credit card. Paid plans are billed monthly, so you can upgrade only when it pays for itself.' },
+          ].map((x) => (
+            <div key={x.t} className="rounded-2xl border border-accent-blue/15 bg-accent-blue/[0.04] p-6">
+              <p className="font-sora text-lg font-bold">{x.t}</p>
+              <p className="mt-2 leading-relaxed text-text-secondary">{x.b}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== FEATURES ===== */}
+      <section className="bg-navy-light/60 px-4 py-24 md:py-28" id="features">
+        <SectionHead eyebrow="Features" title="Everything a group admin needs to sell" />
+        <div className="mx-auto grid max-w-6xl gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {FEATURES.map((f, i) => (
+            <AnimateIn key={f.title} delay={(i % 3) * 0.05}>
+              <SpotlightCard className="h-full rounded-2xl p-5 transition hover:bg-white hover:shadow-card">
+                <span className="mb-4 grid h-11 w-11 place-items-center rounded-xl border border-black/[0.06] bg-white text-accent-blue shadow-card">
+                  {icon(f.d)}
+                </span>
+                <h3 className="font-sora text-lg font-bold">{f.title}</h3>
+                <p className="mt-2 leading-relaxed text-text-secondary">{f.body}</p>
+              </SpotlightCard>
+            </AnimateIn>
+          ))}
+        </div>
+      </section>
 
       {/* ===== HOW IT WORKS ===== */}
-      {/* Full-bleed background to break constrained-section monotony */}
-      <section className="pt-20 pb-28 px-4 bg-navy-light/30" id="how-it-works">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
-            <AnimateIn animation="scale">
-              <h2 className="font-sora text-3xl md:text-4xl mb-3">
-                <span className="font-normal">Get set up in</span>{' '}
-                <span className="font-extrabold text-gradient-teal">under two minutes</span>
-              </h2>
+      <section className="px-4 py-24 md:py-28" id="how-it-works">
+        <SectionHead eyebrow="How it works" title="Set up in five minutes" />
+        <ol className="mx-auto grid max-w-6xl gap-5 md:grid-cols-4">
+          {STEPS.map((s, i) => (
+            <AnimateIn key={s.n} delay={i * 0.06}>
+              <li className="relative h-full rounded-2xl border border-black/[0.08] bg-white p-6">
+                <span className="font-sora text-4xl font-bold text-accent-blue/20">{s.n}</span>
+                <h3 className="mt-3 font-sora text-lg font-bold">{s.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-text-secondary">{s.body}</p>
+              </li>
             </AnimateIn>
-            <p className="text-text-secondary max-w-lg mx-auto">
-              No complicated onboarding. Install, open your group, and leads start flowing.
-            </p>
-          </div>
+          ))}
+        </ol>
+      </section>
 
-          <div className="space-y-14">
-            {STEPS.map((step, i) => (
-              <AnimateIn key={step.step} delay={i * 0.12} direction={i % 2 === 0 ? 'left' : 'right'}>
-                <div className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-                  <div className="flex-shrink-0 w-20 h-20 rounded-full bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center">
-                    <span className="font-sora font-bold text-2xl text-accent-blue">{step.step}</span>
-                  </div>
-                  <div className="flex-1">
-                    <div className={`text-center md:text-left ${i % 2 !== 0 ? 'md:text-right' : ''}`}>
-                      <h3 className="font-sora font-semibold text-xl mb-2">{step.title}</h3>
-                      <p className="text-text-secondary max-w-md">{step.description}</p>
-                    </div>
-                    {/* TODO: Replace with real annotated screenshot of this step */}
-                    <div
-                      className={`mt-4 aspect-[2/1] max-w-sm rounded-[8px] border border-white/[0.06] bg-navy/30 flex items-center justify-center ${i % 2 !== 0 ? 'md:ml-auto' : ''}`}
-                      role="img"
-                      aria-label={`Step ${step.step} screenshot placeholder`}
-                    >
-                      <p className="text-text-muted text-xs">
-                        [Screenshot: {step.title}]
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </AnimateIn>
-            ))}
+      {/* ===== COMPARE ===== */}
+      <section className="bg-navy-light/60 px-4 py-24 md:py-28">
+        <SectionHead eyebrow="Compare" title="Why admins switch to GroupMailBox" />
+        <AnimateIn>
+          <div className="mx-auto max-w-5xl overflow-x-auto rounded-2xl border border-black/[0.08] bg-white shadow-card">
+            <table className="w-full min-w-[640px] text-sm">
+              <thead>
+                <tr className="border-b border-black/[0.06] text-left">
+                  <th className="px-6 py-4 font-medium text-text-muted">Feature</th>
+                  <th className="bg-accent-blue/[0.05] px-6 py-4 font-sora font-bold text-accent-blue">GroupMailBox</th>
+                  <th className="px-6 py-4 font-medium text-text-muted">GroupConvert</th>
+                  <th className="px-6 py-4 font-medium text-text-muted">GroupLeads</th>
+                  <th className="px-6 py-4 font-medium text-text-muted">Groupboss</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON.map((r) => (
+                  <tr key={r.feature} className="border-b border-black/[0.04] last:border-0">
+                    <td className="px-6 py-3.5 text-text-secondary">{r.feature}</td>
+                    <td className="bg-accent-blue/[0.05] px-6 py-3.5 font-semibold text-text-primary">{r.gmb}</td>
+                    <td className="px-6 py-3.5 text-text-muted">{r.gc}</td>
+                    <td className="px-6 py-3.5 text-text-muted">{r.gl}</td>
+                    <td className="px-6 py-3.5 text-text-muted">{r.gb}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+        </AnimateIn>
+        <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+          <Link href="/compare/groupboss-alternative" className="text-accent-blue hover:underline">Groupboss alternative</Link>
+          <span className="text-text-muted">·</span>
+          <Link href="/compare/groupleads-alternative" className="text-accent-blue hover:underline">GroupLeads alternative</Link>
+          <span className="text-text-muted">·</span>
+          <Link href="/compare/groupconvert-alternative" className="text-accent-blue hover:underline">GroupConvert alternative</Link>
+          <span className="text-text-muted">·</span>
+          <Link href="/compare/groupkit-alternative/" className="text-accent-blue hover:underline">GroupKit alternative</Link>
         </div>
       </section>
 
-      {/* Another blob between sections */}
-      <div className="relative" aria-hidden="true">
-        <BlobDecoration className="absolute -top-32 right-0 w-[400px] h-[400px] opacity-40 scale-x-[-1]" />
-      </div>
-
-      {/* ===== COMPARISON TEASER ===== */}
-      {/* Visually "louder" section — full-bleed, more padding */}
-      <section className="pt-28 pb-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <AnimateIn animation="scale">
-            <div className="text-center mb-12">
-              <Badge className="mb-4">Compare</Badge>
-              <h2 className="font-sora text-3xl md:text-4xl mb-4">
-                <span className="font-extrabold">Why admins switch</span>{' '}
-                <span className="font-normal text-gradient-teal">to GroupMailBox</span>
-              </h2>
-              <p className="text-text-secondary">Real feature comparison. No marketing fluff.</p>
+      {/* ===== PRICING ===== */}
+      <section className="px-4 py-24 md:py-28">
+        <SectionHead eyebrow="Pricing" title="Start free. Upgrade when it pays for itself." />
+        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
+          {PRICING_PLANS.map((p) => (
+            <div
+              key={p.id}
+              className={`flex flex-col rounded-2xl border bg-white p-7 ${p.highlighted ? 'glow-border border-transparent shadow-pop' : 'border-black/[0.08] shadow-card'}`}
+            >
+              <div className="flex items-center justify-between">
+                <h3 className="font-sora text-lg font-bold">{p.name}</h3>
+                {p.highlighted && <span className="rounded-full bg-accent-blue/10 px-2.5 py-1 text-xs font-semibold text-accent-blue">Most popular</span>}
+              </div>
+              <p className="mt-1 text-sm text-text-muted">{p.description}</p>
+              <p className="mt-6">
+                <span className="font-sora text-4xl font-bold">{p.price}</span>
+                <span className="text-text-muted"> {p.period}</span>
+              </p>
+              <ul className="mt-6 flex-1 space-y-2.5 text-[15px] text-text-secondary">
+                {p.features.map((f) => (
+                  <li key={f} className="flex gap-2.5">
+                    <span className="mt-0.5 text-accent-green" aria-hidden>✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <Button href="/pricing" variant={p.highlighted ? 'primary' : 'secondary'} className="mt-7 w-full">
+                {p.cta}
+              </Button>
             </div>
-          </AnimateIn>
-
-          <AnimateIn delay={0.2}>
-            {/* Mobile scroll indicator */}
-            <div className="scroll-hint overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
-              <p className="text-text-muted text-xs mb-2 md:hidden">Scroll to see all columns &rarr;</p>
-              <table className="w-full text-sm min-w-[600px]">
-                <thead>
-                  <tr className="border-b border-white/[0.06]">
-                    <th className="text-left py-4 px-4 text-text-muted font-medium">Feature</th>
-                    <th className="py-4 px-4 text-accent-blue font-sora font-semibold">GroupMailBox</th>
-                    <th className="py-4 px-4 text-text-muted font-medium">GroupConvert</th>
-                    <th className="py-4 px-4 text-text-muted font-medium">GroupLeads</th>
-                    <th className="py-4 px-4 text-text-muted font-medium">GroupBoss</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.feature} className="border-b border-white/[0.04]">
-                      <td className="py-3 px-4 text-text-secondary">{row.feature}</td>
-                      <td className="py-3 px-4 text-center text-accent-blue font-medium">{row.gmb}</td>
-                      <td className="py-3 px-4 text-center text-text-muted">{row.gc}</td>
-                      <td className="py-3 px-4 text-center text-text-muted">{row.gl}</td>
-                      <td className="py-3 px-4 text-center text-text-muted">{row.gb}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </AnimateIn>
-
-          <div className="flex justify-center mt-8">
-            <Button href="/compare/groupconvert-alternative" variant="outline" size="sm">
-              See Full Comparisons
-            </Button>
-          </div>
+          ))}
         </div>
       </section>
 
       {/* ===== FAQ ===== */}
-      {/* No badge on FAQ — it doesn't need one */}
-      <section className="pt-16 pb-24 px-4 bg-navy-light/30">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="font-sora font-bold text-3xl md:text-4xl mb-2">
-              Got questions?
-            </h2>
-            <p className="text-text-secondary">The stuff people actually ask us.</p>
-          </div>
-
-          <Accordion items={FAQ_DATA.map(f => ({ question: f.question, answer: f.answer }))} />
+      <section className="bg-navy-light/60 px-4 py-24">
+        <div className="mx-auto max-w-3xl">
+          <SectionHead eyebrow="FAQ" title="Questions admins ask first" />
+          <Accordion items={FAQ_DATA.map((f) => ({ question: f.question, answer: f.answer }))} />
         </div>
       </section>
 
-      {/* Third organic blob */}
-      <div className="relative" aria-hidden="true">
-        <BlobDecoration className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] opacity-30" />
-      </div>
-
       {/* ===== FINAL CTA ===== */}
-      <section className="pt-28 pb-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-sora text-3xl md:text-5xl mb-6">
-            <span className="font-normal">Ready to stop copy-pasting</span>{' '}
-            <span className="font-extrabold text-gradient-teal">member requests?</span>
-          </h2>
-          <p className="text-text-secondary text-lg mb-10 max-w-xl mx-auto">
-            Join hundreds of group admins who ditched the spreadsheet grind. Free plan, no credit card.
+      <section className="px-4 py-24">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[28px] bg-ink px-6 py-16 text-center text-white md:px-16">
+          <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent-blue/40 blur-3xl" aria-hidden />
+          <div className="pointer-events-none absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-[#7C5CFF]/30 blur-3xl" aria-hidden />
+          <h2 className="relative font-sora text-3xl font-bold tracking-tight md:text-5xl">Your group is full of customers.</h2>
+          <p className="relative mx-auto mt-4 max-w-xl text-lg text-white/70">
+            Capture them, sync them and follow up, all from the side panel you already use to approve members.
           </p>
-          <Button href={CHROME_STORE_URL} size="lg" external>
-            Install Free for Chrome
-          </Button>
+          <div className="relative mt-8 flex justify-center">
+            <a
+              href={CHROME_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 font-semibold text-ink transition hover:-translate-y-px"
+            >
+              Add to Chrome, it&apos;s free
+            </a>
+          </div>
         </div>
       </section>
     </>

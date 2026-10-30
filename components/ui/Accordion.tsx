@@ -28,7 +28,7 @@ export default function Accordion({ items, className }: AccordionProps) {
           <div
             key={index}
             role="listitem"
-            className="bg-navy-light/60 backdrop-blur-xl border border-white/[0.06] rounded-[12px] overflow-hidden transition-all duration-300 hover:border-accent-blue/20"
+            className="bg-navy-light/60 backdrop-blur-xl border border-black/[0.08] rounded-[12px] overflow-hidden transition-all duration-300 hover:border-accent-blue/20"
           >
             <button
               id={triggerId}

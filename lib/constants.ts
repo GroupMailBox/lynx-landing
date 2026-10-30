@@ -1,7 +1,7 @@
 export const SITE_NAME = 'GroupMailBox';
-export const SITE_TAGLINE = 'Capture Every Lead from Your Facebook Group';
+export const SITE_TAGLINE = 'Turn Facebook Group Members into Customers';
 export const SITE_DESCRIPTION =
-  'GroupMailBox is a Chrome extension that automatically captures leads from Facebook Group member requests and pushes them to Google Sheets. Free to install.';
+  'GroupMailBox captures every Facebook Group member request, syncs it to Google Sheets, and follows up from your own Gmail until they reply. Free to install.';
 export const SITE_URL = 'https://groupmailbox.com';
 export const CHROME_STORE_URL =
   'https://chromewebstore.google.com/detail/groupmailbox/nbiakohglicfbphghphgjijckccnknbp';
@@ -17,6 +17,7 @@ export type PlanId = 'free' | 'pro' | 'agency';
 export const NAV_LINKS = [
   { label: 'Features', href: '/features' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Integrations', href: '/integrations' },
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Blog', href: '/blog' },
 ] as const;
@@ -24,6 +25,8 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = {
   product: [
     { label: 'Features', href: '/features' },
+    { label: 'Integrations', href: '/integrations' },
+    { label: 'Auto-approve', href: '/features/auto-approve-facebook-group-members' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'How It Works', href: '/how-it-works' },
   ],
@@ -31,8 +34,19 @@ export const FOOTER_LINKS = {
     { label: 'vs GroupConvert', href: '/compare/groupconvert-alternative' },
     { label: 'vs GroupLeads', href: '/compare/groupleads-alternative' },
     { label: 'vs GroupBoss', href: '/compare/groupboss-alternative' },
+    { label: 'GroupKit alternative', href: '/compare/groupkit-alternative' },
+    { label: 'vs Group Collector', href: '/compare/group-collector-alternative' },
+    { label: 'GMass alternative', href: '/compare/gmass-alternative' },
+    { label: 'Mailmeteor alternative', href: '/compare/mailmeteor-alternative' },
+    { label: 'Groups Pro alternative', href: '/compare/groups-pro-alternative' },
+    { label: 'Group Doorman alternative', href: '/compare/group-doorman-alternative' },
+    { label: 'GroupHunter alternative', href: '/compare/grouphunter-alternative' },
+    { label: 'Groupwise alternative', href: '/compare/groupwise-alternative' },
   ],
   resources: [
+    { label: 'Affiliates (40%)', href: '/affiliates' },
+    { label: 'Follow-up calculator', href: '/tools/follow-up-cadence-calculator' },
+    { label: 'Question generator', href: '/tools/membership-question-generator' },
     { label: 'Blog', href: '/blog' },
     { label: 'Support', href: '/support' },
     { label: 'About', href: '/about' },
@@ -59,7 +73,7 @@ export const PRICING_PLANS = [
     ],
     notIncluded: [
       'Auto-approve members',
-      'Email campaigns',
+      'Gmail campaigns & follow-ups',
       'Priority support',
     ],
     cta: 'Install Free',
@@ -78,10 +92,11 @@ export const PRICING_PLANS = [
       'Screening answers capture',
       'Side panel dashboard',
       'Auto-approve members',
-      '500 email campaigns/mo',
+      'Gmail campaigns with follow-ups',
+      'Stop-on-reply sequences',
     ],
     notIncluded: ['Priority support'],
-    cta: 'Start Pro Trial',
+    cta: 'Get Pro',
     highlighted: true,
   },
   {
@@ -97,7 +112,8 @@ export const PRICING_PLANS = [
       'Screening answers capture',
       'Side panel dashboard',
       'Auto-approve members',
-      '5,000 email campaigns/mo',
+      'Gmail campaigns with follow-ups',
+      'Stop-on-reply sequences',
       'Priority support',
     ],
     notIncluded: [],
@@ -133,8 +149,18 @@ export const FAQ_DATA = [
       'Absolutely. GroupMailBox only accesses data from Facebook Group member requests that you can already see as an admin. Data is securely transmitted using HTTPS and stored in encrypted databases. We never sell your data.',
   },
   {
+    question: 'Can GroupMailBox email new members for me?',
+    answer:
+      'Yes. Paid plans send personal emails from your own Gmail to the members you capture, with up to 4 automatic follow-ups in the same thread. Follow-ups stop the moment someone replies or unsubscribes.',
+  },
+  {
+    question: 'Do I still need Mailchimp or Zapier?',
+    answer:
+      'Not for following up with new members. GroupMailBox captures the member, adds them to your Google Sheet and runs the Gmail follow-ups itself. You can still export the sheet to any other tool.',
+  },
+  {
     question: 'Can GroupMailBox auto-approve member requests?',
     answer:
-      'Yes, the Pro and Advanced plans include auto-approve functionality. It includes safety delays to mimic human behavior and protect your group from spam.',
+      'Yes, on the Pro and Advanced plans. It spaces approvals a few seconds apart, stops at 50 per hour, and pauses for 6 hours if Facebook stops accepting approvals, so your account is never pushed past a rate limit.',
   },
 ] as const;

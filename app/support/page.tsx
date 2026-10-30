@@ -6,6 +6,7 @@ import { FAQPageSchema } from '@/components/seo/JsonLd';
 import { FAQ_DATA, SUPPORT_EMAIL } from '@/lib/constants';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/support/' },
   title: 'Support — FAQ & Contact',
   description:
     'Get help with GroupMailBox. Browse frequently asked questions or contact our support team for assistance with the Chrome extension.',
@@ -21,7 +22,27 @@ const EXTENDED_FAQ = [
   {
     question: 'Why aren\'t member requests being detected?',
     answer:
-      'Make sure you are on the Facebook Group member requests page. GroupMailBox automatically activates when it detects that page. Try refreshing the page. If the issue persists, check that the extension is enabled in Chrome settings.',
+      'Open your group\'s member requests page in Chrome on a computer: GroupMailBox reads requests from that page while it is open. Refresh the page once after installing or updating the extension, and check the extension is enabled in Chrome. Requests you or a co-admin approve on the Facebook app before the page is open in Chrome are not captured, so review requests on desktop when you want them saved.',
+  },
+  {
+    question: 'Does GroupMailBox work if Facebook is not in English?',
+    answer:
+      'Approving requests relies on Facebook\'s English button labels, so set Facebook to English (Settings → Language and region) while you review requests. The extension shows a warning when it detects another language.',
+  },
+  {
+    question: 'Why did auto-approve pause?',
+    answer:
+      'Two safety limits protect your Facebook account. Auto-approve stops at 50 approvals per rolling hour across all your tabs, then continues the next hour. If Facebook stops accepting approvals (three clicks in a row with no effect, which usually means it is rate-limiting you), auto-approve pauses for 6 hours instead of retrying. Approvals are spaced a few seconds apart by default, and you can make them slower in settings.',
+  },
+  {
+    question: 'Does my computer need to stay on for auto-approve?',
+    answer:
+      'Yes. Auto-approve runs in your browser on the member requests page, not on our servers, so Chrome must be open on that page. Gmail follow-ups are different: once a member is in a campaign, emails are sent from our servers on schedule even when your computer is off.',
+  },
+  {
+    question: 'Why was a member\'s email not captured?',
+    answer:
+      'GroupMailBox finds an email address anywhere in a member\'s answers, even inside a sentence like "sure, it is ada@example.com". It cannot capture an email the member did not type, or one with a typo such as a missing "@" or domain. Ask clearly, for example: "Want our free guide? Enter your email address (optional)."',
   },
   {
     question: 'Can I use GroupMailBox on multiple groups?',
@@ -31,7 +52,7 @@ const EXTENDED_FAQ = [
   {
     question: 'How do I cancel my subscription?',
     answer:
-      'You can cancel your subscription at any time from your account settings. Your data will be preserved, and you\'ll be downgraded to the free plan at the end of your billing period.',
+      `If you pay by card, open the extension and go to Plan & upgrades → Manage billing, then click Cancel. You keep your plan until the end of the period you paid for, then move to the free plan with your data kept. UPI payments are one month at a time and never renew, so there is nothing to cancel. Stuck? Email ${SUPPORT_EMAIL}.`,
   },
   {
     question: 'How do I delete my account and data?',
@@ -86,7 +107,7 @@ export default function SupportPage() {
             </p>
             <a
               href={`mailto:${SUPPORT_EMAIL}`}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-accent-blue to-[#3A75E0] text-white font-bold px-8 py-3 rounded-sm hover:shadow-[0_4px_20px_rgba(79,140,255,0.3)] hover:-translate-y-0.5 active:scale-[0.97] transition-all"
+              className="inline-flex items-center gap-2 bg-accent-blue hover:bg-teal-dim text-white font-bold px-8 py-3 rounded-sm hover:shadow-[0_4px_20px_rgba(79,140,255,0.3)] hover:-translate-y-0.5 active:scale-[0.97] transition-all"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
