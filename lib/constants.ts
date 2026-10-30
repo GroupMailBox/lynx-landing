@@ -92,7 +92,7 @@ export const PRICING_PLANS = [
       'Stop-on-reply sequences',
     ],
     notIncluded: ['Priority support'],
-    cta: 'Start Pro Trial',
+    cta: 'Get Pro',
     highlighted: true,
   },
   {
