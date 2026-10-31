@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import AnimateIn from '@/components/ui/AnimateIn';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
+import Link from 'next/link';
 import { CHROME_STORE_URL } from '@/lib/constants';
+import { ApproveVisual, CaptureVisual, PanelShot, SheetVisual, ThreadVisual } from '@/components/visuals/ProductVisuals';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/features/' },
@@ -10,72 +12,82 @@ export const metadata: Metadata = {
   description: "Capture Facebook group requests and answers, sync to Google Sheets, auto-approve safely and send Gmail follow-ups that stop on reply.",
 };
 
-const FEATURES = [
+// Each feature pairs accurate copy with a real side panel screenshot (fictional sample data) or a drawn illustration.
+const FEATURES: { title: string; description: string; bullets: string[]; visual: React.ReactNode; href?: string }[] = [
   {
-    title: 'One-Click Lead Capture',
+    title: 'Every join request and answer, captured',
     description:
-      'GroupMailBox scrapes all pending member request data from your Facebook Group with a single click. No manual copy-pasting, no spreadsheet gymnastics.',
+      'Open your group\u2019s member requests page on desktop and GroupMailBox reads each request while the page is open: name, profile link, all three screening answers, and the email address if the person shared one, even inside a sentence.',
     bullets: [
-      'Captures member names and profile URLs',
-      'Extracts up to 3 screening question answers',
-      'Works on any Facebook Group you admin',
-      'Processes all visible member requests at once',
+      'Starts automatically when the member requests page opens',
+      'All three screening questions, mapped question to answer',
+      'Finds emails inside answers like \u201csure, it\u2019s jordan@example.com\u201d',
+      'Works on every group you admin',
     ],
+    visual: <CaptureVisual />,
   },
   {
-    title: 'Google Sheets Integration',
+    title: 'Google Sheets, one row per member',
     description:
-      'Push captured leads directly to Google Sheets with one click. Your data is automatically organized into columns — names, profile links, screening answers, timestamps.',
+      'Captured requests wait in the side panel until you push them. One click adds every lead to your sheet with a column per answer and a timestamp. GroupMailBox can only access the one sheet you choose.',
     bullets: [
-      'One-click push to Google Sheets',
-      'Auto-creates columns for each data field',
       'Pick your own sheet or let us create one',
-      'Per-file access only — we never see the rest of your Drive',
+      'Pending count and last push always visible',
+      'Access to that one file only, never the rest of your Drive',
+      'Download as Excel or CSV from Sheets any time',
     ],
+    visual: (
+      <div className="relative pb-8 md:pb-0">
+        <PanelShot src="/how-it-works/push-to-sheets.png" alt="Side panel showing 12 pending leads and the Push to Sheets button" width={800} height={1240} />
+        <div className="relative z-10 mx-auto -mt-16 w-[92%] max-w-[420px] md:absolute md:-bottom-16 md:-left-10 md:mt-0 md:w-[380px]">
+          <SheetVisual />
+        </div>
+      </div>
+    ),
   },
   {
-    title: 'Auto-Approve Members',
+    title: 'Gmail follow-ups that stop when they reply',
     description:
-      'Available on Pro and Advanced plans. Automatically approve member requests after capturing their data. Includes configurable safety delays to mimic human behavior.',
+      'Send a welcome email to members who shared their address, then up to four follow-ups in the same thread, from your own Gmail. The sequence stops by itself when someone replies, unsubscribes or bounces.',
     bullets: [
-      'Configurable delay between approvals',
-      'Mimics human click patterns',
-      'Can be enabled/disabled per group',
-      'Captures data before approving',
+      'Sent from your Gmail or Google Workspace account',
+      'Follow-ups land in the same thread, like a personal note',
+      'Stops on reply, unsubscribe or bounce',
+      'Unsubscribe link in every email; skips addresses with typo\u2019d domains',
     ],
+    visual: (
+      <div className="grid items-start gap-6 sm:grid-cols-2">
+        <PanelShot src="/features/campaigns.png" alt="Campaigns tab with Gmail connected, welcome and follow-up templates, and running campaigns" width={800} height={1520} />
+        <div className="sm:pt-16">
+          <ThreadVisual />
+        </div>
+      </div>
+    ),
   },
   {
-    title: 'Screening Answer Capture',
+    title: 'Auto-approve at a safe pace',
     description:
-      'Facebook Groups can ask up to 3 screening questions. GroupMailBox captures every question-answer pair automatically and includes them in your exports.',
+      'On Pro and Advanced, GroupMailBox approves captured requests for you while the page is open: answers saved first, then approvals a few seconds apart. If Facebook stops accepting approvals, it pauses instead of retrying.',
     bullets: [
-      'Supports all 3 Facebook screening questions',
-      'Preserves question-answer mapping',
-      'Exports cleanly to separate columns',
-      'Works with any question format',
+      'A few seconds between approvals, adjustable in settings',
+      'Stops at 50 approvals per hour, across all your tabs',
+      'Pauses for 6 hours if Facebook pushes back',
+      'Never approves before the answers are saved',
     ],
+    visual: <ApproveVisual />,
+    href: '/features/auto-approve-facebook-group-members/',
   },
   {
-    title: 'Real-Time Detection',
+    title: 'Results for every step of a sequence',
     description:
-      'GroupMailBox watches your member requests page and detects new requests the instant they appear. No need to refresh — new requests are captured automatically.',
+      'See how each campaign is doing from the side panel: sent, failed and bounced counts, how many people each follow-up reached, who replied, and who is still in the sequence.',
     bullets: [
-      'Instant background detection',
-      'No page refresh required',
-      'Instant capture of new requests',
-      'Works while you browse other tabs',
+      'Sent, failed, bounced and total at a glance',
+      'Per-step counts for day 0, 3 and 7',
+      'Replies, unsubscribes and finished sequences',
+      'A send log you can filter by status',
     ],
-  },
-  {
-    title: 'Side Panel Dashboard',
-    description:
-      'Manage everything from a convenient Chrome side panel. View lead counts, configure settings, connect Google Sheets — all without leaving Facebook.',
-    bullets: [
-      'View captured lead counts in real-time',
-      'Configure Google Sheets connection',
-      'Toggle auto-approve settings',
-      'Access settings without leaving Facebook',
-    ],
+    visual: <PanelShot src="/how-it-works/follow-ups.png" alt="Campaign detail with follow-up steps on day 0, 3 and 7 and replies counted" width={800} height={1170} />,
   },
 ];
 
@@ -88,11 +100,11 @@ export default function FeaturesPage() {
           <AnimateIn>
             <Badge className="mb-4">Features</Badge>
             <h1 className="font-sora font-extrabold text-4xl md:text-5xl mb-6">
-              Powerful Features for{' '}
-              <span className="text-gradient-teal">Facebook Group Admins</span>
+              Everything between a join request{' '}
+              <span className="text-gradient-teal">and a reply</span>
             </h1>
             <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              GroupMailBox is purpose-built to help you capture, organize, and manage leads from your Facebook Group member requests.
+              Capture every request and answer, keep them in your own Google Sheet, approve members safely and follow up from Gmail. Screens below are the real extension with sample data.
             </p>
           </AnimateIn>
         </div>
@@ -132,19 +144,14 @@ export default function FeaturesPage() {
                       </li>
                     ))}
                   </ul>
+                  {feature.href && (
+                    <Link href={feature.href} className="mt-5 inline-block text-sm font-semibold text-accent-blue hover:underline">
+                      How auto-approve stays safe →
+                    </Link>
+                  )}
                 </div>
 
-                {/* Visual placeholder */}
-                <div className="flex-1 w-full">
-                  <div className="bg-navy-light/60 backdrop-blur-xl border border-black/[0.08] rounded-[12px] aspect-video flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center">
-                        <span className="font-sora font-bold text-xl text-accent-blue">{String(i + 1).padStart(2, '0')}</span>
-                      </div>
-                      <p className="text-text-muted text-sm">Feature Preview</p>
-                    </div>
-                  </div>
-                </div>
+                <div className="flex-1 w-full">{feature.visual}</div>
               </div>
             </AnimateIn>
           ))}
@@ -159,7 +166,7 @@ export default function FeaturesPage() {
               Ready to Try These <span className="text-gradient-teal">Features?</span>
             </h2>
             <p className="text-text-secondary text-lg mb-8">
-              Install GroupMailBox for free and experience all these features firsthand.
+              Free for one group. Upgrade when you want auto-approve and Gmail follow-ups.
             </p>
             <Button href={CHROME_STORE_URL} size="lg" external>
               Install Free for Chrome
