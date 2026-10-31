@@ -7,9 +7,9 @@ One primary keyword per page. Add a row before writing a new page.
 | /blog/facebook-group-membership-questions/ | facebook group membership questions | informational | live |
 | /blog/facebook-group-welcome-message-templates/ | facebook group welcome message | informational | live |
 | /blog/email-facebook-group-members/ | email facebook group members | informational | live |
-| /blog/export-facebook-group-members/ | export facebook group members | informational | live; expand (thin) |
-| /blog/facebook-group-email-consent/ | can you email facebook group members | informational | live; expand (thin) |
-| /blog/google-sheets-crm-for-facebook-groups/ | google sheets crm facebook group | informational | live; expand (thin) |
+| /blog/export-facebook-group-members/ | export facebook group members | informational | live; expanded 31 Oct 2026 |
+| /blog/facebook-group-email-consent/ | can you email facebook group members | informational | live; expanded 31 Oct 2026 |
+| /blog/google-sheets-crm-for-facebook-groups/ | google sheets crm facebook group | informational | live; expanded 31 Oct 2026 |
 | /features/auto-approve-facebook-group-members/ | auto approve facebook group members | commercial | live |
 | /compare/*-alternative/ | <competitor> alternative | commercial | 11 live |
 | /tools/membership-question-generator/ | facebook group question generator | tool | live |
