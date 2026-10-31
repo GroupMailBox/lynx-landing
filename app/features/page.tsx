@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import AnimateIn from '@/components/ui/AnimateIn';
-import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
 import { CHROME_STORE_URL } from '@/lib/constants';
 import { ApproveVisual, CaptureVisual, PanelShot, SheetVisual, ThreadVisual } from '@/components/visuals/ProductVisuals';
+import PageHero from '@/components/ui/PageHero';
+import { LayerStack } from '@/components/visuals/Scene3D';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/features/' },
@@ -93,22 +94,31 @@ const FEATURES: { title: string; description: string; bullets: string[]; visual:
 
 export default function FeaturesPage() {
   return (
-    <div className="pt-24 pb-16">
-      {/* Header */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <AnimateIn>
-            <Badge className="mb-4">Features</Badge>
-            <h1 className="font-sora font-extrabold text-4xl md:text-5xl mb-6">
-              Everything between a join request{' '}
-              <span className="text-gradient-teal">and a reply</span>
-            </h1>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              Capture every request and answer, keep them in your own Google Sheet, approve members safely and follow up from Gmail. Screens below are the real extension with sample data.
-            </p>
-          </AnimateIn>
-        </div>
-      </section>
+    <div className="pb-16">
+      <PageHero
+        eyebrow="Features"
+        title={<>Everything between a join request <span className="text-shimmer">and a reply</span></>}
+        subtitle="Capture every request and answer, keep them in your own Google Sheet, approve members safely and follow up from Gmail. Screens below are the real extension with sample data."
+        actions={
+          <>
+            <Button href={CHROME_STORE_URL} size="lg" external>Add to Chrome, it&apos;s free</Button>
+            <Button href="/pricing/" variant="secondary" size="lg">See pricing</Button>
+          </>
+        }
+        visual={
+          <div className="hidden md:block">
+            <LayerStack
+              height={560}
+              layers={[
+                { node: <div className="w-[300px]"><PanelShot src="/how-it-works/push-to-sheets.png" alt="Side panel with 12 pending leads" width={800} height={1240} /></div>, z: 0, style: { left: '37%', top: 0 } },
+                { node: <div className="w-[400px]"><SheetVisual /></div>, z: 110, style: { left: '3%', top: 300 } },
+                { node: <div className="w-[360px]"><ThreadVisual /></div>, z: 170, style: { right: '2%', top: 70 } },
+                { node: <div className="w-[300px]"><ApproveVisual /></div>, z: 60, style: { left: '6%', top: 30 } },
+              ]}
+            />
+          </div>
+        }
+      />
 
       {/* Feature sections */}
       <section className="px-4">

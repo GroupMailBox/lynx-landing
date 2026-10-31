@@ -1,7 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+/* eslint-disable @next/next/no-img-element -- static export with unoptimized images */
 import IntegrationsGrid from '@/components/integrations/IntegrationsGrid';
-import { PanelShot, SheetVisual, ThreadVisual } from '@/components/visuals/ProductVisuals';
+import IntegrationLogo from '@/components/integrations/IntegrationLogo';
+import { INTEGRATIONS } from '@/lib/integrations';
+import PageHero from '@/components/ui/PageHero';
+import { Carousel3D } from '@/components/visuals/Scene3D';
+
+const LIVE = INTEGRATIONS.filter((i) => i.status === 'live');
 
 export const metadata: Metadata = {
   alternates: { canonical: '/integrations/' },
@@ -12,43 +18,37 @@ export const metadata: Metadata = {
 
 export default function IntegrationsPage() {
   return (
-    <section className="px-4 pb-24 pt-32">
+    <>
+    <PageHero
+      eyebrow="Integrations"
+      title={<>Your group, connected to <span className="text-shimmer">the tools you use</span></>}
+      subtitle="Capture members into Google Sheets and follow up from Gmail today. Tell us which tool you want next: requests decide what we build."
+      visual={
+        <>
+          <div className="hidden md:block">
+            <Carousel3D
+              radius={320}
+              height={300}
+              center={<img src="/logo.png" alt="GroupMailBox" width={112} height={112} className="h-28 w-28 rounded-3xl shadow-[0_30px_80px_-20px_rgba(37,56,120,0.55)]" />}
+              items={LIVE.map((i) => (
+                <div key={i.name} className="flex w-44 items-center gap-3 rounded-2xl border border-black/[0.08] bg-white px-4 py-3 shadow-card">
+                  <IntegrationLogo i={i} size="h-10 w-10" />
+                  <span className="font-sora text-sm font-bold">{i.name}</span>
+                </div>
+              ))}
+            />
+          </div>
+          <div className="flex flex-wrap justify-center gap-2 md:hidden">
+            {LIVE.map((i) => (
+              <span key={i.name} className="rounded-full border border-black/[0.08] bg-white px-3 py-1.5 text-sm font-semibold shadow-card">{i.name}</span>
+            ))}
+          </div>
+        </>
+      }
+    />
+    <section className="px-4 pb-24">
       <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent-blue">Integrations</p>
-          <h1 className="font-sora text-4xl font-bold tracking-tight md:text-5xl">Your group, connected to the tools you use</h1>
-          <p className="mt-4 text-lg text-text-secondary">
-            Capture members into Google Sheets and follow up from Gmail today. Tell us which tool you want next: requests decide
-            what we build.
-          </p>
-        </div>
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-black/[0.08] bg-navy-light/60 p-6 md:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#0F9D58]">Live · Google Sheets</p>
-            <h2 className="mt-2 font-sora text-2xl font-bold">Members land in your own sheet</h2>
-            <p className="mt-2 text-text-secondary">
-              Connect once, pick a sheet, and every request arrives as a row with a column per answer. We can open only that file.
-            </p>
-            <div className="mt-6 space-y-4">
-              <PanelShot src="/features/sheets-connected.png" alt="Side panel showing Google Sheets connected with a link to the linked sheet" width={800} height={250} />
-              <SheetVisual />
-            </div>
-          </div>
-          <div className="rounded-3xl border border-black/[0.08] bg-navy-light/60 p-6 md:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#EA4335]">Live · Gmail and Google Workspace</p>
-            <h2 className="mt-2 font-sora text-2xl font-bold">Follow-ups from your own inbox</h2>
-            <p className="mt-2 text-text-secondary">
-              Welcome emails and follow-ups go from your Gmail in one thread, and stop the moment someone replies.
-            </p>
-            <div className="mt-6 space-y-4">
-              <PanelShot src="/features/gmail-connected.png" alt="Campaigns tab showing Gmail connected, the daily send quota and follow-up templates" width={800} height={800} />
-              <ThreadVisual />
-            </div>
-          </div>
-        </div>
-        <p className="mt-4 text-center text-xs text-text-muted">Screens show the real extension with sample data. Names and emails are fictional.</p>
-
-        <h2 className="mt-20 text-center font-sora text-3xl font-bold">All integrations</h2>
+        <h2 className="text-center font-sora text-3xl font-bold">All integrations</h2>
         <div className="mt-10">
           <IntegrationsGrid />
         </div>
@@ -58,5 +58,6 @@ export default function IntegrationsPage() {
         </p>
       </div>
     </section>
+    </>
   );
 }

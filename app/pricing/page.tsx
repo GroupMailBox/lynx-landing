@@ -5,6 +5,8 @@ import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import { PRICING_PLANS, CHROME_STORE_URL, type PlanId } from '@/lib/constants';
 import JsonLd from '@/components/seo/JsonLd';
+import PageHero from '@/components/ui/PageHero';
+import { Orb, TiltCard } from '@/components/visuals/Scene3D';
 import { useAuth } from '@/lib/auth';
 import { useRouter } from 'next/navigation';
 
@@ -22,7 +24,7 @@ export default function PricingPage() {
   };
 
   return (
-    <div className="pt-24 pb-16">
+    <div className="pb-16">
       <JsonLd
         data={{
           '@context': 'https://schema.org',
@@ -38,26 +40,24 @@ export default function PricingPage() {
         }}
       />
 
-      <section className="pt-16 pb-8 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <AnimateIn animation="scale">
-            <Badge className="mb-4">Pricing</Badge>
-            <h1 className="font-sora text-4xl md:text-5xl mb-6">
-              <span className="font-normal">Start free,</span>{' '}
-              <span className="font-extrabold text-gradient-teal">upgrade when you need to</span>
-            </h1>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              Every plan includes lead capture and Google Sheets integration. Pick the one that fits how many groups you run.
-            </p>
-          </AnimateIn>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Pricing"
+        title={<>Start free, <span className="text-shimmer">upgrade when you need to</span></>}
+        subtitle="Every plan includes lead capture and Google Sheets. Pick the one that fits how many groups you run."
+        decor={
+          <>
+            <Orb size={240} className="absolute left-[4%] top-36 hidden lg:block" />
+            <Orb size={170} rings={6} className="absolute right-[6%] top-56 hidden lg:block" />
+          </>
+        }
+      />
 
       <section className="px-4 pb-24">
         {/* Mobile: reorder to show Pro first via CSS order */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           {PRICING_PLANS.map((plan, i) => (
             <AnimateIn key={plan.name} delay={i * 0.15}>
+              <TiltCard>
               <div
                 className={`relative bg-navy-light/60 backdrop-blur-xl border rounded-[12px] p-8 h-full flex flex-col transition-all duration-300 ${
                   plan.highlighted
@@ -138,6 +138,7 @@ export default function PricingPage() {
                   </p>
                 )}
               </div>
+              </TiltCard>
             </AnimateIn>
           ))}
         </div>

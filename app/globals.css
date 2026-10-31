@@ -236,3 +236,26 @@ body {
 .article table { width: 100%; border-collapse: collapse; margin: 8px 0 24px; font-size: 15px; }
 .article th, .article td { border-bottom: 1px solid var(--border); padding: 10px 8px; text-align: left; vertical-align: top; }
 .article th { color: var(--text-primary); font-weight: 600; }
+
+/* ===== CSS 3D scenes (no WebGL: the old three.js hero blanked the page). Decorative only. ===== */
+.scene-3d { perspective: 1400px; }
+.stage-3d { transform-style: preserve-3d; transform: rotateX(var(--tx, 10deg)) rotateY(var(--ty, -16deg)); transition: transform .3s ease-out; }
+@keyframes float-3d { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+.layer-3d { position: absolute; transform-style: preserve-3d; animation: float-3d 7s ease-in-out infinite; }
+@keyframes orb-spin { from { transform: rotateX(18deg) rotateY(0deg); } to { transform: rotateX(18deg) rotateY(360deg); } }
+.orb-3d { position: relative; transform-style: preserve-3d; animation: orb-spin 26s linear infinite; }
+.orb-3d i { position: absolute; inset: 0; border-radius: 9999px; border: 1.5px solid rgba(79, 107, 255, .28); }
+@keyframes carousel-spin { from { transform: rotateX(-10deg) rotateY(0deg); } to { transform: rotateX(-10deg) rotateY(-360deg); } }
+.carousel-3d { position: absolute; inset: 0; transform-style: preserve-3d; animation: carousel-spin 30s linear infinite; }
+.carousel-3d > * { position: absolute; left: 50%; top: 50%; transform-style: preserve-3d; }
+/* Each item spins the opposite way so it keeps facing the viewer while orbiting. */
+@keyframes carousel-face { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+.carousel-face { animation: carousel-face 30s linear infinite; }
+.tilt-card { transform-style: preserve-3d; transform: perspective(1000px) rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg)); transition: transform .25s ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  .layer-3d, .orb-3d, .carousel-3d, .carousel-face { animation: none !important; }
+  .stage-3d, .tilt-card { transform: none !important; }
+}
+
+/* Inner-page heroes end above content; fade the glow out instead of a hard edge. */
+.aurora-fade { -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 92%); mask-image: linear-gradient(to bottom, black 45%, transparent 92%); }
