@@ -3,7 +3,7 @@ import ComparisonPage from '@/components/ComparisonPage';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/groupleads-alternative/' },
-  title: 'GroupMailBox vs GroupLeads — Best Alternative (2026)',
+  title: { absolute: "Group Leads Alternative | GroupMailBox" },
   description:
     'Compare GroupMailBox vs GroupLeads: features, pricing, and performance. Discover why GroupMailBox is the best GroupLeads alternative for Facebook Group admins.',
 };

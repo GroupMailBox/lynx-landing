@@ -3,9 +3,8 @@ import ComparisonPage from '@/components/ComparisonPage';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/groupconvert-alternative/' },
-  title: 'GroupMailBox vs GroupConvert — Best Alternative (2026)',
-  description:
-    'Compare GroupMailBox vs GroupConvert: features, pricing, and capabilities. See why GroupMailBox is the best GroupConvert alternative for Facebook Group lead capture.',
+  title: { absolute: "GroupConvert Alternative | GroupMailBox" },
+  description: "Compare GroupConvert and GroupMailBox for Facebook group lead capture, Google Sheets, auto-approve and Gmail follow-ups.",
 };
 
 export default function GroupConvertAlternativePage() {

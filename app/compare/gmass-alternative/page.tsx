@@ -4,9 +4,8 @@ import ComparisonPage from '@/components/ComparisonPage';
 // Facts checked 25 Oct 2026 (GMass pricing page and published plan history).
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/gmass-alternative/' },
-  title: 'GMass Alternative for Facebook Group Follow-ups (2026)',
-  description:
-    'Following up with Facebook group members from Gmail? Compare GMass, a general Gmail mail-merge tool, with GroupMailBox, which captures new members and their answers and follows up until they reply.',
+  title: { absolute: "GMass Alternative for Facebook Group Follow-ups" },
+  description: "GMass sends mail merges from Gmail. GroupMailBox captures Facebook group members first, then follows up from Gmail until they reply.",
 };
 
 export default function GmassAlternativePage() {

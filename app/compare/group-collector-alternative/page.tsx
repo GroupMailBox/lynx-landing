@@ -4,9 +4,8 @@ import ComparisonPage from '@/components/ComparisonPage';
 // Facts checked 25 Oct 2026: Chrome Web Store listing and pricing/AppSumo pages.
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/group-collector-alternative/' },
-  title: 'GroupMailBox vs Group Collector: Best Alternative (2026)',
-  description:
-    'Compare GroupMailBox and Group Collector for Facebook group lead capture: pricing, Google Sheets, auto-approve, integrations, and Gmail follow-ups that stop on reply.',
+  title: { absolute: "Group Collector Alternative | GroupMailBox" },
+  description: "Compare Group Collector and GroupMailBox: capture, auto-approve, Google Sheets, and Gmail follow-ups that stop when members reply.",
 };
 
 export default function GroupCollectorAlternativePage() {

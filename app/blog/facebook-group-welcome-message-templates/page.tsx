@@ -8,9 +8,9 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/facebook-group-welcome-message-templates/' },
-  title: `${TITLE} (2026)`,
-  description: DESCRIPTION,
-  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/facebook-group-welcome-message-templates/' },
+  title: { absolute: "18 Facebook Group Welcome Message Templates" },
+  description: "Welcome posts, thank-you notes and welcome emails for Facebook groups, with when to send each. Copy, paste and personalise.",
+  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/facebook-group-welcome-message-templates/', images: ['/og/facebook-group-welcome-message-templates.png'] },
 };
 
 const SECTIONS: { name: string; intro: string; items: { label: string; text: string }[] }[] = [

@@ -4,9 +4,8 @@ import ComparisonPage from '@/components/ComparisonPage';
 // Facts checked 25 Oct 2026 (Mailmeteor pricing page).
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/mailmeteor-alternative/' },
-  title: 'Mailmeteor Alternative for Facebook Group Follow-ups (2026)',
-  description:
-    'Compare Mailmeteor, a mail merge for Gmail and Google Sheets, with GroupMailBox, which captures Facebook group members into Sheets and follows up from Gmail until they reply.',
+  title: { absolute: "Mailmeteor Alternative for Facebook Group Follow-ups" },
+  description: "Mailmeteor sends mail merges from Sheets. GroupMailBox captures Facebook group members first, then follows up from Gmail until they reply.",
 };
 
 export default function MailmeteorAlternativePage() {

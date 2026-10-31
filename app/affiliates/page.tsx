@@ -6,8 +6,7 @@ import { SUPPORT_EMAIL } from '@/lib/constants';
 export const metadata: Metadata = {
   alternates: { canonical: '/affiliates/' },
   title: 'Affiliate Program: Earn 40% Recurring',
-  description:
-    'Recommend GroupMailBox to Facebook group admins and earn 40% of every payment for 12 months. Built for coaches, course creators, agencies and community educators.',
+  description: "Earn 40% recurring for 12 months by referring Facebook group admins, coaches and agencies to GroupMailBox. Free to join, paid monthly.",
 };
 
 const STEPS = [

@@ -8,9 +8,9 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/export-facebook-group-members/' },
-  title: `${TITLE} (2026)`,
-  description: DESCRIPTION,
-  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/export-facebook-group-members/' },
+  title: { absolute: "Export Facebook Group Members to Google Sheets (2026)" },
+  description: "Facebook has no member export. Here’s the consent-first way to save members and their answers to Google Sheets, Excel or CSV as they join.",
+  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/export-facebook-group-members/', images: ['/og/export-facebook-group-members.png'] },
 };
 
 export default function ExportMembersArticle() {

@@ -8,8 +8,8 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   alternates: { canonical: '/features/auto-approve-facebook-group-members/' },
-  title: 'Auto-Approve Facebook Group Members (Chrome Extension)',
-  description: DESCRIPTION,
+  title: { absolute: "Auto-Approve Facebook Group Members Safely" },
+  description: "Approve Facebook group requests automatically at a human pace, with answers saved first, a 50-per-hour cap and a pause if Facebook pushes back.",
 };
 
 export default function AutoApprovePage() {

@@ -8,9 +8,9 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/facebook-group-email-consent/' },
-  title: `${TITLE} (2026)`,
-  description: DESCRIPTION,
-  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/facebook-group-email-consent/' },
+  title: { absolute: "Can You Email Facebook Group Members? Consent Guide" },
+  description: "When you can email people who joined your Facebook group, how to ask for consent in membership questions, and what to send. Not legal advice.",
+  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/facebook-group-email-consent/', images: ['/og/facebook-group-email-consent.png'] },
 };
 
 export default function ConsentArticle() {

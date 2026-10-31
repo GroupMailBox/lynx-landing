@@ -6,9 +6,8 @@ import ComparisonPage from '@/components/ComparisonPage';
 // after the extension was shut down.
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/groups-pro-alternative/' },
-  title: 'Groups Pro Alternative: Keep Approving and Emailing Members (2026)',
-  description:
-    'Groups Pro’s AppSumo deal is sold out and its Chrome listing is gone. GroupMailBox approves Facebook group members, saves their answers to Google Sheets and sends follow-ups from your Gmail. Free plan.',
+  title: { absolute: "Groups Pro Alternative for Facebook Group Admins" },
+  description: "Groups Pro’s deal is sold out and its Chrome listing is gone. GroupMailBox approves members, saves answers and follows up from Gmail.",
 };
 
 export default function GroupsProAlternativePage() {

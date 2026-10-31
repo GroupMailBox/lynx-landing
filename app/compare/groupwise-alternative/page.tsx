@@ -5,9 +5,8 @@ import ComparisonPage from '@/components/ComparisonPage';
 // (about 155 users, 3.4 from 5 ratings) was last updated 24 Jun 2024 and lists capture only.
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/groupwise-alternative/' },
-  title: 'Groupwise Alternative for Facebook Group Admins (2026)',
-  description:
-    'Groupwise has not been updated since June 2024 and its website is parked. GroupMailBox captures member requests, syncs to Google Sheets, auto-approves and follows up from Gmail. Free plan.',
+  title: { absolute: "Groupwise Alternative for Facebook Group Admins" },
+  description: "Groupwise hasn’t been updated since June 2024. GroupMailBox captures requests, syncs to Sheets, auto-approves and follows up from Gmail.",
 };
 
 export default function GroupwiseAlternativePage() {

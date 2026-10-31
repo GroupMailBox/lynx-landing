@@ -3,9 +3,8 @@ import ComparisonPage from '@/components/ComparisonPage';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/groupboss-alternative/' },
-  title: 'GroupMailBox vs GroupBoss — Best Alternative (2026)',
-  description:
-    'Compare GroupMailBox vs GroupBoss: features, pricing, and capabilities. See how GroupMailBox compares: a free plan and Gmail follow-ups that stop on reply, built in.',
+  title: { absolute: "Groupboss Alternative | GroupMailBox" },
+  description: "Compare Groupboss and GroupMailBox: emails found inside answers, Google Sheets sync, safe auto-approve and Gmail follow-ups.",
 };
 
 export default function GroupBossAlternativePage() {

@@ -6,9 +6,8 @@ import ComparisonPage from '@/components/ComparisonPage';
 // no public prices; 14-day trial, 30-day money-back.
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/group-doorman-alternative/' },
-  title: 'Group Doorman Alternative with Gmail Follow-ups (2026)',
-  description:
-    'Compare Group Doorman and GroupMailBox for Facebook group lead capture. GroupMailBox shows its prices, has a free plan and sends follow-ups from your Gmail that stop when members reply.',
+  title: { absolute: "Group Doorman Alternative with Gmail Follow-ups" },
+  description: "Compare Group Doorman and GroupMailBox: public prices, a free plan, and follow-ups sent from your Gmail that stop when members reply.",
 };
 
 export default function GroupDoormanAlternativePage() {

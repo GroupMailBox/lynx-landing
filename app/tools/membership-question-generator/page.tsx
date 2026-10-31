@@ -6,9 +6,8 @@ import { SITE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/tools/membership-question-generator/' },
-  title: 'Facebook Group Membership Question Generator (Free)',
-  description:
-    'Generate three Facebook group membership questions in seconds: one to filter, one to learn their goal, and an optional email question with clear consent. Free, no sign-up.',
+  title: { absolute: "Facebook Group Membership Question Generator" },
+  description: "Generate three Facebook group membership questions for your niche in seconds, including an optional email question with clear consent.",
 };
 
 export default function QuestionGeneratorPage() {

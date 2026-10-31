@@ -8,9 +8,8 @@ import { CHROME_STORE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/how-it-works/' },
-  title: 'How It Works: Capture, Sheet, Approve, Follow Up',
-  description:
-    'See GroupMailBox step by step: sign in with Google, capture Facebook group member requests and answers, push them to Google Sheets, auto-approve safely, and follow up from Gmail until people reply.',
+  title: { absolute: "How GroupMailBox Works: 5 Steps | GroupMailBox" },
+  description: "Sign in with Google, capture Facebook group requests and answers, push to Sheets, approve safely and follow up from Gmail until they reply.",
 };
 
 type Step = {

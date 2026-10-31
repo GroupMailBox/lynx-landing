@@ -6,7 +6,7 @@ import { SITE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/tools/follow-up-cadence-calculator/' },
-  title: 'Follow-Up Email Cadence Calculator (Free Tool)',
+  title: { absolute: "Follow-Up Email Cadence Calculator (Free Tool)" },
   description:
     'Plan a welcome email and follow-ups with real dates. Pick how many follow-ups and how far apart, skip weekends, and get a schedule you can use in Gmail.',
 };

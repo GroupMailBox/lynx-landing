@@ -8,9 +8,9 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/facebook-group-membership-questions/' },
-  title: `${TITLE} (2026)`,
-  description: DESCRIPTION,
-  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/facebook-group-membership-questions/' },
+  title: { absolute: "60 Facebook Group Membership Questions by Niche" },
+  description: "Copy-paste membership questions for coaching, business, local and hobby groups, plus how to ask for an email with clear consent.",
+  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/facebook-group-membership-questions/', images: ['/og/facebook-group-membership-questions.png'] },
 };
 
 const NICHES: { name: string; intro: string; questions: string[] }[] = [

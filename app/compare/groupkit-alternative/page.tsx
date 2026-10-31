@@ -4,9 +4,8 @@ import ComparisonPage from '@/components/ComparisonPage';
 // GroupKit announced its shutdown on groupkit.com: closed 23 Oct 2026, data no longer accessible (checked 25 Oct 2026).
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/groupkit-alternative/' },
-  title: 'GroupKit Alternative: GroupKit Shut Down, What Now? (2026)',
-  description:
-    'GroupKit shut down on 23 October 2026. Move your Facebook group lead capture to GroupMailBox in minutes: capture member requests, sync to Google Sheets and follow up from Gmail. Free plan.',
+  title: { absolute: "GroupKit Alternative: GroupKit Shut Down (2026)" },
+  description: "GroupKit shut down on 23 Oct 2026. Move to GroupMailBox in minutes: capture member requests, sync to Sheets and follow up from Gmail.",
 };
 
 export default function GroupKitAlternativePage() {

@@ -8,9 +8,9 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/email-facebook-group-members/' },
-  title: `${TITLE} (2026)`,
-  description: DESCRIPTION,
-  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/email-facebook-group-members/' },
+  title: { absolute: "How to Email Facebook Group Members (Without Spam)" },
+  description: "Facebook can’t email your members. Collect emails with consent at join time, then follow up from Gmail until they reply. 3 templates inside.",
+  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/email-facebook-group-members/', images: ['/og/email-facebook-group-members.png'] },
 };
 
 const SEQUENCE = [

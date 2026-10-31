@@ -8,9 +8,9 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/google-sheets-crm-for-facebook-groups/' },
-  title: `${TITLE} (2026)`,
-  description: DESCRIPTION,
-  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/google-sheets-crm-for-facebook-groups/' },
+  title: { absolute: "Google Sheets CRM for Facebook Groups (Free Setup)" },
+  description: "Turn a Google Sheet into a simple CRM for your Facebook group: columns, statuses, filters and follow-ups, with a free template layout.",
+  openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/google-sheets-crm-for-facebook-groups/', images: ['/og/google-sheets-crm-for-facebook-groups.png'] },
 };
 
 const COLUMNS = [

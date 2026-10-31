@@ -5,9 +5,8 @@ import ComparisonPage from '@/components/ComparisonPage';
 // on 6 Oct 2026. Earlier it described itself as capture + auto-approve + CRM sync (search index snapshots).
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/grouphunter-alternative/' },
-  title: 'GroupHunter Alternative: GroupHunter Is Gone, What Now? (2026)',
-  description:
-    'GroupHunter’s website no longer hosts the Facebook group tool. GroupMailBox captures member requests and answers, auto-approves safely and follows up from Gmail. Free plan.',
+  title: { absolute: "GroupHunter Alternative: GroupHunter Is Gone" },
+  description: "GroupHunter’s site no longer hosts the tool. GroupMailBox captures requests, auto-approves safely and follows up from Gmail. Free plan.",
 };
 
 export default function GroupHunterAlternativePage() {
