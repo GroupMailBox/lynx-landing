@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-sora font-extrabold text-4xl mb-4">Privacy Policy</h1>
-          <p className="text-text-muted mb-2">Last updated: May 9, 2026</p>
+          <p className="text-text-muted mb-2">Last updated: November 5, 2026</p>
           <p className="text-text-muted mb-12">Effective date: May 9, 2026</p>
 
           <div className="prose prose-invert max-w-none space-y-8 text-text-secondary leading-relaxed">
@@ -150,7 +150,7 @@ export default function PrivacyPage() {
               <ul className="list-disc pl-6 space-y-2 mt-2">
                 <li><strong>To Google, on your explicit instruction</strong> — to write rows to <em>your</em> Google Sheet, or to send an email from <em>your</em> Gmail account to a recipient <em>you</em> specified in a campaign.</li>
                 <li><strong>To the email recipient&apos;s mail provider</strong> — when you send a campaign, the message is delivered to the recipient&apos;s inbox via Gmail, the same way any email from you reaches them.</li>
-                <li><strong>Service providers (sub-processors) strictly necessary to run the Services</strong> — Supabase (managed PostgreSQL hosting), Render (application hosting), and the Redis provider used for our outbound mail queue. These vendors process data only as our service providers, under contractual confidentiality, and never for their own purposes.</li>
+                <li><strong>Service providers (sub-processors) strictly necessary to run the Services</strong> — MongoDB Atlas (managed database hosting), Render (application hosting), and the Redis provider used for our outbound mail queue. These vendors process data only as our service providers, under contractual confidentiality, and never for their own purposes.</li>
                 <li><strong>Legal compliance</strong> — to comply with applicable law, lawful requests by public authorities, court orders, or to protect our or others&apos; rights, property, or safety.</li>
                 <li><strong>Business transfers</strong> — in connection with a merger, acquisition, financing, reorganization, or sale of assets, with notice to you and an opportunity to object where required by law.</li>
                 <li><strong>With your consent</strong>.</li>
