@@ -156,13 +156,13 @@ export default function CheckoutPage() {
     setStep('submitting');
     try {
       const res = await submitUtr(token, order.orderId, cleaned);
-      // Backend auto-confirms on UTR submit (MVP). Either status is 'paid'
-      // (just activated) or alreadyPaid was true.
+      // Paid only if an admin already confirmed this order. A fresh UTR comes
+      // back as 'submitted' and waits for manual review.
       if (res.status === 'paid' || res.alreadyPaid) {
         router.push('/checkout/success/');
         return;
       }
-      // Fallback for the legacy path: an admin still has to flip it. Poll.
+      // An admin still has to confirm the payment. The effect above polls.
       setStep('verifying');
     } catch (err) {
       setStep('pay');
@@ -248,8 +248,8 @@ export default function CheckoutPage() {
                 <div className="mt-5 bg-accent-blue/10 border border-accent-blue/30 rounded-lg p-4 text-sm">
                   <div className="font-semibold text-accent-blue mb-1">UTR submitted ✓</div>
                   <div className="text-text-secondary text-xs">
-                    We&apos;re verifying with our bank. This usually takes a few minutes — this page will update
-                    automatically when your plan activates. You can close this tab and check back later.
+                    We check each UPI payment by hand before activating your plan. This page updates
+                    automatically once it&apos;s confirmed. You can close this tab and check back later.
                   </div>
                 </div>
               )}

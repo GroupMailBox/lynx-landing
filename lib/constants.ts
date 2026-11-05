@@ -7,10 +7,12 @@ export const CHROME_STORE_URL =
   'https://chromewebstore.google.com/detail/groupmailbox/nbiakohglicfbphghphgjijckccnknbp';
 export const SUPPORT_EMAIL = 'support@groupmailbox.com';
 
-// Backend (viper-core) base URL — read at build time. Override via
-// NEXT_PUBLIC_BACKEND_URL in .env.local for local dev.
+// Backend base URL, read at build time. Production comes from .env.production;
+// override NEXT_PUBLIC_API_URL in .env.local for local dev. Not the older
+// NEXT_PUBLIC_BACKEND_URL: a value left in hosting settings silently beats
+// .env.production, which kept builds on the retired Render backend.
 export const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3000';
+  process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
 export type PlanId = 'free' | 'pro' | 'agency';
 
