@@ -37,7 +37,7 @@ const BLOG_POSTS = [
     slug: "/blog/email-facebook-group-members/",
     title: "How to Email Your Facebook Group Members (Without Spamming Them)",
     excerpt:
-      "Collect emails with consent at join time, then send a short welcome sequence from Gmail that stops when people reply. Includes 3 templates.",
+      "Collect emails with consent at join time, then send a short welcome sequence that stops when people reply. Includes 3 templates.",
     category: "Guide",
     date: "October 26, 2026",
     readTime: "8 min read",

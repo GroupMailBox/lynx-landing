@@ -5,7 +5,7 @@ import ComparisonPage from '@/components/ComparisonPage';
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/mailmeteor-alternative/' },
   title: { absolute: "Mailmeteor Alternative for Facebook Group Follow-ups" },
-  description: "Mailmeteor sends mail merges from Sheets. GroupMailBox captures Facebook group members first, then follows up from Gmail until they reply.",
+  description: "Mailmeteor sends mail merges from Sheets. GroupMailBox captures Facebook group members first, then follows up by email until they reply.",
 };
 
 export default function MailmeteorAlternativePage() {
@@ -13,14 +13,14 @@ export default function MailmeteorAlternativePage() {
     <ComparisonPage
       competitorName="Mailmeteor"
       competitorSlug="mailmeteor"
-      intro="Mailmeteor is a popular, affordable mail merge for Gmail and Google Sheets. GroupMailBox is built for Facebook group admins: it fills the sheet for you with each new member and their answers, then follows up from your Gmail until they reply."
+      intro="Mailmeteor is a popular, affordable mail merge for Gmail and Google Sheets. GroupMailBox is built for Facebook group admins: it fills the sheet for you with each new member and their answers, then follows up by email until they reply, with no email account to connect."
       comparison={[
         { feature: 'Built for', gmb: 'Facebook group admins', competitor: 'Any Gmail / Sheets mail merge' },
         { feature: 'Captures Facebook group members and answers', gmb: 'Yes', competitor: 'No' },
         { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: 'Yes, up to 50 emails a day' },
         { feature: 'Paid plans', gmb: 'From $29/month', competitor: 'From $5.99/month' },
         { feature: 'Follow-ups', gmb: 'Up to 4, stop on reply', competitor: 'Yes' },
-        { feature: 'Sends from your own Gmail', gmb: 'Yes', competitor: 'Yes' },
+        { feature: 'Sends from your own Gmail', gmb: 'No: sent for you, replies reach your inbox', competitor: 'Yes' },
       ]}
       gmbPros={[
         'Builds the list for you from Facebook group requests',

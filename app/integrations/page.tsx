@@ -11,9 +11,9 @@ const LIVE = INTEGRATIONS.filter((i) => i.status === 'live');
 
 export const metadata: Metadata = {
   alternates: { canonical: '/integrations/' },
-  title: 'Integrations: Google Sheets, Gmail and More',
+  title: 'Integrations: Google Sheets, Email and More',
   description:
-    'GroupMailBox connects your Facebook group to Google Sheets and Gmail today. See every integration, and request the email-marketing and CRM tools you want next.',
+    'GroupMailBox connects your Facebook group to Google Sheets and sends your follow-up emails today. See every integration, and request the email-marketing and CRM tools you want next.',
 };
 
 export default function IntegrationsPage() {
@@ -22,7 +22,7 @@ export default function IntegrationsPage() {
     <PageHero
       eyebrow="Integrations"
       title={<>Your group, connected to <span className="text-shimmer">the tools you use</span></>}
-      subtitle="Capture members into Google Sheets and follow up from Gmail today. Tell us which tool you want next: requests decide what we build."
+      subtitle="Capture members into Google Sheets and follow up by email today. Tell us which tool you want next: requests decide what we build."
       visual={
         <>
           <div className="hidden md:block">

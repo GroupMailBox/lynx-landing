@@ -14,7 +14,7 @@ export default function TermsPage() {
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-sora font-extrabold text-4xl mb-4">Terms of Service</h1>
-          <p className="text-text-muted mb-12">Last updated: May 9, 2026</p>
+          <p className="text-text-muted mb-12">Last updated: November 6, 2026</p>
 
           <div className="prose prose-invert max-w-none space-y-8 text-text-secondary leading-relaxed">
 
@@ -27,7 +27,7 @@ export default function TermsPage() {
             <section>
               <h2 className="font-sora font-bold text-xl text-text-primary mb-3">1. The Services</h2>
               <p>
-                {SITE_NAME} provides a software-as-a-service platform consisting of (a) a Chrome browser extension that captures answers to Facebook Group screening questions visible to a logged-in Group Admin, (b) a web-based dashboard and backend that append those answers to a Google Sheet you select via the Google Picker (or one created for you), and (c) tools to compose and send email campaigns to your captured leads using your own Gmail account (collectively, the &quot;Services&quot;).
+                {SITE_NAME} provides a software-as-a-service platform consisting of (a) a Chrome browser extension that captures answers to Facebook Group screening questions visible to a logged-in Group Admin, (b) a web-based dashboard and backend that append those answers to a Google Sheet you select via the Google Picker (or one created for you), and (c) tools to create and send email campaigns to your captured leads (collectively, the &quot;Services&quot;).
               </p>
             </section>
 
@@ -83,10 +83,11 @@ export default function TermsPage() {
                 <li>Send only to recipients whose email address you obtained lawfully and who have a reasonable expectation of receiving email from you.</li>
                 <li>Include a valid postal address for the sender in every campaign.</li>
                 <li>Honor every unsubscribe request promptly. Re-importing previously-unsubscribed addresses is prohibited.</li>
-                <li>Not use {SITE_NAME} to send unsolicited bulk email, deceptive headers or subject lines, or any content that violates Google&apos;s Gmail Sending Guidelines or program policies.</li>
+                <li>Only email people who gave you their address and agreed to hear from you, for example through a consent question when they asked to join your group. Purchased, rented, or scraped lists are prohibited.</li>
+                <li>Not use {SITE_NAME} to send unsolicited bulk email, deceptive headers or subject lines, or any content that breaks applicable email laws.</li>
               </ul>
               <p className="mt-3">
-                Violating these terms may result in immediate suspension of your account and revocation of Google OAuth access.
+                Violating these terms may result in immediate suspension of your account. We may also pause sending from your account automatically if your campaigns draw unusually high bounce or spam-complaint rates, while we review it with you.
               </p>
             </section>
 
@@ -98,16 +99,16 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-sora font-bold text-xl text-text-primary mb-3">8. Sending Limits and Gmail Quotas</h2>
+              <h2 className="font-sora font-bold text-xl text-text-primary mb-3">8. Sending Limits</h2>
               <p>
-                {SITE_NAME} enforces a daily limit of 450 outbound email messages per Gmail account per 24 hours, and a per-second rate limit, to stay within Google&apos;s published Gmail API quotas. Limits may be adjusted without notice as required to comply with Gmail&apos;s policies.
+                Each plan includes a daily sending limit (currently 500 emails per day on Pro and 5,000 per day on Advanced). Emails beyond the limit wait and are sent after it resets. Campaign emails are sent from a {SITE_NAME} sending domain that all customers share, so we may lower limits or pause sending as needed to protect deliverability for everyone.
               </p>
             </section>
 
             <section>
               <h2 className="font-sora font-bold text-xl text-text-primary mb-3">9. Third-Party Services</h2>
               <p>
-                The Services interoperate with third-party services such as Facebook (Meta) and Google (Sheets, Gmail). We do not control those services and are not responsible for their availability, content, or terms. If a third-party service changes its API, interface, or terms in a way that impairs the Services, we will use commercially reasonable efforts to adapt but make no guarantee of continued integration.
+                The Services interoperate with third-party services such as Facebook (Meta) and Google (Sheets). We do not control those services and are not responsible for their availability, content, or terms. If a third-party service changes its API, interface, or terms in a way that impairs the Services, we will use commercially reasonable efforts to adapt but make no guarantee of continued integration.
               </p>
             </section>
 
@@ -135,10 +136,10 @@ export default function TermsPage() {
             <section>
               <h2 className="font-sora font-bold text-xl text-text-primary mb-3">13. Disclaimers</h2>
               <p>
-                THE SERVICES ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR UNINTERRUPTED OPERATION. WE DO NOT WARRANT THAT THE SERVICES WILL CONTINUE TO OPERATE IF FACEBOOK OR META CHANGES ITS PLATFORM, USER INTERFACE, OR TERMS, OR IF GOOGLE CHANGES ITS SHEETS OR GMAIL APIS.
+                THE SERVICES ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR UNINTERRUPTED OPERATION. WE DO NOT WARRANT THAT THE SERVICES WILL CONTINUE TO OPERATE IF FACEBOOK OR META CHANGES ITS PLATFORM, USER INTERFACE, OR TERMS, OR IF GOOGLE CHANGES ITS SHEETS API.
               </p>
               <p className="mt-2">
-                We do not guarantee that the Services will capture all member-request data or that Google Sheets / Gmail integration will work without interruption. Facebook and Google may change their interfaces or policies at any time, which could affect the Services&apos; functionality.
+                We do not guarantee that the Services will capture all member-request data or that the Google Sheets integration and email delivery will work without interruption. Facebook and Google may change their interfaces or policies at any time, which could affect the Services&apos; functionality.
               </p>
             </section>
 

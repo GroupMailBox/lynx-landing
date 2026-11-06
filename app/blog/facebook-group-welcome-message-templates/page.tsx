@@ -117,7 +117,7 @@ export default function WelcomeTemplatesArticle() {
       <h2>Send welcome emails automatically</h2>
       <p>
         Writing each welcome email by hand works for a few members a week. GroupMailBox captures new members and their
-        answers as you approve them, personalises the welcome email from those answers, sends it from your Gmail, and follows
+        answers as you approve them, personalises the welcome email from those answers, sends it for you, and follows
         up on day 3 and 7 only if they have not replied. Read the full method in{' '}
         <Link href="/blog/email-facebook-group-members/">how to email your Facebook group members</Link>.
       </p>

@@ -5,7 +5,7 @@ import ComparisonPage from '@/components/ComparisonPage';
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/group-collector-alternative/' },
   title: { absolute: "Group Collector Alternative | GroupMailBox" },
-  description: "Compare Group Collector and GroupMailBox: capture, auto-approve, Google Sheets, and Gmail follow-ups that stop when members reply.",
+  description: "Compare Group Collector and GroupMailBox: capture, auto-approve, Google Sheets, and email follow-ups that stop when members reply.",
 };
 
 export default function GroupCollectorAlternativePage() {
@@ -13,18 +13,18 @@ export default function GroupCollectorAlternativePage() {
     <ComparisonPage
       competitorName="Group Collector"
       competitorSlug="group-collector"
-      intro="Looking for a Group Collector alternative? Both capture member requests and answers. GroupMailBox adds a free plan and follows up from your own Gmail until people reply, so you do not need a separate email tool."
+      intro="Looking for a Group Collector alternative? Both capture member requests and answers. GroupMailBox adds a free plan and follows up by email until people reply, so you do not need a separate email tool."
       comparison={[
         { feature: 'Starting price', gmb: 'Free plan', competitor: '$25/mo, or $297 lifetime' },
         { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: 'No' },
         { feature: 'Google Sheets', gmb: 'Native', competitor: 'Yes' },
         { feature: 'Auto-approve', gmb: 'Yes (Pro plan)', competitor: 'Yes' },
         { feature: 'Email marketing integrations', gmb: 'Google Sheets export', competitor: 'Many, via direct integrations' },
-        { feature: 'Sends follow-up emails itself', gmb: 'Yes, from your Gmail, stops on reply', competitor: 'No, hands leads to your email tool' },
+        { feature: 'Sends follow-up emails itself', gmb: 'Yes, built in, stops on reply', competitor: 'No, hands leads to your email tool' },
       ]}
       gmbPros={[
         'Free plan for one group',
-        'Gmail follow-ups that stop when someone replies',
+        'Email follow-ups that stop when someone replies',
         'Side panel next to your member requests',
         'Native Google Sheets sync',
       ]}

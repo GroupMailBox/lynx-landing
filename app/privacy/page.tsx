@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-sora font-extrabold text-4xl mb-4">Privacy Policy</h1>
-          <p className="text-text-muted mb-2">Last updated: November 5, 2026</p>
+          <p className="text-text-muted mb-2">Last updated: November 6, 2026</p>
           <p className="text-text-muted mb-12">Effective date: May 9, 2026</p>
 
           <div className="prose prose-invert max-w-none space-y-8 text-text-secondary leading-relaxed">
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
             <section className="border border-accent-blue/30 rounded-md p-5 bg-accent-blue/5">
               <p className="text-text-primary font-semibold mb-2">In plain language</p>
               <p>
-                We&apos;re {SITE_NAME}. Our Chrome extension helps Facebook Group administrators move new-member screening answers into a Google Sheet they own, and (optionally) send follow-up emails from their own Gmail account. We don&apos;t sell data, we don&apos;t use it to train AI, we don&apos;t share it with advertisers or Meta, and we don&apos;t read group content beyond what is needed for that single purpose. The members of your groups are <em>your</em> contacts — not ours.
+                We&apos;re {SITE_NAME}. Our Chrome extension helps Facebook Group administrators move new-member screening answers into a Google Sheet they own, and (optionally) send welcome and follow-up emails to those members, which we deliver on their behalf. We don&apos;t sell data, we don&apos;t use it to train AI, we don&apos;t share it with advertisers or Meta, and we don&apos;t read group content beyond what is needed for that single purpose. The members of your groups are <em>your</em> contacts — not ours.
               </p>
             </section>
 
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="font-sora font-bold text-xl text-text-primary mb-3">1. Scope and Roles</h2>
               <p>
-                {SITE_NAME} provides software-as-a-service tools that enable administrators of Facebook™ groups (&quot;Group Admins&quot;) to capture answers to membership screening questions submitted by prospective members of <em>their own</em> groups, append those answers to a Google Sheet they pick (or one created for them), and (optionally) send email campaigns to those leads from the Group Admin&apos;s own Gmail account.
+                {SITE_NAME} provides software-as-a-service tools that enable administrators of Facebook™ groups (&quot;Group Admins&quot;) to capture answers to membership screening questions submitted by prospective members of <em>their own</em> groups, append those answers to a Google Sheet they pick (or one created for them), and (optionally) send email campaigns to those leads.
               </p>
               <p className="mt-3">For the purposes of the EU/UK General Data Protection Regulation (&quot;GDPR&quot;) and analogous laws:</p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
@@ -62,7 +62,7 @@ export default function PrivacyPage() {
               <ul className="list-disc pl-6 space-y-2 mt-2">
                 <li>Device and browser metadata (browser type, version, operating system).</li>
                 <li>IP address and approximate geolocation derived from IP.</li>
-                <li>Log data: timestamps, requests, error reports, and counters used to enforce rate limits and the daily 450-message Gmail send cap.</li>
+                <li>Log data: timestamps, requests, error reports, and counters used to enforce rate limits and your plan&apos;s daily sending limit.</li>
                 <li>Cookies and similar technologies on the Site (see Section 11).</li>
               </ul>
 
@@ -81,9 +81,9 @@ export default function PrivacyPage() {
               <h3 className="font-sora font-semibold text-lg text-text-primary mt-6 mb-2">2.4 Information from third-party integrations you authorize</h3>
               <p>When you connect Google services to your {SITE_NAME} account via OAuth 2.0, we receive and store:</p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
-                <li>The access token and refresh token Google returns for the scopes you granted (<code>drive.file</code> and, if you connect Gmail, <code>gmail.send</code>). Tokens are encrypted at rest and used only to fulfill your requests.</li>
-                <li>The ID of the Google Sheet(s) you explicitly select via the Google Picker (or that {SITE_NAME} creates for you), and the Gmail address Google returns at OAuth.</li>
-                <li>For email campaigns you create: templates, campaigns, recipient lists, rendered messages, send-log entries (recipient address, status, Gmail message ID, error if any), and unsubscribe records.</li>
+                <li>The access token and refresh token Google returns for the scope you granted (<code>drive.file</code>). Tokens are encrypted at rest and used only to fulfill your requests. {SITE_NAME} does not request access to your Gmail.</li>
+                <li>The ID of the Google Sheet(s) you explicitly select via the Google Picker (or that {SITE_NAME} creates for you), and the email address Google returns when you sign in.</li>
+                <li>For email campaigns you create: templates, campaigns, recipient lists, rendered messages, send-log entries (recipient address, status, message ID, error if any), whether and when each email was first opened, bounce and spam-complaint records, and unsubscribe records.</li>
               </ul>
 
               <h3 className="font-sora font-semibold text-lg text-text-primary mt-6 mb-2">2.5 Website data</h3>
@@ -94,9 +94,9 @@ export default function PrivacyPage() {
               <h2 className="font-sora font-bold text-xl text-text-primary mb-3">3. How We Use Account Data</h2>
               <p>We use Account Data to:</p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
-                <li>Provide, maintain, and improve the Services you initiate (lead capture to Sheets, sending Gmail campaigns you compose).</li>
+                <li>Provide, maintain, and improve the Services you initiate (lead capture to Sheets, sending the email campaigns you compose).</li>
                 <li>Authenticate you with Google via OAuth 2.0 and administer your account.</li>
-                <li>Enforce rate limits and quotas (e.g., the daily 450-message Gmail send cap) so the Services stay within Google&apos;s API policies.</li>
+                <li>Enforce rate limits and sending limits (e.g., your plan&apos;s daily sending limit), and pause sending from an account whose campaigns draw unusual numbers of bounces or spam complaints, to protect recipients and email deliverability.</li>
                 <li>Honor unsubscribe requests across your future campaigns.</li>
                 <li>Diagnose errors and maintain reliability.</li>
                 <li>Communicate with you about service updates, security alerts, and customer support.</li>
@@ -117,7 +117,7 @@ export default function PrivacyPage() {
                 <li>Transmits Member Data using HTTPS/TLS in transit and stores OAuth tokens encrypted at rest.</li>
               </ul>
               <p className="mt-3">
-                You represent and warrant that you have a lawful basis (such as legitimate interest, your group&apos;s stated rules, or recipient consent) to collect, store, and contact these individuals, and that your use of {SITE_NAME} to email them complies with applicable laws including the CAN-SPAM Act, GDPR, the UK Privacy and Electronic Communications Regulations (PECR), CCPA/CPRA, and CASL. Recipients can opt out at any time using the unsubscribe link in every campaign email; opt-outs are honored automatically across all of your future campaigns.
+                You represent and warrant that you have a lawful basis (such as legitimate interest, your group&apos;s stated rules, or recipient consent) to collect, store, and contact these individuals, and that your use of {SITE_NAME} to email them complies with applicable laws including the CAN-SPAM Act, GDPR, the UK Privacy and Electronic Communications Regulations (PECR), CCPA/CPRA, and CASL. Recipients can opt out at any time using the unsubscribe link in every campaign email; opt-outs, hard bounces and spam complaints are honored automatically across all of your future campaigns.
               </p>
 
               <p className="mt-4 font-semibold text-text-primary">Limited Use of Google API and Chrome Web Store data.</p>
@@ -130,17 +130,15 @@ export default function PrivacyPage() {
               </p>
               <p className="mt-3"><strong className="text-text-primary">Google Drive-specific:</strong></p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
+                <li>You can revoke Google access at any time at <a href="https://myaccount.google.com/permissions" className="text-accent-blue hover:underline" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/permissions</a>.</li>
                 <li>The <code>drive.file</code> scope is per-file: {SITE_NAME} can only open the specific sheet(s) you pick in the Google Picker or that it created for you. It cannot see, list, or read any other file in your Google Drive.</li>
               </ul>
-              <p className="mt-3"><strong className="text-text-primary">Gmail-specific:</strong></p>
+              <p className="mt-3"><strong className="text-text-primary">Campaign email:</strong></p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
-                <li>We never read, list, or modify your existing emails. The <code>gmail.send</code> scope only permits sending new messages.</li>
-                <li>Sent-message metadata (Gmail message ID, timestamp, recipient, subject, status) is logged so we can show you delivery status and handle retries.</li>
-                <li>Email-template body content is stored in our database so the same template can be reused across recipients.</li>
-                <li>You can revoke access at any time at{' '}
-                  <a href="https://myaccount.google.com/permissions" className="text-accent-blue hover:underline" target="_blank" rel="noopener noreferrer">
-                    https://myaccount.google.com/permissions
-                  </a>{' '}or via the Disconnect Google action in the extension. Revocation halts sending immediately.</li>
+                <li>{SITE_NAME} does not connect to, read, list, or send from your Gmail or any other mailbox. Campaign emails are sent by {SITE_NAME} from its own sending domain, showing your name (for example, &quot;Priya via {SITE_NAME}&quot;).</li>
+                <li>Campaign emails contain a small tracking image so we can tell you whether, and when, each email was first opened. Some mail apps block or pre-load these images, so open data is an estimate.</li>
+                <li>Replies to a campaign email go to a {SITE_NAME} reply address, which forwards them to your account email so the follow-up sequence can stop. We record that a reply arrived; we do not store the content of replies.</li>
+                <li>Sent-message metadata (message ID, timestamp, recipient, subject, status) is logged so we can show you delivery status.</li>
               </ul>
             </section>
 
@@ -148,9 +146,9 @@ export default function PrivacyPage() {
               <h2 className="font-sora font-bold text-xl text-text-primary mb-3">5. How We Share Information</h2>
               <p>We share information only as follows:</p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
-                <li><strong>To Google, on your explicit instruction</strong> — to write rows to <em>your</em> Google Sheet, or to send an email from <em>your</em> Gmail account to a recipient <em>you</em> specified in a campaign.</li>
-                <li><strong>To the email recipient&apos;s mail provider</strong> — when you send a campaign, the message is delivered to the recipient&apos;s inbox via Gmail, the same way any email from you reaches them.</li>
-                <li><strong>Service providers (sub-processors) strictly necessary to run the Services</strong> — MongoDB Atlas (managed database hosting), Render (application hosting), and the Redis provider used for our outbound mail queue. These vendors process data only as our service providers, under contractual confidentiality, and never for their own purposes.</li>
+                <li><strong>To Google, on your explicit instruction</strong> — to write rows to <em>your</em> Google Sheet.</li>
+                <li><strong>To the email recipient&apos;s mail provider</strong> — when you send a campaign, the message is delivered to the recipient&apos;s inbox.</li>
+                <li><strong>Service providers (sub-processors) strictly necessary to run the Services</strong> — MongoDB Atlas (managed database hosting), Railway (application hosting), an email sending service (delivering campaign emails, open tracking, and reply and unsubscribe processing), Vercel (website hosting), and Stripe (card payments). These vendors process data only as our service providers, under contractual confidentiality, and never for their own purposes.</li>
                 <li><strong>Legal compliance</strong> — to comply with applicable law, lawful requests by public authorities, court orders, or to protect our or others&apos; rights, property, or safety.</li>
                 <li><strong>Business transfers</strong> — in connection with a merger, acquisition, financing, reorganization, or sale of assets, with notice to you and an opportunity to object where required by law.</li>
                 <li><strong>With your consent</strong>.</li>

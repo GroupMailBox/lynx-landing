@@ -252,7 +252,7 @@ export default function MembershipQuestionsArticle() {
       </ol>
       <p>
         GroupMailBox does these three steps for you: it captures each request and its answers as you review them, adds them
-        to your Google Sheet, and sends a welcome email plus a few follow-ups from your own Gmail, stopping as soon as
+        to your Google Sheet, and sends a welcome email plus a few follow-ups, stopping as soon as
         someone replies. See <Link href="/how-it-works/">how it works</Link>, or compare it with{' '}
         <Link href="/compare/groupboss-alternative/">Groupboss</Link> and{' '}
         <Link href="/compare/groupleads-alternative/">Group Leads</Link>.

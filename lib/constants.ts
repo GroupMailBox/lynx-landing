@@ -1,7 +1,7 @@
 export const SITE_NAME = 'GroupMailBox';
 export const SITE_TAGLINE = 'Turn Facebook Group Members into Customers';
 export const SITE_DESCRIPTION =
-  'GroupMailBox captures every Facebook Group member request, syncs it to Google Sheets, and follows up from your own Gmail until they reply. Free to install.';
+  'GroupMailBox captures every Facebook Group member request, syncs it to Google Sheets, and follows up by email until they reply. Free to install.';
 export const SITE_URL = 'https://groupmailbox.com';
 export const CHROME_STORE_URL =
   'https://chromewebstore.google.com/detail/groupmailbox/nbiakohglicfbphghphgjijckccnknbp';
@@ -75,7 +75,7 @@ export const PRICING_PLANS = [
     ],
     notIncluded: [
       'Auto-approve members',
-      'Gmail campaigns & follow-ups',
+      'Email campaigns & follow-ups',
       'Priority support',
     ],
     cta: 'Install Free',
@@ -94,7 +94,7 @@ export const PRICING_PLANS = [
       'Screening answers capture',
       'Side panel dashboard',
       'Auto-approve members',
-      'Gmail campaigns with follow-ups',
+      'Email campaigns with follow-ups',
       'Stop-on-reply sequences',
     ],
     notIncluded: ['Priority support'],
@@ -114,7 +114,7 @@ export const PRICING_PLANS = [
       'Screening answers capture',
       'Side panel dashboard',
       'Auto-approve members',
-      'Gmail campaigns with follow-ups',
+      'Email campaigns with follow-ups',
       'Stop-on-reply sequences',
       'Priority support',
     ],
@@ -153,12 +153,12 @@ export const FAQ_DATA = [
   {
     question: 'Can GroupMailBox email new members for me?',
     answer:
-      'Yes. Paid plans send personal emails from your own Gmail to the members you capture, with up to 4 automatic follow-ups in the same thread. Follow-ups stop the moment someone replies or unsubscribes.',
+      'Yes. Paid plans send personal emails to the members you capture, with up to 4 automatic follow-ups in the same thread. There is no email account to connect: emails go out with your name, replies arrive in your inbox, and follow-ups stop the moment someone replies or unsubscribes.',
   },
   {
     question: 'Do I still need Mailchimp or Zapier?',
     answer:
-      'Not for following up with new members. GroupMailBox captures the member, adds them to your Google Sheet and runs the Gmail follow-ups itself. You can still export the sheet to any other tool.',
+      'Not for following up with new members. GroupMailBox captures the member, adds them to your Google Sheet and runs the email follow-ups itself. You can still export the sheet to any other tool.',
   },
   {
     question: 'Can GroupMailBox auto-approve member requests?',

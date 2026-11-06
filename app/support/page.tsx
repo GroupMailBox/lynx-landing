@@ -37,7 +37,7 @@ const EXTENDED_FAQ = [
   {
     question: 'Does my computer need to stay on for auto-approve?',
     answer:
-      'Yes. Auto-approve runs in your browser on the member requests page, not on our servers, so Chrome must be open on that page. Gmail follow-ups are different: once a member is in a campaign, emails are sent from our servers on schedule even when your computer is off.',
+      'Yes. Auto-approve runs in your browser on the member requests page, not on our servers, so Chrome must be open on that page. Email follow-ups are different: once a member is in a campaign, emails are sent from our servers on schedule even when your computer is off.',
   },
   {
     question: 'Why was a member\'s email not captured?',

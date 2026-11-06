@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/follow-up-cadence-calculator/' },
   title: { absolute: "Follow-Up Email Cadence Calculator (Free Tool)" },
   description:
-    'Plan a welcome email and follow-ups with real dates. Pick how many follow-ups and how far apart, skip weekends, and get a schedule you can use in Gmail.',
+    'Plan a welcome email and follow-ups with real dates. Pick how many follow-ups and how far apart, skip weekends, and get a schedule you can use in any email tool.',
 };
 
 export default function CadenceCalculatorPage() {
@@ -45,7 +45,7 @@ export default function CadenceCalculatorPage() {
           <p>
             Need words for the emails? Copy our <Link href="/blog/facebook-group-welcome-message-templates/">welcome message templates</Link> or
             read <Link href="/blog/email-facebook-group-members/">how to email your Facebook group members</Link>. GroupMailBox can send this
-            sequence for you from Gmail and stop it automatically when someone replies.
+            sequence for you and stop it automatically when someone replies.
           </p>
         </div>
       </div>

@@ -29,7 +29,7 @@ export function SoftwareApplicationSchema() {
           offerCount: '3',
         },
         description:
-          'Chrome extension that captures Facebook Group member requests and screening answers, syncs them to Google Sheets, and sends Gmail follow-ups that stop when someone replies.',
+          'Chrome extension that captures Facebook Group member requests and screening answers, syncs them to Google Sheets, and sends email follow-ups that stop when someone replies.',
         url: 'https://groupmailbox.com/',
         // No aggregateRating: ratings in markup must match real, visible reviews
         // (the hard-coded 4.8 / 50 did not). Add it only from live Chrome Web Store data.

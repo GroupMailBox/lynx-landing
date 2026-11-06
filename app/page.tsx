@@ -29,8 +29,8 @@ const PILLARS = [
   },
   {
     eyebrow: 'Follow up',
-    title: 'Personal emails from your Gmail, until they reply',
-    body: 'A welcome email plus up to four follow-ups in the same thread. Anyone who replies or unsubscribes drops out automatically.',
+    title: 'Personal emails, until they reply',
+    body: 'A welcome email plus up to four follow-ups in the same thread, sent for you. Replies land in your inbox, and anyone who replies or unsubscribes drops out automatically.',
   },
 ];
 
@@ -38,7 +38,7 @@ const FEATURES = [
   { title: 'One-click capture', body: 'Grab every pending request at once. No copying and pasting from tiny Facebook modals.', d: 'M12 4v16m8-8H4' },
   { title: 'Screening answers', body: 'All three question-and-answer pairs captured with each member, so you know who is a buyer.', d: 'M8 10h8M8 14h5M21 12a9 9 0 1 1-4.2-7.6L21 3v5h-5' },
   { title: 'Google Sheets sync', body: 'Leads arrive in your own spreadsheet with tidy columns, ready for your CRM or team.', d: 'M4 4h16v16H4zM4 10h16M10 4v16' },
-  { title: 'Gmail follow-ups', body: 'Sequences that send from your Gmail at a human pace and stop the moment someone replies.', d: 'M4 6h16v12H4zM4 7l8 6 8-6' },
+  { title: 'Email follow-ups', body: 'Sequences that send at a human pace, can target who opened, and stop the moment someone replies.', d: 'M4 6h16v12H4zM4 7l8 6 8-6' },
   { title: 'Auto-approve', body: 'Approve requests for you with safety delays that look human. Wake up to a bigger group.', d: 'M5 13l4 4L19 7' },
   { title: 'Unsubscribe built in', body: 'Every email carries a one-click unsubscribe, and opted-out people are never emailed again.', d: 'M18.4 5.6 5.6 18.4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z' },
 ];
@@ -47,7 +47,7 @@ const STEPS = [
   { n: '1', title: 'Install the extension', body: 'Add GroupMailBox to Chrome. No account needed to start capturing.' },
   { n: '2', title: 'Open your member requests', body: 'Go to your group admin page as usual. The side panel opens beside it.' },
   { n: '3', title: 'Capture and sync', body: 'New requests are captured and pushed to your Google Sheet in one click.' },
-  { n: '4', title: 'Follow up from Gmail', body: 'Pick a template and a few follow-ups. Replies land in your inbox, as normal.' },
+  { n: '4', title: 'Follow up by email', body: 'Pick a template and a few follow-ups. No email account to connect, and replies land in your inbox.' },
 ];
 
 const COMPARISON = [
@@ -92,7 +92,7 @@ export default function HomePage() {
               className="mb-7 inline-flex items-center gap-2 rounded-full border border-black/[0.08] bg-white px-3 py-1.5 text-xs font-medium text-text-secondary shadow-card hover:border-accent-blue/30"
             >
               <span className="rounded-full bg-accent-blue px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">New</span>
-              Gmail follow-ups that stop on reply
+              Email follow-ups that stop on reply
               <span aria-hidden>→</span>
             </Link>
                       <h1 className="font-sora text-[42px] font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
@@ -100,7 +100,7 @@ export default function HomePage() {
               <span className="text-shimmer">into customers.</span>
             </h1>
                       <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-text-secondary md:text-xl">
-              GroupMailBox captures every member request, syncs it to Google Sheets, and follows up from your own Gmail
+              GroupMailBox captures every member request, syncs it to Google Sheets, and follows up by email
               until they reply. One Chrome extension, no Zapier.
             </p>
                       <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -126,7 +126,7 @@ export default function HomePage() {
           <div className="marquee-track gap-14 pr-14 text-sm font-semibold text-text-muted">
             {[0, 1].map((k) => (
               <div key={k} className="flex shrink-0 items-center gap-14" aria-hidden={k === 1}>
-                {['Facebook Groups', 'Google Sheets', 'Gmail', 'Google Workspace', 'Google Chrome', 'Screening questions', 'Member approvals', 'Follow-up sequences'].map((t) => (
+                {['Facebook Groups', 'Google Sheets', 'Google Chrome', 'Screening questions', 'Member approvals', 'Follow-up sequences'].map((t) => (
                   <span key={t} className="flex items-center gap-2 whitespace-nowrap">
                     <span className="h-1.5 w-1.5 rounded-full bg-accent-blue/50" />
                     {t}

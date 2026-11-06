@@ -5,7 +5,7 @@ import ComparisonPage from '@/components/ComparisonPage';
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/gmass-alternative/' },
   title: { absolute: "GMass Alternative for Facebook Group Follow-ups" },
-  description: "GMass sends mail merges from Gmail. GroupMailBox captures Facebook group members first, then follows up from Gmail until they reply.",
+  description: "GMass sends mail merges from Gmail. GroupMailBox captures Facebook group members first, then follows up by email until they reply.",
 };
 
 export default function GmassAlternativePage() {
@@ -13,13 +13,13 @@ export default function GmassAlternativePage() {
     <ComparisonPage
       competitorName="GMass"
       competitorSlug="gmass"
-      intro="GMass is a powerful, general-purpose mail merge for Gmail. If the people you email are new members of your Facebook group, GroupMailBox does the whole job in one place: it captures each member and their answers, then follows up from your Gmail until they reply."
+      intro="GMass is a powerful, general-purpose mail merge for Gmail. If the people you email are new members of your Facebook group, GroupMailBox does the whole job in one place: it captures each member and their answers, then follows up by email until they reply, with no email account to connect."
       comparison={[
         { feature: 'Built for', gmb: 'Facebook group admins', competitor: 'Any Gmail mail merge' },
         { feature: 'Captures Facebook group members and answers', gmb: 'Yes', competitor: 'No' },
         { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: 'No (trial only since Dec 2023)' },
         { feature: 'Follow-ups that stop on reply', gmb: 'Yes', competitor: 'Yes, on Premium and above' },
-        { feature: 'Sends from your own Gmail', gmb: 'Yes', competitor: 'Yes' },
+        { feature: 'Sends from your own Gmail', gmb: 'No: sent for you, replies reach your inbox', competitor: 'Yes' },
         { feature: 'Large campaigns and advanced reporting', gmb: 'Not the focus', competitor: 'Yes' },
       ]}
       gmbPros={[

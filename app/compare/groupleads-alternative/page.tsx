@@ -13,7 +13,7 @@ export default function GroupLeadsAlternativePage() {
     <ComparisonPage
       competitorName="GroupLeads"
       competitorSlug="groupleads"
-      intro="Considering a Group Leads alternative? GroupMailBox captures member requests and answers into Google Sheets like Group Leads does, then follows up from your own Gmail until people reply, with a free plan to start."
+      intro="Considering a Group Leads alternative? GroupMailBox captures member requests and answers into Google Sheets like Group Leads does, then follows up by email until people reply, with a free plan to start."
       comparison={[
         { feature: 'Starting price', gmb: 'Free plan', competitor: '$27/mo (2 groups), 7-day trial' },
         { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: 'No' },
@@ -21,12 +21,12 @@ export default function GroupLeadsAlternativePage() {
         { feature: 'Screening answers', gmb: 'All 3 Q&A', competitor: 'Yes' },
         { feature: 'Auto-approve', gmb: 'Yes (Pro plan)', competitor: 'Yes' },
         { feature: 'Email marketing integrations', gmb: 'Google Sheets export', competitor: '29 listed (Kartra, Keap, AWeber…)' },
-        { feature: 'Sends follow-up emails itself', gmb: 'Yes, from your Gmail, stops on reply', competitor: 'No, hands leads to your email tool' },
+        { feature: 'Sends follow-up emails itself', gmb: 'Yes, built in, stops on reply', competitor: 'No, hands leads to your email tool' },
         { feature: 'Messenger welcome messages', gmb: 'No', competitor: 'Yes' },
       ]}
       gmbPros={[
         'Free plan for one group',
-        'Gmail follow-ups that stop when someone replies, no email tool needed',
+        'Email follow-ups that stop when someone replies, no email tool needed',
         'Side panel next to your member requests',
         'Native Google Sheets sync',
       ]}
@@ -48,11 +48,11 @@ export default function GroupLeadsAlternativePage() {
       faq={[
         {
           question: 'Is GroupMailBox a good GroupLeads alternative?',
-          answer: 'Yes, for capturing member requests and screening answers into Google Sheets. The main differences: GroupMailBox has a free plan and sends follow-up emails from your Gmail itself, while Group Leads connects to many email-marketing tools and can send Messenger welcome messages.',
+          answer: 'Yes, for capturing member requests and screening answers into Google Sheets. The main differences: GroupMailBox has a free plan and sends follow-up emails itself, while Group Leads connects to many email-marketing tools and can send Messenger welcome messages.',
         },
         {
           question: 'How does GroupMailBox compare to GroupLeads on pricing?',
-          answer: 'GroupMailBox starts free (1 group, 100 leads/month). Group Leads starts at $27/month for 2 groups with a 7-day trial (checked 25 Oct 2026). GroupMailBox Pro is $29/month for 5 groups and includes Gmail follow-ups, so you may not need a separate email tool.',
+          answer: 'GroupMailBox starts free (1 group, 100 leads/month). Group Leads starts at $27/month for 2 groups with a 7-day trial (checked 25 Oct 2026). GroupMailBox Pro is $29/month for 5 groups and includes email follow-ups, so you may not need a separate email tool.',
         },
         {
           question: 'Does GroupMailBox capture screening answers like GroupLeads?',

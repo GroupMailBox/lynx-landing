@@ -5,7 +5,7 @@ import ComparisonPage from '@/components/ComparisonPage';
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/groupkit-alternative/' },
   title: { absolute: "GroupKit Alternative: GroupKit Shut Down (2026)" },
-  description: "GroupKit shut down on 23 Oct 2026. Move to GroupMailBox in minutes: capture member requests, sync to Sheets and follow up from Gmail.",
+  description: "GroupKit shut down on 23 Oct 2026. Move to GroupMailBox in minutes: capture member requests, sync to Sheets and follow up by email.",
 };
 
 export default function GroupKitAlternativePage() {
@@ -19,13 +19,13 @@ export default function GroupKitAlternativePage() {
         { feature: 'Capture member requests + answers', gmb: 'Yes', competitor: 'No longer available' },
         { feature: 'Google Sheets sync', gmb: 'Native', competitor: 'No longer available' },
         { feature: 'Auto-approve', gmb: 'Yes (Pro plan)', competitor: 'No longer available' },
-        { feature: 'Follow up by email', gmb: 'From your Gmail, stops on reply', competitor: 'No longer available' },
+        { feature: 'Follow up by email', gmb: 'Built in, stops on reply', competitor: 'No longer available' },
         { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: '—' },
       ]}
       gmbPros={[
         'Set up in about five minutes: install, open member requests, connect Google Sheets',
         'Free plan to start capturing today',
-        'Gmail follow-ups, so you can email new members without another tool',
+        'Built-in email follow-ups, so you can email new members without another tool',
         'Your leads live in your own Google Sheet, so you always keep a copy',
       ]}
       competitorPros={['Served Facebook group admins for nearly seven years']}
@@ -42,7 +42,7 @@ export default function GroupKitAlternativePage() {
         },
         {
           question: 'What are the alternatives to GroupKit?',
-          answer: 'GroupKit itself pointed customers to Group Leads, Groupboss and GroupTrack CRM. GroupMailBox is another option, and the only one of these that sends follow-up emails from your own Gmail and stops when someone replies.',
+          answer: 'GroupKit itself pointed customers to Group Leads, Groupboss and GroupTrack CRM. GroupMailBox is another option, and the only one of these that sends follow-up emails itself and stops when someone replies.',
         },
       ]}
     />

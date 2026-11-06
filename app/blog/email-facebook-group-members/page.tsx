@@ -4,12 +4,12 @@ import Article from '@/components/blog/Article';
 
 const TITLE = 'How to Email Your Facebook Group Members (Without Spamming Them)';
 const DESCRIPTION =
-  'Facebook has no way to email every member, so here is the method that works: collect emails with consent at join time, then send a short welcome sequence from your own Gmail that stops when people reply. Includes 3 templates.';
+  'Facebook has no way to email every member, so here is the method that works: collect emails with consent at join time, then send a short, personal welcome sequence that stops when people reply. Includes 3 templates.';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/email-facebook-group-members/' },
   title: { absolute: "How to Email Facebook Group Members (Without Spam)" },
-  description: "Facebook can’t email your members. Collect emails with consent at join time, then follow up from Gmail until they reply. 3 templates inside.",
+  description: "Facebook can’t email your members. Collect emails with consent at join time, then follow up by email until they reply. 3 templates inside.",
   openGraph: { type: 'article', title: TITLE, description: DESCRIPTION, url: '/blog/email-facebook-group-members/', images: ['/og/email-facebook-group-members.png'] },
 };
 
@@ -64,7 +64,7 @@ export default function EmailMembersArticle() {
 
       <div className="callout">
         <strong>The method in one line:</strong> ask for an email with clear consent when people join, then send a short,
-        personal welcome sequence from your own Gmail that stops the moment someone replies.
+        personal welcome sequence that stops the moment someone replies.
       </div>
 
       <h2>Step 1: Collect emails with consent at join time</h2>
@@ -82,9 +82,9 @@ export default function EmailMembersArticle() {
         <Link href="/blog/export-facebook-group-members/">exporting group members to Google Sheets</Link> covers the setup.
       </p>
 
-      <h2>Step 3: Send a short welcome sequence from Gmail</h2>
+      <h2>Step 3: Send a short welcome sequence</h2>
       <p>
-        You do not need a newsletter platform to welcome new members. A few plain, personal emails sent from your own Gmail
+        You do not need a newsletter platform to welcome new members. A few plain, personal emails
         land like a message from a person, because they are. Three emails is enough:
       </p>
       {SEQUENCE.map((e) => (
@@ -102,11 +102,11 @@ export default function EmailMembersArticle() {
         automatic “just checking in” after they have already answered.
       </p>
 
-      <h2>Step 4: Stay within Gmail&apos;s limits and keep a good reputation</h2>
+      <h2>Step 4: Keep a good sending reputation</h2>
       <ul>
         <li>
-          <strong>Mind the daily limit.</strong> Google Workspace accounts can send up to 2,000 messages a day; personal
-          Gmail accounts have a lower limit. A welcome sequence for new members rarely comes close, but pace large sends.
+          <strong>Pace large sends.</strong> A welcome sequence for new members rarely sends many emails at once, but if you
+          add a large backlog, send it over a few days rather than all at once.
         </li>
         <li>
           <strong>Include an unsubscribe link</strong> in every email and honour it straight away.
@@ -138,7 +138,7 @@ export default function EmailMembersArticle() {
           <tr>
             <td>Welcome email</td>
             <td>Write and send each one</td>
-            <td>Personalised from the sheet, sent from your Gmail</td>
+            <td>Personalised from the sheet, with your name on it</td>
           </tr>
           <tr>
             <td>Follow-ups</td>
@@ -159,7 +159,7 @@ export default function EmailMembersArticle() {
       </table>
       <p>
         Other Facebook group tools stop at the spreadsheet and send you to a separate email marketing tool. GroupMailBox
-        does the follow-up itself, from the Gmail account you already use. Compare it with{' '}
+        does the follow-up itself, so you do not need a separate email tool. Compare it with{' '}
         <Link href="/compare/groupboss-alternative/">Groupboss</Link> or{' '}
         <Link href="/compare/groupleads-alternative/">Group Leads</Link>, or see{' '}
         <Link href="/pricing/">pricing</Link>.
@@ -174,7 +174,7 @@ export default function EmailMembersArticle() {
       <h3>Do I need Mailchimp or another email marketing tool?</h3>
       <p>
         Not for welcoming and following up with new members. A newsletter tool makes sense when you send designed campaigns
-        to thousands of people; personal one-to-one follow-ups work better from Gmail.
+        to thousands of people; personal one-to-one follow-ups work better as plain, personal emails.
       </p>
       <h3>How soon should I send the first email?</h3>
       <p>Within a day of approving someone, while they still remember joining and why.</p>

@@ -6,7 +6,7 @@ import ComparisonPage from '@/components/ComparisonPage';
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/grouphunter-alternative/' },
   title: { absolute: "GroupHunter Alternative: GroupHunter Is Gone" },
-  description: "GroupHunter’s site no longer hosts the tool. GroupMailBox captures requests, auto-approves safely and follows up from Gmail. Free plan.",
+  description: "GroupHunter’s site no longer hosts the tool. GroupMailBox captures requests, auto-approves safely and follows up by email. Free plan.",
 };
 
 export default function GroupHunterAlternativePage() {
@@ -20,13 +20,13 @@ export default function GroupHunterAlternativePage() {
         { feature: 'Capture member requests + answers', gmb: 'Yes', competitor: 'No longer available' },
         { feature: 'Auto-approve', gmb: 'Yes, at a safe pace (Pro)', competitor: 'No longer available' },
         { feature: 'Where leads go', gmb: 'Your Google Sheet', competitor: 'No longer available' },
-        { feature: 'Follow-up emails', gmb: 'From your Gmail, stops on reply', competitor: 'No longer available' },
+        { feature: 'Follow-up emails', gmb: 'Built in, stops on reply', competitor: 'No longer available' },
         { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: '—' },
       ]}
       gmbPros={[
         'Same core job: capture, approve, keep every lead',
         'Leads saved to a Google Sheet you own, so a tool shutting down never takes your list with it',
-        'Welcome email and follow-ups from your Gmail',
+        'Welcome email and follow-ups, sent for you',
         'Free plan to start today',
       ]}
       competitorPros={['Combined capture, approval and CRM sync in one tool']}

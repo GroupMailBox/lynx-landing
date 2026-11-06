@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/how-it-works/" },
   title: { absolute: "How GroupMailBox Works: 5 Steps | GroupMailBox" },
   description:
-    "Sign in with Google, capture Facebook group requests and answers, push to Sheets, approve safely and follow up from Gmail until they reply.",
+    "Sign in with Google, capture Facebook group requests and answers, push to Sheets, approve safely and follow up by email until they reply.",
 };
 
 type Step = {
@@ -36,7 +36,7 @@ const STEPS: Step[] = [
     details: [
       "Free to install from the Chrome Web Store",
       "Access to the one sheet you choose, never the rest of your Drive",
-      "Works with Gmail and Google Workspace accounts",
+      "Sign in with any Google account",
     ],
     visual: (
       <PanelShot
@@ -97,11 +97,11 @@ const STEPS: Step[] = [
   },
   {
     step: "05",
-    title: "Follow up from Gmail until they reply",
+    title: "Follow up by email until they reply",
     description:
       "Send a welcome email to members who shared their address, then up to four follow-ups in the same thread. Each one stops the moment someone replies or unsubscribes, and you can see every step’s results.",
     details: [
-      "Sent from your own Gmail, so it lands like a personal note",
+      "No email account to connect: emails go out with your name and replies reach your inbox",
       "Stops on reply, unsubscribe or bounce",
       "Unsubscribe link in every email",
     ],

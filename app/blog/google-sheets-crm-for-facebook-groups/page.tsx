@@ -87,7 +87,7 @@ export default function SheetsCrmArticle() {
       <p>
         The weak point of a spreadsheet CRM is data entry. Copying each request and its answers by hand works for a few people
         a week. GroupMailBox fills the sheet for you as you review member requests, and when you send{' '}
-        <Link href="/blog/email-facebook-group-members/">welcome emails from Gmail</Link>, it tracks who replied, who is still in the sequence and who unsubscribed in the side panel, so you only update the Status column for people who need a personal touch.
+        <Link href="/blog/email-facebook-group-members/">welcome emails</Link>, it tracks who replied, who is still in the sequence and who unsubscribed in the side panel, so you only update the Status column for people who need a personal touch.
       </p>
 
       <h2>When you actually need a paid CRM</h2>

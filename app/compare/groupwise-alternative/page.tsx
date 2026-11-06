@@ -6,7 +6,7 @@ import ComparisonPage from '@/components/ComparisonPage';
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/groupwise-alternative/' },
   title: { absolute: "Groupwise Alternative for Facebook Group Admins" },
-  description: "Groupwise hasn’t been updated since June 2024. GroupMailBox captures requests, syncs to Sheets, auto-approves and follows up from Gmail.",
+  description: "Groupwise hasn’t been updated since June 2024. GroupMailBox captures requests, syncs to Sheets, auto-approves and follows up by email.",
 };
 
 export default function GroupwiseAlternativePage() {
@@ -20,12 +20,12 @@ export default function GroupwiseAlternativePage() {
         { feature: 'Capture requests + answers', gmb: 'Yes', competitor: 'Yes' },
         { feature: 'Google Sheets sync', gmb: 'Native', competitor: 'Not listed' },
         { feature: 'Auto-approve', gmb: 'Yes, at a safe pace (Pro)', competitor: 'Not listed' },
-        { feature: 'Follow-up emails', gmb: 'From your Gmail, stops on reply', competitor: 'Not listed' },
+        { feature: 'Follow-up emails', gmb: 'Built in, stops on reply', competitor: 'Not listed' },
         { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: '—' },
       ]}
       gmbPros={[
         'Actively maintained as Facebook changes its pages',
-        'Sheets sync, auto-approve and Gmail follow-ups in one place',
+        'Sheets sync, auto-approve and email follow-ups in one place',
         'Finds emails even inside a sentence',
         'Free plan for one group',
       ]}

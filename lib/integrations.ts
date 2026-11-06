@@ -5,8 +5,7 @@ export interface Integration { name: string; category: string; status: Status; b
 // Only 'live' entries are real integrations today. 'request' cards collect demand; never mark one live until it ships.
 export const INTEGRATIONS: Integration[] = [
   { name: 'Google Sheets', category: 'Spreadsheets', status: 'live', initials: 'GS', color: 'bg-[#34A853]', logo: '/integrations/googlesheets.svg', body: 'Every member request and its answers lands in your own sheet, one row per person.' },
-  { name: 'Gmail', category: 'Email', status: 'live', initials: 'GM', color: 'bg-[#EA4335]', logo: '/integrations/gmail.svg', body: 'Welcome emails and follow-ups sent from your own Gmail, stopping when someone replies.' },
-  { name: 'Google Workspace', category: 'Email', status: 'live', initials: 'GW', color: 'bg-[#4285F4]', body: 'Works with business Gmail accounts on Google Workspace.' },
+  { name: 'Built-in email', category: 'Email', status: 'live', initials: '@', color: 'bg-[#4F8CFF]', body: 'Welcome emails and follow-ups sent for you, with no email account to connect. Replies arrive in your inbox and follow-ups stop.' },
   { name: 'Google Chrome', category: 'Browser', status: 'live', initials: 'CH', color: 'bg-[#4285F4]', logo: '/integrations/googlechrome.svg', body: 'Runs as a Chrome extension with a side panel next to your member requests.' },
   { name: 'CSV / Excel export', category: 'Spreadsheets', status: 'live', initials: 'CSV', color: 'bg-[#217346]', body: 'Download your sheet as CSV or Excel to import anywhere else.' },
   { name: 'Mailchimp', category: 'Email marketing', status: 'request', initials: 'MC', color: 'bg-[#FFE01B]', logo: '/integrations/mailchimp.svg', body: 'Send captured members straight to a Mailchimp audience.' },

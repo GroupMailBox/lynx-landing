@@ -36,7 +36,7 @@ export default function FlowMock() {
     <div
       className="relative mx-auto grid w-full max-w-5xl gap-4 md:grid-cols-3 md:gap-10"
       role="img"
-      aria-label="Example: a Facebook group member request is captured, added to a Google Sheet, then followed up in Gmail until they reply"
+      aria-label="Example: a Facebook group member request is captured, added to a Google Sheet, then followed up by email until they reply"
     >
       {/* Light beams flowing between the three panels (desktop only) */}
       <svg className="pointer-events-none absolute inset-0 -z-0 hidden h-full w-full md:block" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden>
@@ -113,10 +113,10 @@ export default function FlowMock() {
         </table>
       </Panel>
 
-      {/* 3. Gmail thread */}
+      {/* 3. Email thread */}
       <Panel
         step="3 · Follow up"
-        title="Gmail · same thread"
+        title="Email · same thread"
         icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5Z" /></svg>}
       >
         <div className="space-y-2.5 p-4 text-[11px]">

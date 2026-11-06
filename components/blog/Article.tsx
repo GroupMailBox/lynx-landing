@@ -62,7 +62,7 @@ export default function Article({ slug, title, description, category, published,
         <aside className="mt-14 rounded-2xl bg-ink p-8 text-white md:p-10">
           <p className="font-sora text-2xl font-bold">Capture every answer automatically</p>
           <p className="mt-2 text-white/70">
-            GroupMailBox saves each member request and its answers to Google Sheets, then follows up from your Gmail until they reply.
+            GroupMailBox saves each member request and its answers to Google Sheets, then follows up by email until they reply.
           </p>
           <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex rounded-xl bg-white px-5 py-3 font-semibold text-ink">
             Add to Chrome, it&apos;s free

@@ -34,7 +34,7 @@ export default function AffiliatesPage() {
           </h1>
           <p className="mt-5 text-lg text-text-secondary">
             Your audience runs Facebook groups. GroupMailBox helps them capture every new member, keep the list in Google Sheets and
-            follow up from Gmail. You earn 40% of every payment for 12 months.
+            follow up by email. You earn 40% of every payment for 12 months.
           </p>
           <div className="mt-8 flex justify-center">
             <Button href={mailto} size="lg" external>Apply to become an affiliate</Button>
@@ -64,7 +64,7 @@ export default function AffiliatesPage() {
             <h2 className="font-sora text-2xl font-bold">Why it is easy to recommend</h2>
             <ul className="mt-5 space-y-3 text-text-secondary">
               <li>A free plan, so your audience can try it with no card.</li>
-              <li>It follows up from the admin&apos;s own Gmail and stops on reply, where other group tools hand leads to a separate email platform.</li>
+              <li>It sends the follow-up emails itself and stops on reply, where other group tools hand leads to a separate email platform.</li>
               <li>A clear before and after: no more copy-pasting member answers.</li>
             </ul>
             <p className="mt-6 text-sm text-text-muted">

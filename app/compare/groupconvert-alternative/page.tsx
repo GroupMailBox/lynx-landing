@@ -4,7 +4,7 @@ import ComparisonPage from '@/components/ComparisonPage';
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/groupconvert-alternative/' },
   title: { absolute: "GroupConvert Alternative | GroupMailBox" },
-  description: "Compare GroupConvert and GroupMailBox for Facebook group lead capture, Google Sheets, auto-approve and Gmail follow-ups.",
+  description: "Compare GroupConvert and GroupMailBox for Facebook group lead capture, Google Sheets, auto-approve and email follow-ups.",
 };
 
 export default function GroupConvertAlternativePage() {
@@ -12,18 +12,18 @@ export default function GroupConvertAlternativePage() {
     <ComparisonPage
       competitorName="GroupConvert"
       competitorSlug="groupconvert"
-      intro="Looking for a GroupConvert alternative? GroupMailBox is a self-serve option with a free plan and built-in Gmail follow-ups that stop when someone replies."
+      intro="Looking for a GroupConvert alternative? GroupMailBox is a self-serve option with a free plan and built-in email follow-ups that stop when someone replies."
       comparison={[
         { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: 'No' },
         { feature: 'Google Sheets', gmb: 'Native', competitor: 'See their site' },
         { feature: 'Screening answers', gmb: 'All 3 Q&A', competitor: 'Yes' },
         { feature: 'Auto-approve', gmb: 'Yes (Pro plan)', competitor: 'Yes' },
-        { feature: 'Sends follow-up emails from your Gmail', gmb: 'Yes, stops on reply', competitor: 'No' },
+        { feature: 'Sends follow-up emails itself', gmb: 'Yes, stops on reply', competitor: 'No' },
         { feature: 'Sold with', gmb: 'Self-serve plans', competitor: 'A coaching program (Kim Dang)' },
       ]}
       gmbPros={[
         'Free plan for one group',
-        'Gmail follow-ups that stop when someone replies',
+        'Email follow-ups that stop when someone replies',
         'Self-serve: no course or coaching needed to get value',
         'Native Google Sheets sync',
       ]}
@@ -39,12 +39,12 @@ export default function GroupConvertAlternativePage() {
       competitorCons={[
         'No free plan',
         'Best value if you also want the coaching programme',
-        'Does not send follow-up emails from your Gmail',
+        'Does not send follow-up emails',
       ]}
       faq={[
         {
           question: 'Is GroupMailBox better than GroupConvert?',
-          answer: 'They suit different people. GroupConvert is highly rated and comes with its founder’s coaching programme. GroupMailBox is self-serve, has a free plan, and follows up with new members from your own Gmail, stopping when they reply.',
+          answer: 'They suit different people. GroupConvert is highly rated and comes with its founder’s coaching programme. GroupMailBox is self-serve, has a free plan, and follows up with new members by email, stopping when they reply.',
         },
         {
           question: 'Can I switch from GroupConvert to GroupMailBox?',

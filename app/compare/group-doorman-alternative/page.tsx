@@ -6,8 +6,8 @@ import ComparisonPage from '@/components/ComparisonPage';
 // no public prices; 14-day trial, 30-day money-back.
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/group-doorman-alternative/' },
-  title: { absolute: "Group Doorman Alternative with Gmail Follow-ups" },
-  description: "Compare Group Doorman and GroupMailBox: public prices, a free plan, and follow-ups sent from your Gmail that stop when members reply.",
+  title: { absolute: "Group Doorman Alternative with Built-in Email Follow-ups" },
+  description: "Compare Group Doorman and GroupMailBox: public prices, a free plan, and built-in email follow-ups that stop when members reply.",
 };
 
 export default function GroupDoormanAlternativePage() {
@@ -15,17 +15,17 @@ export default function GroupDoormanAlternativePage() {
     <ComparisonPage
       competitorName="Group Doorman"
       competitorSlug="group-doorman"
-      intro="Group Doorman collects membership answers, approves members by rule and sends them to Google Sheets or one of many email platforms, with email verification built in. GroupMailBox does the capture and approval too, and then follows up from your own Gmail, so you do not need a separate email platform."
+      intro="Group Doorman collects membership answers, approves members by rule and sends them to Google Sheets or one of many email platforms, with email verification built in. GroupMailBox does the capture and approval too, and then sends the follow-up emails itself, so you do not need a separate email platform."
       comparison={[
         { feature: 'Capture requests + answers', gmb: 'Yes', competitor: 'Yes' },
         { feature: 'Approval', gmb: 'Auto-approve at a safe pace (Pro)', competitor: 'Rules (all, some or all questions answered) with an autorun schedule' },
         { feature: 'Google Sheets', gmb: 'Native', competitor: 'Yes' },
-        { feature: 'Email platforms', gmb: 'Sends from your Gmail, stops on reply', competitor: '20+ platforms such as Mailchimp, ActiveCampaign, ConvertKit' },
+        { feature: 'Email platforms', gmb: 'Sends the emails itself, stops on reply', competitor: '20+ platforms such as Mailchimp, ActiveCampaign, ConvertKit' },
         { feature: 'Public pricing', gmb: 'Free, $29 and $99 a month', competitor: 'Not shown on its site (14-day trial)' },
         { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: 'Trial only' },
       ]}
       gmbPros={[
-        'No email platform needed: welcome and follow-ups go from your Gmail',
+        'No email platform needed: GroupMailBox sends the welcome and follow-ups',
         'Follow-ups stop automatically when a member replies',
         'Prices on the page, plus a free plan',
         'Finds emails even inside a sentence',
@@ -36,7 +36,7 @@ export default function GroupDoormanAlternativePage() {
       faq={[
         {
           question: 'What is the difference between Group Doorman and GroupMailBox?',
-          answer: 'Both capture member answers and approve members. Group Doorman hands the email address to your email platform. GroupMailBox sends the welcome email and follow-ups itself, from your Gmail, and stops when someone replies.',
+          answer: 'Both capture member answers and approve members. Group Doorman hands the email address to your email platform. GroupMailBox sends the welcome email and follow-ups itself, and stops when someone replies.',
         },
         {
           question: 'How much does Group Doorman cost?',

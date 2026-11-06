@@ -10,7 +10,7 @@ import { LayerStack } from '@/components/visuals/Scene3D';
 export const metadata: Metadata = {
   alternates: { canonical: '/features/' },
   title: { absolute: "Features: Capture, Sheets, Auto-Approve, Follow-ups" },
-  description: "Capture Facebook group requests and answers, sync to Google Sheets, auto-approve safely and send Gmail follow-ups that stop on reply.",
+  description: "Capture Facebook group requests and answers, sync to Google Sheets, auto-approve safely and send email follow-ups that stop on reply.",
 };
 
 // Each feature pairs accurate copy with a real side panel screenshot (fictional sample data) or a drawn illustration.
@@ -47,18 +47,18 @@ const FEATURES: { title: string; description: string; bullets: string[]; visual:
     ),
   },
   {
-    title: 'Gmail follow-ups that stop when they reply',
+    title: 'Email follow-ups that stop when they reply',
     description:
-      'Send a welcome email to members who shared their address, then up to four follow-ups in the same thread, from your own Gmail. The sequence stops by itself when someone replies, unsubscribes or bounces.',
+      'Send a welcome email to members who shared their address, then up to four follow-ups in the same thread, sent for you. The sequence stops by itself when someone replies, unsubscribes or bounces.',
     bullets: [
-      'Sent from your Gmail or Google Workspace account',
-      'Follow-ups land in the same thread, like a personal note',
+      'No email account to connect: emails go out with your name',
+      'Replies land in your inbox, and follow-ups can target who opened',
       'Stops on reply, unsubscribe or bounce',
       'Unsubscribe link in every email; skips addresses with typo\u2019d domains',
     ],
     visual: (
       <div className="grid items-start gap-6 sm:grid-cols-2">
-        <PanelShot src="/features/campaigns.png" alt="Campaigns tab with Gmail connected, welcome and follow-up templates, and running campaigns" width={800} height={1520} />
+        <PanelShot src="/features/campaigns.png" alt="Campaigns tab with welcome and follow-up templates, and running campaigns" width={800} height={1520} />
         <div className="sm:pt-16">
           <ThreadVisual />
         </div>
@@ -98,7 +98,7 @@ export default function FeaturesPage() {
       <PageHero
         eyebrow="Features"
         title={<>Everything between a join request <span className="text-shimmer">and a reply</span></>}
-        subtitle="Capture every request and answer, keep them in your own Google Sheet, approve members safely and follow up from Gmail. Screens below are the real extension with sample data."
+        subtitle="Capture every request and answer, keep them in your own Google Sheet, approve members safely and follow up by email. Screens below are the real extension with sample data."
         actions={
           <>
             <Button href={CHROME_STORE_URL} size="lg" external>Add to Chrome, it&apos;s free</Button>
@@ -176,7 +176,7 @@ export default function FeaturesPage() {
               Ready to Try These <span className="text-gradient-teal">Features?</span>
             </h2>
             <p className="text-text-secondary text-lg mb-8">
-              Free for one group. Upgrade when you want auto-approve and Gmail follow-ups.
+              Free for one group. Upgrade when you want auto-approve and email follow-ups.
             </p>
             <Button href={CHROME_STORE_URL} size="lg" external>
               Install Free for Chrome

@@ -7,7 +7,7 @@ import ComparisonPage from '@/components/ComparisonPage';
 export const metadata: Metadata = {
   alternates: { canonical: '/compare/groups-pro-alternative/' },
   title: { absolute: "Groups Pro Alternative for Facebook Group Admins" },
-  description: "Groups Pro’s deal is sold out and its Chrome listing is gone. GroupMailBox approves members, saves answers and follows up from Gmail.",
+  description: "Groups Pro’s deal is sold out and its Chrome listing is gone. GroupMailBox approves members, saves answers and follows up by email.",
 };
 
 export default function GroupsProAlternativePage() {
@@ -20,12 +20,12 @@ export default function GroupsProAlternativePage() {
         { feature: 'Status (checked 30 Oct 2026)', gmb: 'Active and updated', competitor: 'Chrome listing empty, AppSumo deal sold out' },
         { feature: 'Approve members who answered', gmb: 'Yes, at a safe pace (Pro)', competitor: 'Yes (all, answered all questions, or a pre-approved list)' },
         { feature: 'Save answers', gmb: 'Every answer, to your Google Sheet', competitor: 'Name and email to your autoresponder' },
-        { feature: 'Welcome and follow-up emails', gmb: 'Built in, from your Gmail, stops on reply', competitor: 'Through your autoresponder' },
+        { feature: 'Welcome and follow-up emails', gmb: 'Built in, stops on reply', competitor: 'Through your autoresponder' },
         { feature: 'Needs another email tool', gmb: 'No', competitor: 'Yes (ActiveCampaign, ConvertKit, HighLevel or Zapier)' },
         { feature: 'Free plan', gmb: 'Yes, 1 group', competitor: '—' },
       ]}
       gmbPros={[
-        'Follow-ups sent from your own Gmail, so no autoresponder subscription is needed',
+        'Follow-ups are sent for you, so no autoresponder subscription is needed',
         'Every screening answer saved, not only name and email',
         'Approves at a human pace and pauses if Facebook pushes back',
         'Your list lives in your Google Sheet, so you can export it anywhere',
@@ -44,7 +44,7 @@ export default function GroupsProAlternativePage() {
         },
         {
           question: 'Can I still send members to my autoresponder?',
-          answer: 'Yes. Your Google Sheet works with any tool that imports from Sheets or CSV. Many admins find they no longer need the autoresponder, because GroupMailBox sends the welcome email and follow-ups from Gmail.',
+          answer: 'Yes. Your Google Sheet works with any tool that imports from Sheets or CSV. Many admins find they no longer need the autoresponder, because GroupMailBox sends the welcome email and follow-ups itself.',
         },
       ]}
     />
