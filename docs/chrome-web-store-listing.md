@@ -1,50 +1,58 @@
-# Chrome Web Store listing (proposed, updated 30 Oct 2026)
+# Chrome Web Store listing (updated 10 Nov 2026)
+
+Rejected on 6 Nov 2026 for keyword spam (an audience list: "course creators, community builders, coaches, ..."). Do not add lists of audiences, competitor names or other keywords.
 
 Paste into the developer dashboard. Keep claims identical to the website.
 
-## Name (max 75 characters)
-GroupMailBox: Facebook Group Leads to Sheets & Gmail Follow-ups
-(63 characters. Pairs the brand with "Facebook Group" so it is not confused with Microsoft's "group mailbox"; no competitor uses "Gmail" in its title.)
+## Name (from the extension package, max 75)
+GroupMailBox: Facebook Group Leads to Google Sheets & Email
 
-## Summary (max 132 characters)
-Capture Facebook group member requests and answers to Google Sheets, auto-approve, and follow up from Gmail until they reply.
-(125 characters)
+## Summary (from the extension package, max 132)
+Save Facebook group member requests and membership answers to Google Sheets, auto-approve members, and send follow-up emails.
 
-## Description
-Turn Facebook group members into customers.
+## Description (paste into Store listing → Description)
+Turn the people asking to join your Facebook group into leads you can actually follow up with.
 
-GroupMailBox works next to your group's member requests page:
+GroupMailBox opens in a side panel next to your group's Member Requests page. As requests come in, it saves each person's name, profile and answers to your membership questions, finds the email address they gave you, and sends everything to your own Google Sheet. Then it can email them for you.
 
-• Capture every member request with all 3 screening answers, the moment it appears
-• Finds the email even inside a sentence ("sure, it's jordan@example.com")
-• Sync leads to your own Google Sheet, with a column per answer
-• Auto-approve at a safe pace (Pro): a few seconds apart, max 50 an hour, and a 6-hour pause if Facebook stops accepting approvals
-• Follow up from your own Gmail: a welcome email plus up to 4 follow-ups in the same thread
-• Follow-ups stop automatically when someone replies or unsubscribes
-• One-click unsubscribe in every email; opted-out people are never emailed again
+WHAT IT DOES
+• Captures member requests: name, profile link and all 3 membership question answers, the moment they appear
+• Finds the email address, even when someone writes it inside a sentence
+• Syncs leads to Google Sheets: your own sheet, with a column for each answer
+• Auto-approves members (Pro): at a steady, safe pace, a few seconds apart and at most 50 an hour, with an automatic 6-hour pause if Facebook stops accepting approvals
+• Sends email campaigns: a welcome email plus up to 4 follow-ups, personalised with each person's first name, group name and answers
+• Smart follow-ups: send the next email only to people who opened, or only to people who didn't
+• Stops on reply: follow-ups end as soon as someone answers, and the reply is forwarded to your inbox
+• Shows your results: sent, opened and replied for every campaign, plus a log of each email
 
-No Zapier, no separate email marketing tool, no new inbox.
+GETTING STARTED
+1. Install GroupMailBox and sign in
+2. Open your group's Member Requests page
+3. Connect a Google Sheet and start capturing
+4. Write a welcome email and start a campaign (Pro and Advanced)
 
-Free plan: 1 Facebook group, 100 leads a month. Pro and Advanced add more groups, auto-approve and Gmail follow-ups.
+PLANS
+Free: 1 Facebook group and 100 leads a month, saved to Google Sheets.
+Pro and Advanced: more groups, unlimited leads, auto-approve and email campaigns.
 
-Built for coaches, course creators, consultants, agencies and community admins who grow through Facebook groups.
+YOUR PRIVACY
+GroupMailBox only reads member requests you can already see as a group admin. Leads go to your own Google Sheet, and we never sell your data. Emails go only to people who shared their email address with you. Google access is used only to write to the sheet you choose, and you can remove it any time at https://myaccount.google.com/permissions. Privacy policy: https://groupmailbox.com/privacy
 
-Privacy: GroupMailBox only reads member requests you can already see as an admin. Leads go to your own Google Sheet. We never sell your data. Email is sent only to members who shared their email with you.
+GOOD TO KNOW
+Works on desktop Chrome with Facebook set to English. Auto-approve runs while the Member Requests page is open. Campaign emails are sent from our servers, even when your computer is off.
 
-Switching from GroupKit (shut down Oct 2026), Groups Pro, Groupboss, Group Leads or Group Collector? Connect the same Google Sheet and keep going.
-
-Good to know: works on desktop Chrome with Facebook set to English. Auto-approve runs while the member requests page is open; follow-up emails send from our servers even when your computer is off.
+GroupMailBox is not affiliated with, endorsed or sponsored by Facebook or Meta.
 
 ## Screenshots (1280×800, up to 5)
 Ready-made files in docs/store-assets/ (real side panel, fictional sample data):
 1. Side panel next to member requests, with "Captured" badges
 2. Google Sheet filling with names, answers and email status
 3. Campaign creator with follow-up steps and "Stop when they reply"
-4. Gmail thread: welcome, day-3 follow-up, reply → "Follow-ups stopped"
+4. Email thread: welcome, day-3 follow-up, reply → "Follow-ups stopped"
 5. Campaign detail: replied / in sequence / unsubscribed counts
 
 ## Small promo tile (440×280)
-Logo + "Facebook group leads → Sheets → Gmail"
+Logo + "Facebook group leads → Sheets → email"
 
 ## Reviews
 Ask happy beta users for an honest review after their first week. Never offer anything in exchange for a review or ask only for 5 stars (store policy).
