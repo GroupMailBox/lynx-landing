@@ -16,6 +16,15 @@ export const metadata: Metadata = {
 // Only articles that exist. The old list had six placeholder posts linking to '#'.
 const BLOG_POSTS = [
   {
+    slug: "/blog/why-zapier-cant-capture-facebook-group-answers/",
+    title: "Why Zapier Can't Capture Facebook Group Membership Answers",
+    excerpt:
+      "Zapier's Facebook Groups app was removed in April 2024 and answers were never exposed by an API. What to use instead.",
+    category: "Guide",
+    date: "November 19, 2026",
+    readTime: "6 min read",
+  },
+  {
     slug: "/blog/facebook-group-email-consent/",
     title: "Can You Email Facebook Group Members? A Consent-First Guide",
     excerpt:
