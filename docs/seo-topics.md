@@ -10,6 +10,7 @@ One primary keyword per page. Add a row before writing a new page.
 | /blog/export-facebook-group-members/ | export facebook group members | informational | live; expand (thin) |
 | /blog/facebook-group-email-consent/ | can you email facebook group members | informational | live; expand (thin) |
 | /blog/google-sheets-crm-for-facebook-groups/ | google sheets crm facebook group | informational | live; expand (thin) |
+| /blog/why-zapier-cant-capture-facebook-group-answers/ | zapier facebook group answers | informational | live (19 Nov 2026) |
 | /features/auto-approve-facebook-group-members/ | auto approve facebook group members | commercial | live |
 | /compare/*-alternative/ | <competitor> alternative | commercial | 11 live |
 | /tools/membership-question-generator/ | facebook group question generator | tool | live |
