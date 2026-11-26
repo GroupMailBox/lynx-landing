@@ -11,6 +11,7 @@ One primary keyword per page. Add a row before writing a new page.
 | /blog/facebook-group-email-consent/ | can you email facebook group members | informational | live; expand (thin) |
 | /blog/google-sheets-crm-for-facebook-groups/ | google sheets crm facebook group | informational | live; expand (thin) |
 | /features/auto-approve-facebook-group-members/ | auto approve facebook group members | commercial | live |
+| /facebook-group-follow-up-emails/ | facebook group follow up emails | informational-commercial | live |
 | /compare/*-alternative/ | <competitor> alternative | commercial | 11 live |
 | /tools/membership-question-generator/ | facebook group question generator | tool | live |
 | /tools/follow-up-cadence-calculator/ | follow up email cadence | tool | live |
